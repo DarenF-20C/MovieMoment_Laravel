@@ -8,4 +8,5 @@
 
 31 Mar 22
 -> add controller (based on ClassDiagram)
--> add model (based on ER-D)
+-> add model -m(based on ER-D)
+-> migration (xampp)

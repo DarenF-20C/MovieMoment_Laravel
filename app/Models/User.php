@@ -17,11 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['F_Name','L_Name','userEmail','userPW','dateOfBirth','gender','status'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,4 +37,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function movieViewed(){
+        return $this->hasMany('App\Models\MovieViewed');
+    }
 }

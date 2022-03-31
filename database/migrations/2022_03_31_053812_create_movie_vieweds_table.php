@@ -15,6 +15,8 @@ class CreateMovieViewedsTable extends Migration
     {
         Schema::create('movie_vieweds', function (Blueprint $table) {
             $table->id();
+            $table->string('MovieID');
+            $table->string('UserID');
             $table->timestamps();
         });
     }

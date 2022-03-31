@@ -15,6 +15,10 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
+            $table->string('ctDetail');
+            $table->integer('ctLike')->default('0');
+            $table->string('MovieID');
+            $table->string('UserID');
             $table->timestamps();
         });
     }

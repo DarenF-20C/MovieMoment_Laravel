@@ -15,6 +15,9 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->string('adminName');
+            $table->string('adminPW');
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }
