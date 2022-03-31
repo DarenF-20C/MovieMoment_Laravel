@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Friend extends Model
 {
     use HasFactory;
+    protected $fillable=['UserID1','status','UserID2'];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

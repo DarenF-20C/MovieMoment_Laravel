@@ -42,4 +42,8 @@ class User extends Authenticatable
     public function movieViewed(){
         return $this->hasMany('App\Models\MovieViewed');
     }
+
+    public function comment(){
+        return $this->hasMany('App\Models\Comment');
+    }
 }
