@@ -172,3 +172,7 @@ p{
 a {
   color:#00ff00;
 }
+
+a:hover {
+  color:#fc8138;
+}
