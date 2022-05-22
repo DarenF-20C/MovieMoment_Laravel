@@ -1,106 +1,75 @@
 @extends('layout')
 @section('content')
 @push('css')
-    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+<link rel="stylesheet" href="{{asset('css/contact.css')}}">
 @endpush
-<body>
-<div id="intro">
-            <div class="mask rgba-white-strong">
-               <h4 class="my-5 text-center font-weight-bold ">Contact Us </h4>
-               <p class="white-text text-center font-weight-bold">If you interested to join us , feel free to send your information to us.</p>
-               <div class="buttoncenter">
-                  <button type="button" class="buttondesign btn-rounded"><a href="#formapp" class="fontcolors">Fill up to contact with us!</a></button>  
-               </div>
-            </div>
-         </div>
-    </header>
+<body><br>
+<main>
+<div class="container-fluid">
+<section id="teammembers" class="text-center text-black">
+<br>
+<h2 class="my-2"style="font-size:80px;">Contact Us</h2> <br>
+<h3 class="feature-title">Team Members</h3> <br>
+<div class="row">
+<div class="col-sm-4"> 
+<div class="card">
+      <div class="card-body">
+      <img class="chathead" src="https://bpic.588ku.com/element_origin_min_pic/19/04/09/7c15cf7125b5fb7b8a163e594dc9ac25.jpg">
+        <h5 class="card-title">Project Member 1</h5>
+        <p class="card-text">
+        Name: Loh Chia Heung <br>
+        Student ID: D200262C <br>
+        Batch: IT-20C <br>
+        H/P: 012-345678910 <br>
+        Hotmail:lohchiaheung@gmail.com<br>
+        Location:Johor Bahru, Johor.
+        </p>
+    </div>
+  </div> 
+</p>
+</div>
+<div class="col-sm-4"> 
+<div class="card">
+      <div class="card-body">
+      <img class="chathead" src="https://bpic.588ku.com/element_origin_min_pic/19/04/09/7c15cf7125b5fb7b8a163e594dc9ac25.jpg">
+        <h5 class="card-title"> Project Member 2 </h5>
+        <p class="card-text">     
+        Name: Teh Jun Yuan <br>
+        Student ID: D200248C <br>
+        Batch: IT-20C <br>
+        H/P: 012-34567891 <br>
+        Hotmail:Junyuan741@gmail.com<br>
+        Location:Johor Bahru, Johor
+       </p>
+    </div>
+  </div> 
+</p>
+</div>
+<div class="col-sm-4"> 
+<div class="card">
+      <div class="card-body">
+      <img class="chathead" src="https://bpic.588ku.com/element_origin_min_pic/19/04/09/7c15cf7125b5fb7b8a163e594dc9ac25.jpg">
+        <h5 class="card-title"> Project Member 3 </h5>
+        <p class="card-text"> 
+        Name: Fang Xiang Lun <br>
+        Student ID: D200221C <br>
+        Batch: IT-20C <br>
+        H/P: 012-34567891 <br>
+        Hotmail:D200221C@sc.edu.my<br>
+        Location:Johor Bahru, Johor
+       </p>
+    </div>
+  </div> 
+</p>
+</div>
+</main>
 
-   <div class="container1">
-      <div class="row company" id="content">
-         <div class="col-md-4 mb-4 text-center">
-            <h3 class="feature-title">Company Logo</h3>
-            <img src="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/07/door-company-logo.jpg" class="img-fluid">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. </p>
-         </div>
-         <div class="col-md-4 mb-1 text-center">
-            <h3 class="feature-title">Company Slogan </h3>
-            <img src="https://www.aplustopper.com/wp-content/uploads/2020/11/5-Slogans-on-Company-in-English.png" class="img-fluid">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. </p>
-         </div>
-         <div class="col-md-4 mb-1 text-center">
-            <h3 class="feature-title">Company Bonus </h3>
-            <img src="https://theea.org/wp-content/uploads/2018/11/Company-Bonus-Hot-Topic-Survey-Image-for-Website.png" class="img-fluid">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu.</p>
-         </div>
-         <hr class="hr-light">
-   </div>
-
-   <div class="row container2">
-      <div class="col-md-6 mb-1 text-center hire">
-         <h3 class="feature-title">Hiring People </h3>
-         <img src="https://i.pinimg.com/564x/90/c7/a6/90c7a6b46a35e461e63d4ca4bd2dbc82.jpg">
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu.</p>
-      </div>
-      <div class="col-md-6 mb-1 text-center">
-         <h5 class="feature-title">If you are interested in joining our our teams, fill the form below! </h5>
-            <form id="formapp" onsubmit="thanksyou()">
-               <div class="row form">
-                  <div class="col-md-1"></div>
-                  <div class="col-md-10">
-                     <div class="card">
-                        <!-- Name input -->
-                        <div class="form-outline mb-2">
-                           <input type="text" id="form3Example1" class="form-control" />
-                           <label class="form-label" for="form3Example1">Name</label>
-                        </div>
-
-                        <!-- Phone input -->
-                        <div class="form-outline mb-2">
-                           <input type="text" id="form3Example2" class="form-control" />
-                           <label class="form-label" for="form3Example1">Phone</label>
-                        </div>
-                     
-                        <!-- Email input -->
-                        <div class="form-outline mb-2">
-                           <input type="email" id="form3Example3" class="form-control" />
-                           <label class="form-label" for="form3Example3">Email address</label>
-                        </div>
-                     
-                        <!-- Password input -->
-                        <div class="form-outline mb-2">
-                           <input type="number" id="form3Example4" class="form-control" />
-                           <label class="form-label" for="form3Example4">Age</label>
-                        </div>
-
-                        <!-- Extra input -->
-                        <div class="form-outline mb-0">
-                           <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                           <label class="form-label" for="form6Example7">Why did you choose us?</label>
-                        </div>
-
-
-                     </div>
-                  </div>
-                  <div class="col-md-1"></div>
-               </div>
-             
-               <!-- Submit button -->
-               <button type="submit" class="btn btn-success mb-4">Sign up</button>
-             
-               <!-- Register buttons -->
-               <div class="text-center follow">
-                 <p>Follow us on:</p>
-                 <button type="button" class="btn btn-primary btn-floating mx-1 fb">
-                     <a href="https://www.facebook.com/Movie-Moment-MM-109810318198221"><i class="fab fa-facebook-f"></i></a>
-                 </button>
-               
-                  <button type="button" class="btn btn-primary btn-floating mx-1 insta" >
-                     <a href="https://www.instagram.com/moviemoment_2021/"><i class="fab fa-instagram"></i></a>
-                  </button>
-               </div>
-             </form>
-      </div>
-   </div>
-   </div>
 </body>
+  <!--/body-->
+    <!-- MDB Java scripts-->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</main>
 @endsection
