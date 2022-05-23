@@ -1,0 +1,40 @@
+h3 {
+    color:#fc8138;
+    font-family: Franklin Gothic Medium;
+    font-size:60px;
+    text-shadow: rgb(180, 57, 0) 0.05em 0.05em 0.05em;
+    text-align:center;
+  }
+
+body {
+    background-color:#101210;
+}
+
+.form-group {
+    color:#00dd00;
+    font-family:Franklin Gothic Medium;
+    font-size:32px;
+    shadow
+}
+
+#formcontrols {
+    color:black;
+}
+
+.btn {
+    color:black;
+    text-align:center;
+    padding-top:10px;
+    font-family:Franklin Gothic Medium;
+    align-items: center;
+    background-color: #fc8138;
+}
+
+.btn:hover {
+    background-color:#00dd00;
+    color:black;
+    text-align:center;
+    padding-top:10px;
+    font-family:Franklin Gothic Medium;
+    align-items: center;
+}

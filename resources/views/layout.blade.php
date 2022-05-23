@@ -56,7 +56,7 @@
                               <a class="nav-link" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Weekly)  </a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link dropdown-toggle" href="#" ></i> About</a>
+                              <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
                                  <ul class="dropdown-menu">
                                  <li><a class="dropdown-item" href="{{url('aboutUs')}}"> About Us</a></li>
                                  <li><a class="dropdown-item" href="{{url('contactUs')}}"> Contact Us</a></li>
