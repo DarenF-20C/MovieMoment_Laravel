@@ -1,0 +1,46 @@
+thead {
+    font-size:22px;
+    background-color:#ff8036;
+    font-family: Franklin Gothic Medium;
+    text-align:center;
+}
+
+body {
+    background-color:#101210;
+
+
+}
+
+.bodytr:hover {
+    background-color: #00dd00;;
+}
+
+tbody {
+    background-color: #fbae81;
+    font-family: Franklin Gothic Medium;
+    text-align:center;
+    font-size:16px;
+}
+
+.Title {
+    padding-top:100px;
+    text-align:center;
+    font-size:70px;
+    font-family: Franklin Gothic Medium;
+    color:#00dd00;
+}
+
+table,th,td { 
+    border: 2px solid whitesmoke;
+    
+}
+
+.img-fluids {
+    width:100px;
+    height:100px;
+}
+
+.abc {
+    width:100px;
+}
+

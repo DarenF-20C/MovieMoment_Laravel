@@ -13,7 +13,7 @@ class MemberController extends Controller
         $r=request();  //received the data by GET or POST mothod 
         $image=$r->file('image');        
         $image->move('images',$image->getClientOriginalName());   //images is the location                
-        $imageName=$image->getClientOriginalName(); 
+        $imageName=$image->getClientOriginalName();
         $addMembers=ProjectMember::create([
             'name'=>$r->name,
             'image'=>$imageName,
@@ -24,6 +24,11 @@ class MemberController extends Controller
             'location'=>$r->location,
             'addtionalInformation'=>$r->addtionalInformation,  
          ]);
-         Return redirect()->route('addMembers');
+         Return redirect()->route('showMembers');
+    }
+
+    public function view(){
+        $viewMembers=ProjectMember::all(); //generate SQL select * from categories
+        Return view('showMembers')->with('ProjectMember',$viewMembers);
     }
 }

@@ -23,10 +23,14 @@ Route::get('/addMembers', function () {
 
 
 
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/addMembers', [App\Http\Controllers\MemberController::class, 'store'])->name('addMembers');
+Route::POST('/addMembers', [App\Http\Controllers\MemberController::class, 'store'])->name('addMembers');
 
-Route::get('/addCompany', [App\Http\Controllers\CompanyController::class, 'store'])->name('storeCompany');
+Route::get('/showMembers', [App\Http\Controllers\MemberController::class, 'view'])->name('viewMembers');
+
+
