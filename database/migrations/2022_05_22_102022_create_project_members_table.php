@@ -15,14 +15,15 @@ class CreateProjectMembersTable extends Migration
     {
         Schema::create('project_members', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
+            $table->string('image');
             $table->string('studentID');
             $table->string('batch');
             $table->string('telephoneNumber');
             $table->string('email');
             $table->string('location');
             $table->string('addtionalInformation');
+            $table->timestamps();
         });
     }
     /**

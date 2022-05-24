@@ -10,17 +10,13 @@
         <h3>Add New Members</h3>
         <form action="{{ route('addMembers') }}" method="POST" enctype="multipart/form-data" >
            @csrf
-           <div class="form-group">
-           <label for="ID">Id:</label>
-           <input class="form-control" type="text" placeholder="Member ID" readonly>     
-            </div>
             <div class="form-group">
                 <label for="Name">Name:</label>
-                <input type="text-success" class="form-control" id="formcontrols" name="name">                
+                <input type="text-success" class="form-control" id="Name" name="name">                
             </div>
             <div class="form-group">
-                    <label for="Images">Images:</label>
-                    <input type="file" class="form-control addmember" id="Images" name="Images">                
+                    <label for="image">Images:</label>
+                    <input type="file" class="form-control" id="image" name="image">                
                 </div>
             <div class="form-group">
                 <label for="studentID">Student ID:</label>

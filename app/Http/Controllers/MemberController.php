@@ -11,11 +11,12 @@ class MemberController extends Controller
 {
     public function store(){
         $r=request();  //received the data by GET or POST mothod 
-        $image=$r->file('');        
-        $image->move('Images',$image->getClientOriginalName());   //images is the location                
+        $image=$r->file('image');        
+        $image->move('images',$image->getClientOriginalName());   //images is the location                
         $imageName=$image->getClientOriginalName(); 
         $addMembers=ProjectMember::create([
             'name'=>$r->name,
+            'image'=>$imageName,
             'studentID'=>$r->studentID,
             'batch'=>$r->batch,
             'telephoneNumber'=>$r->telephoneNumber,
@@ -23,5 +24,6 @@ class MemberController extends Controller
             'location'=>$r->location,
             'addtionalInformation'=>$r->addtionalInformation,  
          ]);
+         Return redirect()->route('addMembers');
     }
 }
