@@ -14,7 +14,7 @@ h3 {
 }
 
 .card-title {
-    color:#00ff00;
+    color:black;
     font-family: 'Libre Franklin', sans-serif;
     font-size:45px;
     text-align:center;
@@ -22,9 +22,10 @@ h3 {
 }
 
 .card-text {
-    color:#56f156;
+    color:black;
     font-family:'Libre Franklin', sans-serif;
     text-align:center;
+    padding:10px;
 }
 
 img.chathead {

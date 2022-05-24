@@ -13,7 +13,7 @@
 <div class="col-sm-4"> 
 <div class="card">
       <div class="card-body">
-      <img class="chathead" src="https://bpic.588ku.com/element_origin_min_pic/19/04/09/7c15cf7125b5fb7b8a163e594dc9ac25.jpg">
+      <img class="chathead" src="https://img.tukuppt.com/png_preview/00/46/97/jPISSbfuj7.jpg!/fw/780">
         <h5 class="card-title"> Project Member 1 </h5>
         <p class="card-text">     
         Name: Loh Chia Heung <br>
@@ -30,7 +30,7 @@
 <div class="col-sm-4"> 
 <div class="card">
       <div class="card-body">
-      <img class="chathead" src="https://bpic.588ku.com/element_origin_min_pic/19/04/09/7c15cf7125b5fb7b8a163e594dc9ac25.jpg">
+      <img class="chathead" src="https://img.tukuppt.com/png_preview/00/46/97/LwhsdW43FZ.jpg!/fw/780">
         <h5 class="card-title"> Project Member 2 </h5>
         <p class="card-text">     
         Name: Teh Jun Yuan <br>
@@ -47,7 +47,7 @@
 <div class="col-sm-4"> 
 <div class="card">
       <div class="card-body">
-      <img class="chathead" src="https://bpic.588ku.com/element_origin_min_pic/19/04/09/7c15cf7125b5fb7b8a163e594dc9ac25.jpg">
+      <img class="chathead" src="https://bpic.51yuansu.com/pic3/cover/03/47/84/5badd4424da07_610.jpg">
         <h5 class="card-title"> Project Member 3 </h5>
         <p class="card-text"> 
         Name: Fang Xiang Lun <br>
