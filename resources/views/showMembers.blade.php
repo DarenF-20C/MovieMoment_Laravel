@@ -27,7 +27,7 @@
                         @foreach($ProjectMember as $ProjectMember)
                         <tr class="bodytr">
                             <td> {{$ProjectMember->id}} </td>
-                            <td><img src="{{ asset('images/') }}/{{$ProjectMember->image}}" width="150" height="110" class="img-fluids" alt=""></td>
+                            <td><img src="{{ asset('images/') }}/{{$ProjectMember->image}}" width="100" height="110" class="img-fluids" alt=""></td>
                             <td class="abc" >{{$ProjectMember->name}}</td>
                             <td >{{$ProjectMember->studentID}}</td>
                             <td >{{$ProjectMember->batch}}</td>

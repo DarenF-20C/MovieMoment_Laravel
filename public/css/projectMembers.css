@@ -17,14 +17,37 @@ h3 {
     color:#00ff00;
     font-family: 'Libre Franklin', sans-serif;
     font-size:45px;
+    text-align:center;
+    text-decoration: solid;
 }
 
 .card-text {
-    color:#00ff00;
+    color:#56f156;
+    font-family:'Libre Franklin', sans-serif;
+    text-align:center;
 }
 
 img.chathead {
     width: 340px;
     height: 350px;
 }
+
+.my-2 {
+    text-align:center;
+    font-size:100px;
+}
+
+.orangeline {
+    border:1px solid #fc8138;
+}
+
+.img {
+    width:100px;
+    height:100px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    
+  }
 

@@ -59,7 +59,7 @@
                               <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
                                  <ul class="dropdown-menu">
                                  <li><a class="dropdown-item" href="{{url('aboutUs')}}"> About Us</a></li>
-                                 <li><a class="dropdown-item" href="{{url('contactUs')}}"> Contact Us</a></li>
+                                 <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members</a></li>
                               </ul>
                            </li>
                         </ul>

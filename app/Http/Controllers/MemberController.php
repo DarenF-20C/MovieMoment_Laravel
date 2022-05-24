@@ -31,4 +31,9 @@ class MemberController extends Controller
         $viewMembers=ProjectMember::all(); //generate SQL select * from categories
         Return view('showMembers')->with('ProjectMember',$viewMembers);
     }
+
+    public function listMembers(){
+        $listMembers=ProjectMember::all();
+        return view('showProjectMembers')->with('ProjectMember',$listMembers);
+    }
 }

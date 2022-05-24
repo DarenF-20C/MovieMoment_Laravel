@@ -33,4 +33,5 @@ Route::POST('/addMembers', [App\Http\Controllers\MemberController::class, 'store
 
 Route::get('/showMembers', [App\Http\Controllers\MemberController::class, 'view'])->name('viewMembers');
 
+Route::get('/showProjectMembers', [App\Http\Controllers\MemberController::class, 'listMembers'])->name('listMembers');
 
