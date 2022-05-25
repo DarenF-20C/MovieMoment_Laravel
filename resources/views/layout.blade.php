@@ -58,9 +58,10 @@
                            <li class="nav-item">
                               <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
                                  <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members</a></li>
-                                 <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members</a></li>
+                                 <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members(Admin)</a></li>
+                                 <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members(User)</a></li>
                                  <li><a class="dropdown-item" href="{{url('showMembers')}}">Show Members(Admin)</a></li>
+                                 <li><a class="dropdown-item" href="{{url('contact')}}">Contact Us(User)</a></li>
                               </ul>
                            </li>
                         </ul>

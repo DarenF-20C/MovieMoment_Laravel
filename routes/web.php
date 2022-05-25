@@ -29,6 +29,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/contact', [App\Http\Controllers\ContactUsFormController::class, 'createForm']);
+
+Route::post('/contact', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
 Route::POST('/addMembers', [App\Http\Controllers\MemberController::class, 'store'])->name('addMembers');
 
 Route::get('/showMembers', [App\Http\Controllers\MemberController::class, 'view'])->name('viewMembers');
