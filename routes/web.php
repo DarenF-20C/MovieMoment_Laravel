@@ -37,5 +37,11 @@ Route::POST('/addMembers', [App\Http\Controllers\MemberController::class, 'store
 
 Route::get('/showMembers', [App\Http\Controllers\MemberController::class, 'view'])->name('viewMembers');
 
+Route::get('/deleteMembers/{id}', [App\Http\Controllers\MemberController::class, 'delete'])->name('deleteMembers');
+
 Route::get('/showProjectMembers', [App\Http\Controllers\MemberController::class, 'listMembers'])->name('listMembers');
+
+Route::post('/updateMembers', [App\Http\Controllers\MemberController::class, 'update'])->name('updateMembers');
+
+Route::get('/editMembers/{id}', [App\Http\Controllers\MemberController::class, 'edit'])->name('editMembers');
 

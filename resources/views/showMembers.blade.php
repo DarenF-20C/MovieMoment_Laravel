@@ -35,9 +35,10 @@
                             <td >{{$ProjectMember->email}}</td>
                             <td >{{$ProjectMember->location}}</td>
                             <td >{{$ProjectMember->addtionalInformation}}</td>
-                            <td><a href="" class="btn btn-warning btn-sm" style="margin-bottom:5px;">Edit</a> <br> 
-                            <a href="" class="btn btn-danger btn-sm" onClick="return confirm('Are you sure to delete?')">Delete</a>
-</td>
+                            <td>
+                            <a href="{{ route('editMembers',['id'=>$ProjectMember->id])}}" class="btn btn-warning btn-sm" style="margin-bottom:5px;">Edit</a> <br> 
+                            <a href="{{ route('deleteMembers',['id'=>$ProjectMember->id])}}" class="btn btn-danger btn-sm" onClick="return confirm('Are you sure to delete?')">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
