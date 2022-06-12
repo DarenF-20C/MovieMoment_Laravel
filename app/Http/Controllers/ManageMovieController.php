@@ -28,8 +28,6 @@ class ManageMovieController extends Controller
         $addMovie=Movie::create([
             'name'=>$r->movieName,
             'description'=>$r->movieDescription,
-            'quantity'=>$r->movieQuantity,
-            'price'=>$r->moviePrice,
             'CategoryID'=>$r->CategoryID,
             'image'=>$imageName,
         ]);
@@ -81,11 +79,9 @@ class ManageMovieController extends Controller
 
             $movies->name=$r->movieName;
             $movies->description=$r->movieDescription;
-            $movies->price=$r->moviePrice;
-            $movies->quantity=$r->movieQuantity;
             $movies->CategoryID=$r->CategoryID;
             $movies->save();
 
-        return redirect()->route('viewmovie');
+        return redirect()->route('viewMovie');
     }
 }
