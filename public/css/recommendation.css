@@ -172,7 +172,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width:500px;
   transition: transform 0.3s linear;
 }
 
@@ -184,7 +184,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -273,3 +273,4 @@ body {
       font-size: 3rem;
   }
 }
+

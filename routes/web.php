@@ -15,6 +15,9 @@ Route::get('/addMembers', function () {
     return view('addMembers');
 });
 
+Route::get('/movieRecommendation',function(){
+    return view('movieRecommendation');
+});
 
 
 

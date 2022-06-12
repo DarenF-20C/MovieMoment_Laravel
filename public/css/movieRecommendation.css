@@ -1,0 +1,42 @@
+.container.mx-auto.px-4.pt-16 {
+    padding:20px;
+}
+
+body {
+    background-color:#101210;
+    height:100%;
+}
+
+.col-sm-3 {
+    padding:25px;
+}
+
+.col-sm-3:hover {
+    padding:25px;
+    transform: scale(1.05);
+}
+
+.img-fluid {
+    width:800px !important;
+    height:500px;
+}
+
+.img-fluid:hover {
+   opacity:0.8;
+
+}
+
+.movie-item-title {
+    font-family:Franklin Gothic Medium;
+    font-size:30px;
+}
+
+.movie-infos {
+  display: flex;
+  align-items: center; 
+}
+
+.carousel-item {
+   width:500px;
+   align-content:center;
+}
