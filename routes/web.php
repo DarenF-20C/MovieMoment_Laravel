@@ -15,6 +15,24 @@ Route::get('/addMembers', function () {
     return view('addMembers');
 });
 
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard');
+
+//--Category route--//
+Route::get('/addCategory', [App\Http\Controllers\CategoryController::class,'index'])->name('add.Category');
+
+Route::post('/addCategory', [App\Http\Controllers\CategoryController::class, 'store'])->name('storeCategory');
+
+//-Manage Movie route--//
+Route::get('/addMovie', [App\Http\Controllers\ManageMovieController::class,'index'])->name('add.Movie');
+
+Route::post('/addMovie' , [App\Http\Controllers\ManageMovieController::class, 'store'])->name('storeMovie');
+
+Route::get('/showMovie', [App\Http\Controllers\ManageMovieController::class, 'view'])->name('viewMovie');
+
+Route::get('/deleteMovie/{id}',[App\Http\Controllers\ManageMovieController::class,'delete'])->name('deleteMovie');
+
+Route::get('editMovie/{id}',[App\Http\Controllers\ManageMovieController::class,'edit'])->name('editMovie');
+
 
 
 
