@@ -22,7 +22,7 @@ header{
     border-radius: 45px;
     font-size: 1rem;
     color:#fff;
-    font-family: inherit;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .search:focus{
@@ -112,4 +112,71 @@ main{
 
 .movie:hover .overview{
     transform:translateY(0);
+}
+
+#tags{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.tag{
+    color:black;
+    padding:10px 20px;
+    background-color: #ff8036;
+    border-radius: 5px;
+    margin:10px;
+    display:inline-block;
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    background-color: #00dd00;
+}
+
+.tag.highlight{
+    background-color: rgb(65, 191, 237);
+}
+
+.no-results{
+    color:white;
+    font-size:35px;
+    white-space: nowrap;
+}
+
+.pagination{
+    display:flex;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:15px;
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color:grey !important;;
+}
+
+.page:hover{
+    color:#ff8036;
+}
+
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid #ff8036;
+    font-size: 20px;
+    font-weight: 600;
 }
