@@ -1,5 +1,6 @@
 body {
   padding-top: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar img {
@@ -17,10 +18,10 @@ body {
 
 /* nav-link active & hover */
 ul.navbar-nav .nav-link.active {
-  color: #fc8138 !important; 
+  color: #00ff00 !important; 
  }
 ul.navbar-nav a:hover {
- color: #00ff00 !important; 
+ color: #fc8138 !important; 
 }
 
 ul.navbar-nav .dropdown-item.active {

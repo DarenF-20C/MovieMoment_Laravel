@@ -15,7 +15,9 @@ class CreateContentAttachmentsTable extends Migration
     {
         Schema::create('content_attachments', function (Blueprint $table) {
             $table->id();
-            $table->string('ctAttachment');
+            $table->string('ctImage');
+            $table->string('ctVideo');
+            $table->string('ctAudio');
             $table->string('ContentID');
             $table->timestamps();
         });

@@ -47,10 +47,10 @@
                      <!-- Center Navigation -->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                            <li class="nav-item">
-                              <a class="nav-link" href="{{url('community')}}" class="text-dark"><i class="fas fa-comments"></i> Movie Community  </a>
+                              <a class="nav-link" href="{{url('community')}}" class="text-dark"><i class="fas fa-comments"></i> Movie Community </a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="{{url('recommendation')}}"><i class="fas fa-video"></i> Movie Recommendation  </a>
+                              <a class="nav-link" href="{{url('recommend')}}"><i class="fas fa-video"></i> Movie Recommendation  </a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Weekly)  </a>

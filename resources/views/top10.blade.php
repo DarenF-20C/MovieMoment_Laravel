@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+@push('css')
+    <link rel="stylesheet" href="{{asset('css/top10.css')}}">
+@endpush
 <body>
 <div class="ranking">
          <div class="row title">

@@ -7,6 +7,6 @@
 @endpush
 
 31 Mar 22
--> add controller (based on ClassDiagram)
--> add model -m(based on ER-D)
+-> add controller (based on ClassDiagram)(library)
+-> add model -m(based on ER-D) (relationship)
 -> migration (xampp)

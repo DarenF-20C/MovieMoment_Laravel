@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     use HasFactory;
-    protected $fillable=['ctDetail','ctLike','MovieID','UserID'];
+    protected $fillable=['ctDetail','ctLike','ctDate','ctTime','MovieID','UserID'];
 
     public function content(){
         return $this->belongsTo('App\Models\Content');

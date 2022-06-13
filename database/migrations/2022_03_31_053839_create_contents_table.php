@@ -17,6 +17,8 @@ class CreateContentsTable extends Migration
             $table->id();
             $table->string('ctDetail');
             $table->integer('ctLike')->default('0');
+            $table->date('ctDate')->default('2022-01-01');
+            $table->string('ctTime')->default('00:00');
             $table->string('MovieID');
             $table->string('UserID');
             $table->timestamps();

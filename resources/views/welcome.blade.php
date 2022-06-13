@@ -1,5 +1,9 @@
 @extends('layout')
 @section('content')
+@push('css')
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+@endpush
+
      <!-- Background image -->
      <div class="p-5 text-center bg-image" style="background-image: url('images/mainpagebgimage.jpeg');height: 680px; opacity:0.9;">      
     <div class="mask">
