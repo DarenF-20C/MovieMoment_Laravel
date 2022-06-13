@@ -2,37 +2,60 @@
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/movieRecommendation.css')}}">
+<!-- Scripts -->
+<script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 @endpush
-@push('javascript')
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-@endpush('javascript')
 <body><br><br>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./images/series/supergirl.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./images/series/stranger-thing.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./images/series/star-trek.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+<header>
+        <form  id="form">
+            <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+    </header>
+    <main id="main">
+        <div class="movie">
+            <img src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=877&q=80" alt="Image">
+
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+
+            <div class="overview">
+
+                <h3>Overview</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab laudantium accusamus consequuntur explicabo numquam, totam quia illum dicta? Quod, vitae?
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=877&q=80"
+                alt="Image">
+
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+
+            <div class="overview">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab laudantium accusamus consequuntur explicabo numquam,
+                totam quia illum dicta? Quod, vitae?
+            </div>
+        </div>
+        <div class="movie">
+            <img src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=877&q=80"
+                alt="Image">
+
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+
+            <div class="overview">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab laudantium accusamus consequuntur explicabo numquam,
+                totam quia illum dicta? Quod, vitae?
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
-@endsection 

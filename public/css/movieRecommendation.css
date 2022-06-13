@@ -1,42 +1,115 @@
-.container.mx-auto.px-4.pt-16 {
-    padding:20px;
+*{
+    box-sizing: border-box;
 }
 
-body {
-    background-color:#101210;
-    height:100%;
+body{
+    background-color: #101210;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
-.col-sm-3 {
-    padding:25px;
+header{
+    padding:1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: #101210;
 }
 
-.col-sm-3:hover {
-    padding:25px;
-    transform: scale(1.05);
+.search{
+    background-color: #101210;
+    border: 2px solid #ff8036;
+    padding:0.5rem 1rem;
+    border-radius: 45px;
+    font-size: 1rem;
+    color:#fff;
+    font-family: inherit;
 }
 
-.img-fluid {
-    width:800px !important;
-    height:500px;
+.search:focus{
+    outline:0;
+    background-color: transparent;
+    color:#00dd00;;
 }
 
-.img-fluid:hover {
-   opacity:0.8;
-
+.search::placeholder{
+    color:#00dd00;;
 }
 
-.movie-item-title {
-    font-family:Franklin Gothic Medium;
-    font-size:30px;
+main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.movie-infos {
-  display: flex;
-  align-items: center; 
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color:rgba(0, 0, 0, 0.978);
+    position:relative;
+    overflow: hidden;
 }
 
-.carousel-item {
-   width:500px;
-   align-content:center;
+
+.movie img{
+    width:300px;
+}
+
+.movie-info{
+    color:#00dd00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    font-size:20px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+    font-size:20px;
+}
+
+.movie-info span{
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    padding:25px 25px 25px 25px;
+}
+
+.movie-info span.green{
+    color:rgb(110, 251, 110);
+}
+
+.movie-info span.orange{
+    color:#ff8036;
+}
+
+.movie-info span.red{
+    color:red;
+}
+
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:whitesmoke;
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+    color:black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.overview h3 {
+    font-size:25px;
+    font-weight: bold;
+     font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.movie:hover .overview{
+    transform:translateY(0);
 }

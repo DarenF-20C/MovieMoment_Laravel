@@ -15,7 +15,7 @@ Route::get('/addMembers', function () {
     return view('addMembers');
 });
 
-Route::get('/movieRecommendation',function(){
+Route::get('/movieRecommendation', function () {
     return view('movieRecommendation');
 });
 
@@ -26,7 +26,7 @@ Route::get('/addCategory', [App\Http\Controllers\CategoryController::class,'inde
 
 Route::post('/addCategory', [App\Http\Controllers\CategoryController::class, 'store'])->name('storeCategory');
 
-//-Manage Movie route--//
+//-Manage Movie route--
 Route::get('/addMovie', [App\Http\Controllers\ManageMovieController::class,'index'])->name('add.Movie');
 
 Route::post('/addMovie' , [App\Http\Controllers\ManageMovieController::class, 'store'])->name('storeMovie');
