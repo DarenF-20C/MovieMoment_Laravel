@@ -6,6 +6,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 @endpush
 <body><br><br>
+<div style="min-height:480px">
 <header>
         <form  id="form">
             <input type="text" placeholder="Search for your movie" id="search" class="search">
@@ -17,6 +18,7 @@
         <div class="page" id="prev"> << Previous Page </div>
         <div class="current" id="current">1</div>
         <div class="page" id="next">Next Page >></div>
+    </div>
     </div>
 </body>
 
