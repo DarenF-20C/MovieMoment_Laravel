@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+@push('css')
+<link rel="stylesheet" href="{{asset('css/welcome.css')}}">
+@endpush
      <!-- Background image -->
      <div class="p-5 text-center bg-image"> 
    <div class="mask">
