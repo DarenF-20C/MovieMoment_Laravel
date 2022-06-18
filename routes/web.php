@@ -19,7 +19,7 @@ Route::get('/movieRecommendation', function () {
     return view('movieRecommendation');
 });
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard');
+Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
 //--Category route--//
 Route::get('/addCategory', [App\Http\Controllers\CategoryController::class,'index'])->name('add.Category');
