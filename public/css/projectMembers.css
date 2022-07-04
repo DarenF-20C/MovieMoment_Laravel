@@ -2,11 +2,15 @@ body,header,#intro {
     height:100%;
 }
 
-h3 {
-    color:#fc8138;
+.my-2 {
+    color:#00dd00;;
     font-family: 'Libre Franklin', sans-serif;
     font-size:60px;
-    text-shadow: rgb(180, 57, 0) 0.05em 0.05em 0.05em;
+}
+
+
+body{
+    background-color: #101210;
 }
 
 .card-body {
@@ -51,4 +55,3 @@ img.chathead {
     transform: scale(1.05);
     
   }
-

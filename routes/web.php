@@ -19,6 +19,10 @@ Route::get('/movieRecommendation', function () {
     return view('movieRecommendation');
 });
 
+Route::get('/movieDetail', function () {
+    return view('movieDetail');
+});
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard');
 
 //--Category route--//
@@ -56,4 +60,5 @@ Route::get('/showProjectMembers', [App\Http\Controllers\MemberController::class,
 Route::post('/updateMembers', [App\Http\Controllers\MemberController::class, 'update'])->name('updateMembers');
 
 Route::get('/editMembers/{id}', [App\Http\Controllers\MemberController::class, 'edit'])->name('editMembers');
+
 

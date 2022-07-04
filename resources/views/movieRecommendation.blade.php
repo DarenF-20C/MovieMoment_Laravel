@@ -13,7 +13,17 @@
         </form>
     </header>
     <div id="tags"></div>
-    <main id="main"></main>
+    <div id="myNav" class="overlay">
+
+<!-- Button to close the overlay navigation -->
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+<!-- Overlay content -->
+<div class="overlay-content" id="overlay-content">
+
+</div>
+</div>
+    <main id="main"></main> 
     <div class="pagination">
         <div class="page" id="prev"> << Previous Page </div>
         <div class="current" id="current">1</div>

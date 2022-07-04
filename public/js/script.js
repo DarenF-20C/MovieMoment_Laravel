@@ -1,5 +1,4 @@
 //TMDB API
-
 //API Key (fff27caf16baadb8c1e7426e855cff9d)
 const API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
 //Base URL for TMDb
@@ -240,23 +239,31 @@ function showMovies(data) {
     main.innerHTML = '';
 
     data.forEach(movie => {
-        const {title, poster_path, vote_average, overview} = movie;
+        const {title, poster_path, vote_average, overview, id} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
-        <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
+        <img onClick="showMovieDetails()"src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
             <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
             <div class="overview">
                 <h3>Overview</h3>
-                ${overview}
+                ${overview} <br>
+                <button class="know-more" id="${id}"> Know More </button>
             </div>
         
         `
 
         main.appendChild(movieEl);
+      
+        document.getElementById(id).addEventListener('click', () => {
+        console.log(id)
+        getMovieDetails(movie);
+          
+        })
+       
     })
 }
 
@@ -282,3 +289,95 @@ form.addEventListener('submit', (e) => {
     }
 
 }) 
+
+const overlayContent = document.getElementById('overlay-content');
+/* Open when someone clicks on the span element */
+function getMovieDetails(movie) {
+  let id = movie.id;
+  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits').then(res => res.json())
+  //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
+  .then(movieData => {
+  console.log(movieData);
+  showMovieDetails(movieData);
+  
+  })
+}
+
+function showMovieDetails(movieData) {
+  const {overview,budget, release_date,poster_path,title,original_language,tagline,vote_average,directors,popularity,adult
+  ,status, id, revenue, genres,cast,name,videos_results,site,videos,credits,vote_count} = movieData;
+  genres.forEach(genresType);
+  document.getElementById("myNav").style.width = "100%";
+  const movieE2 = document.createElement('div');
+  movieE2.classList.add('movieDetails');
+  //  // <img src ="${poster_path? IMG_URL +poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
+  movieE2.innerHTML = `
+  <br><br>
+  <div class="row">
+  <div class="col-6">
+  <img class= "img" src ="${poster_path? IMG_URL +poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}"> <br>
+  <div class="trailer">
+  <p class="Title">Trailer :</p> <br>
+  <iframe width="500" height="315" 
+  src="https://www.youtube.com/embed/${videos.results[0].key}" 
+  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+  clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+  </iframe> <br>
+  </div>
+  <div class="buttons">
+  <button class="btn btn-sm"> Add to Favourite </button>
+  <button class="btn btn-sm onclick="closeNav()"> Return </button>
+  </div>
+  </div>
+  <div class="col-6">
+  <div class="contents">
+  <p class="Title">Title:</p><p class="content">${title}</p> 
+  <p class="Title">Genre:</p><p class="content">${genres}</</p>
+  <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} /  ${vote_count}</p>
+  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p> 
+  <p class="Title">Language:<p class="content">${original_language}</p>
+  <p class="Title">Status: </p> <p class="content">${status} </p>
+  <p class="Title">Tagline: </p><p class="content">"${tagline}"</p>
+  <p class="Title">Overview: </p><p class="content">${overview} </p>
+  <p class="Title">Released Date:  </p><p class="content">${release_date}</p>
+  <p class="Title">Actor/Actress:</p>
+  <p class="content">1)${credits.cast[0].name} <text id="actas"> act as</text> "${credits.cast[0].character}"
+  <p class="content">2)${credits.cast[1].name} <text id="actas"> act as</text> "${credits.cast[1].character}"
+  <p class="content">3)${credits.cast[2].name} <text id="actas"> act as</text> "${credits.cast[2].character}" <br>
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[0].profile_path}" alt="${title}">
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[1].profile_path}" alt="${title}">
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[2].profile_path}" alt="${title}">
+  </p>
+  </div> `
+  myNav.appendChild(movieE2);
+} 
+
+
+
+function genresType( genres, index, arr) {
+  arr[index] = genres.name ;
+}
+
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  myNav.innerHTML=`
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <br><br>
+  `
+}
+
+function test(adult) {
+  if (adult == 'Yes') {
+    return { message: '18+'};
+  }
+  else {
+    return {message: 'No'};
+  }
+}
+var response = test();
+
+
+   
