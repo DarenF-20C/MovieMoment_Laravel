@@ -7,6 +7,85 @@ const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 //Image from TMDB API
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
+const genres = [
+  {
+    "id": 28,
+    "name": "Action"
+  },
+  {
+    "id": 12,
+    "name": "Adventure"
+  },
+  {
+    "id": 16,
+    "name": "Animation"
+  },
+  {
+    "id": 35,
+    "name": "Comedy"
+  },
+  {
+    "id": 80,
+    "name": "Crime"
+  },
+  {
+    "id": 99,
+    "name": "Documentary"
+  },
+  {
+    "id": 18,
+    "name": "Drama"
+  },
+  {
+    "id": 10751,
+    "name": "Family"
+  },
+  {
+    "id": 14,
+    "name": "Fantasy"
+  },
+  {
+    "id": 36,
+    "name": "History"
+  },
+  {
+    "id": 27,
+    "name": "Horror"
+  },
+  {
+    "id": 10402,
+    "name": "Music"
+  },
+  {
+    "id": 9648,
+    "name": "Mystery"
+  },
+  {
+    "id": 10749,
+    "name": "Romance"
+  },
+  {
+    "id": 878,
+    "name": "Science Fiction"
+  },
+  {
+    "id": 10770,
+    "name": "TV Movie"
+  },
+  {
+    "id": 53,
+    "name": "Thriller"
+  },
+  {
+    "id": 10752,
+    "name": "War"
+  },
+  {
+    "id": 37,
+    "name": "Western"
+  }
+]
+
 const main = document.getElementById('main');
 const form =  document.getElementById('form');
 const search = document.getElementById('search');
@@ -47,12 +126,12 @@ function getTop10Movies() {
         var nextWeek = nextDate + "/" + month + "/" + year;
 
         movieEl.innerHTML = `
-        <h1 class="Title">Top 10 Movies lists from ${dateStr} to  ${nextWeek} </h1>
+        <h1 class="Top10">Top 10 Movies lists from ${dateStr} to  ${nextWeek} </h1>
         <div class="d-flex justify-content-center">
         <div class="top-1">
-        <h1><span class="fa fa-crown fa-lg"></span></h1>
+        <h1><span class="fa fa-crown fa-lg"></span></h> 
         <div class="movies">
-        <img src="${data[0].poster_path? IMG_URL+ data[0].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[0].title}" onclick="myFunction()" id="${data[0].id}">
+        <img src="${data[0].poster_path? IMG_URL+ data[0].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[0].title}" id="${data[0].id}">
         <div class="movie-info">
         ${data[0].title}
         <span class="${getColor(data[0].vote_average)}">${data[0].vote_average.toFixed(1)}</span>
@@ -66,7 +145,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">2</span></h1>
         <div class="movies">
-        <img class="posters"src="${data[1].poster_path? IMG_URL+ data[1].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[1].title}">
+        <img src="${data[1].poster_path? IMG_URL+ data[1].poster_path: "http://via.placeholder.com/1080x1580" }"  alt="${data[1].title}" id="${data[1].id}">
         <div class="movie-info">
         ${data[1].title}
         <span class="${getColor(data[1].vote_average)}">${data[1].vote_average.toFixed(1)}</span>
@@ -76,7 +155,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-3">3</span></h1>
         <div class="movies">
-        <img src="${data[2].poster_path? IMG_URL+ data[2].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[2].title}">
+        <img src="${data[2].poster_path? IMG_URL+ data[2].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[2].title}" id="${data[2].id}">
         <div class="movie-info">
         ${data[2].title}
         <span class="${getColor(data[2].vote_average)}">${data[2].vote_average.toFixed(1)}</span>
@@ -89,7 +168,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">4</span></h1>
         <div class="movies">
-        <img src="${data[3].poster_path? IMG_URL+ data[3].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[3].title}">
+        <img src="${data[3].poster_path? IMG_URL+ data[3].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[3].title}" id="${data[3].id}">
         <div class="movie-info">
         ${data[3].title}
         <span class="${getColor(data[3].vote_average)}">${data[3].vote_average.toFixed(1)}</span>
@@ -99,7 +178,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">5</span></h1>
         <div class="movies">
-        <img src="${data[4].poster_path? IMG_URL+ data[4].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[4].title}">
+        <img src="${data[4].poster_path? IMG_URL+ data[4].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[4].title}" id="${data[4].id}">
         <div class="movie-info">
         ${data[4].title}
         <span class="${getColor(data[4].vote_average)}">${data[4].vote_average.toFixed(1)}</span>
@@ -109,7 +188,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">6</span></h1>
         <div class="movies">
-        <img src="${data[5].poster_path? IMG_URL+ data[5].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[5].title}">
+        <img src="${data[5].poster_path? IMG_URL+ data[5].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[5].title}" id="${data[5].id}">
         <div class="movie-info">
         ${data[5].title}
         <span class="${getColor(data[5].vote_average)}">${data[5].vote_average.toFixed(1)}</span>
@@ -122,7 +201,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">7</span></h1>
         <div class="movies">
-        <img src="${data[6].poster_path? IMG_URL+ data[6].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[6].title}">
+        <img src="${data[6].poster_path? IMG_URL+ data[6].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[6].title}" id="${data[6].id}">
         <div class="movie-info">
         ${data[6].title}
         <span class="${getColor(data[6].vote_average)}">${data[6].vote_average.toFixed(1)}</span>
@@ -132,7 +211,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">8</span></h1>
         <div class="movies">
-        <img src="${data[7].poster_path? IMG_URL+ data[7].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[7].title}">
+        <img src="${data[7].poster_path? IMG_URL+ data[7].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[7].title}" id="${data[7].id}">
         <div class="movie-info">
         ${data[7].title}
         <span class="${getColor(data[7].vote_average)}">${data[7].vote_average.toFixed(1)}</span>
@@ -142,7 +221,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">9</span></h1>
         <div class="movies">
-        <img src="${data[8].poster_path? IMG_URL+ data[8].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[8].title}">
+        <img src="${data[8].poster_path? IMG_URL+ data[8].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[8].title}" id="${data[8].id}">
         <div class="movie-info">
         ${data[8].title}
         <span class="${getColor(data[8].vote_average)}">${data[8].vote_average.toFixed(1)}</span>
@@ -152,7 +231,7 @@ function getTop10Movies() {
         <div class="top-1">
         <h1><span class="fa fa-circle-2">10</span></h1>
         <div class="movies">
-        <img src="${data[9].poster_path? IMG_URL+ data[9].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[9].title}">
+        <img src="${data[9].poster_path? IMG_URL+ data[9].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[9].title}" id="${data[9].id}">
         <div class="movie-info">
         ${data[9].title}
         <span class="${getColor(data[9].vote_average)}">${data[9].vote_average.toFixed(1)}</span>
@@ -162,15 +241,62 @@ function getTop10Movies() {
         </div>
         `
 
-        myNav.appendChild(movieEl);
+        top10.appendChild(movieEl);
 
         document.getElementById(data[0].id).addEventListener('click', () => {
-          console.log(data[0].id)
-          myFunction()
-            
-          })
-    
+          let id = data[0].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[1].id).addEventListener('click', () => {
+          let id = data[1].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[2].id).addEventListener('click', () => {
+          let id = data[2].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[3].id).addEventListener('click', () => {
+          let id = data[3].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[4].id).addEventListener('click', () => {
+          let id = data[4].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[5].id).addEventListener('click', () => {
+          let id = data[5].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[6].id).addEventListener('click', () => {
+          let id = data[6].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[7].id).addEventListener('click', () => {
+          let id = data[7].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[8].id).addEventListener('click', () => {
+          let id = data[8].id
+          console.log(id)
+          getMovieDetails(id)
+        })
+        document.getElementById(data[9].id).addEventListener('click', () => {
+          let id = data[9].id
+          console.log(id)
+          getMovieDetails(id)
+        })
 }
+
+
+
 
 function getColor(vote) {
   if(vote>= 8){
@@ -182,6 +308,122 @@ function getColor(vote) {
   }
 }
 
-function myFunction(){
-   
+const overlayContent = document.getElementById('overlay-content');
+/* Open when someone clicks on the span element */
+/* Open when someone clicks on the span element */
+function getMovieDetails(id) {
+  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+  //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
+  .then(movieData => {
+  console.log(movieData);
+  showMovieDetails(movieData);
+  })
+  .catch(error => {
+    throw(error);
+  })
+}
+
+
+function showMovieDetails(movieData) {
+  const {overview, release_date,poster_path,title,original_language,tagline,vote_average,directors,popularity,adult
+    ,status, id,genres,name,videos_results,site,videos,credits,vote_count,similar,index} = movieData;
+  genres.forEach(genresType);
+  document.getElementById("myNav").style.width = "100%";
+  const movieE2 = document.createElement('div');
+  movieE2.classList.add('movieDetails');
+  movieE2.innerHTML=
+  `
+  <br><br>
+  <div class="row">
+  <div class="col-6">
+  <img class= "img" src ="${poster_path? IMG_URL +poster_path:"http://via.placeholder.com/1080x1580"  }" alt="${title}"> <br>
+  </div>
+  <div class="col-6">
+  <div class="contents">
+  <p class="Title">Title:</p><p class="content">${title}</p> 
+  <p class="Title">Genre:</p><p class="content">${genres}</</p>
+  <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} /  ${vote_count}</p>
+  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p> 
+  <p class="Title">Language:<p class="content">${original_language}</p>
+  <p class="Title">Status: </p> <p class="content">${status} </p>
+  <p class="Title">Tagline: </p><p class="content">"${tagline}"</p>
+  <p class="Title">Overview: </p><p class="content">${overview} </p>
+  <p class="Title">Released Date:  </p><p class="content">${release_date}</p>
+  <p class="Title">Actor/Actress:</p>
+  <p class="content">1)${credits.cast[0].name} <text id="actas"> act as</text> "${credits.cast[0].character}"
+  <p class="content">2)${credits.cast[1].name} <text id="actas"> act as</text> "${credits.cast[1].character}"
+  <p class="content">3)${credits.cast[2].name} <text id="actas"> act as</text> "${credits.cast[2].character}" <br>
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[0].profile_path}" alt="${credits.cast[0].name}">
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[1].profile_path}" alt="${credits.cast[1].name}">
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[2].profile_path}" alt="${credits.cast[2].name}">
+  </p>
+  <br>
+  <div class="buttons">
+  <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
+  <button class="btn btn-sm  onClick="rateMovies()"> Rate the movie </button>
+  <button class="btn btn-sm" onClick="closeNav()">Back</button>
+  </div>
+  </div>
+  </div>
+  <div class="container">
+  <p class="Titles">You may also like... </p>
+  <div class="row">
+    <div class="col-sm">
+    <img id="" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
+            <div class="movie-info">
+                <h3>${similar.results[0].title}</h3>
+                <span class="${getColor(vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
+            </div>
+    </div>
+    <div class="col-sm">
+    <img src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}" onclick="getSimilarMovies()">
+            <div class="movie-info">
+                <h3>${similar.results[3].title}</h3>
+                <span class="${getColor(vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
+            </div>
+    </div>
+    <div class="col-sm">
+    <img src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
+            <div class="movie-info">
+                <h3>${similar.results[5].title}</h3>
+                <span class="${getColor(vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
+            </div>
+    </div>
+  </div>
+</div>
+  `
+
+  myNav.appendChild(movieE2);
+  document.getElementById(videos).addEventListener('click', () => {
+    let keys = videos.results[0].key
+    console.log(keys)
+    playVideo(keys)
+      })
+  }
+
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  myNav.innerHTML=`
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <br><br>
+  `
+}
+
+function genresType( genres, index, arr) {
+  arr[index] = genres.name ;
+}
+
+function test(adult) {
+  if (adult == 'Yes') {
+    return { message: '18+'};
+  }
+  else {
+    return {message: 'No'};
+  }
+}
+var response = test();
+
+function playVideo(keys){
+  window.open("https://www.youtube.com/embed/"+ keys)
 }
