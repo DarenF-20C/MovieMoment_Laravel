@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use DB;
+use App\Models\Movie;
+use App\Models\Category;
+use Session;
+
 
 class HomeController extends Controller
 {
@@ -21,8 +27,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+     public function index()
     {
         return view('home');
+    }
+
+    public function adminHome()
+    {
+        return view('admin-home');
     }
 }

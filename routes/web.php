@@ -23,23 +23,21 @@ Route::get('/movieDetail', function () {
     return view('movieDetail');
 });
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard');
+Route::get('/top10', function () {
+    return view('top10');
+});
+
+Route::get('/familyMovie', function () {
+    return view('familyMovie');
+});
+
+Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
 //--Category route--//
 Route::get('/addCategory', [App\Http\Controllers\CategoryController::class,'index'])->name('add.Category');
 
 Route::post('/addCategory', [App\Http\Controllers\CategoryController::class, 'store'])->name('storeCategory');
 
-//-Manage Movie route--
-Route::get('/addMovie', [App\Http\Controllers\ManageMovieController::class,'index'])->name('add.Movie');
-
-Route::post('/addMovie' , [App\Http\Controllers\ManageMovieController::class, 'store'])->name('storeMovie');
-
-Route::get('/showMovie', [App\Http\Controllers\ManageMovieController::class, 'view'])->name('viewMovie');
-
-Route::get('/deleteMovie/{id}',[App\Http\Controllers\ManageMovieController::class,'delete'])->name('deleteMovie');
-
-Route::get('editMovie/{id}',[App\Http\Controllers\ManageMovieController::class,'edit'])->name('editMovie');
 
 Auth::routes();
 
