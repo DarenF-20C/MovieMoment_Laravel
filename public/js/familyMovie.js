@@ -4,7 +4,7 @@ const API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
 //Base URL for TMDb
 const BASE_URL = 'https://api.themoviedb.org/3';
 //API URL
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
+const API_URL = BASE_URL + '/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&'+API_KEY;
 //Image from TMDB API
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 //Search
@@ -89,6 +89,7 @@ const genres = [
     }
   ]
 
+const main = document.getElementById('main');
 const form =  document.getElementById('form');
 const search = document.getElementById('search');
 const tagsEl = document.getElementById('tags');
@@ -293,29 +294,37 @@ const overlayContent = document.getElementById('overlay-content');
 /* Open when someone clicks on the span element */
 function getMovieDetails(movie) {
   let id = movie.id;
-  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits').then(res => res.json())
   //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
   .then(movieData => {
   console.log(movieData);
   showMovieDetails(movieData);
-  })
-  .catch(error => {
-    throw(error);
+  
   })
 }
 
 function showMovieDetails(movieData) {
-  const {overview, release_date,poster_path,title,original_language,tagline,vote_average,directors,popularity,adult
-  ,status, id,genres,name,videos_results,site,videos,credits,vote_count,similar,index} = movieData;
+  const {overview,budget, release_date,poster_path,title,original_language,tagline,vote_average,directors,popularity,adult
+  ,status, id, revenue, genres,cast,name,videos_results,site,videos,credits,vote_count} = movieData;
   genres.forEach(genresType);
   document.getElementById("myNav").style.width = "100%";
   const movieE2 = document.createElement('div');
   movieE2.classList.add('movieDetails');
+  //  // <img src ="${poster_path? IMG_URL +poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
   movieE2.innerHTML = `
   <br><br>
   <div class="row">
   <div class="col-6">
-  <img class= "img" src ="${poster_path? IMG_URL +poster_path:"http://via.placeholder.com/1080x1580"  }" alt="${title}"> <br>
+  <img class= "img" src ="${poster_path? IMG_URL +poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}"> <br>
+  <div class="trailer">
+  <p class="Title">Trailer / Movie Related :</p> <br>
+  <iframe width="500" height="450" 
+  src="https://www.youtube.com/embed/${videos.results[0].key}" 
+  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+  clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+  </iframe>
+  </div>
   </div>
   <div class="col-6">
   <div class="contents">
@@ -332,55 +341,18 @@ function showMovieDetails(movieData) {
   <p class="content">1)${credits.cast[0].name} <text id="actas"> act as</text> "${credits.cast[0].character}"
   <p class="content">2)${credits.cast[1].name} <text id="actas"> act as</text> "${credits.cast[1].character}"
   <p class="content">3)${credits.cast[2].name} <text id="actas"> act as</text> "${credits.cast[2].character}" <br>
-  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[0].profile_path}" alt="${credits.cast[0].name}">
-  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[1].profile_path}" alt="${credits.cast[1].name}">
-  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[2].profile_path}" alt="${credits.cast[2].name}">
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[0].profile_path}" alt="${title}">
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[1].profile_path}" alt="${title}">
+  <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[2].profile_path}" alt="${title}">
   </p>
   <br>
   <div class="buttons">
-  <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
-  <button class="btn btn-sm  onClick="rateMovies()"> Rate the movie </button>
-  <button class="btn btn-sm" onClick="closeNav()">Back</button>
+  <button class="btn btn-sm"> Add to Favourite </button>
+  <button class="btn btn-sm" onClick="closeNav()"> Return </button>
   </div>
-  </div>
-  </div>
-  <div class="container">
-  <p class="Titles">You may also like... </p>
-  <div class="row">
-    <div class="col-sm">
-    <img id="" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
-            <div class="movie-info">
-                <h3>${similar.results[0].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
-            </div>
-    </div>
-    <div class="col-sm">
-    <img src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}" onclick="getSimilarMovies()">
-            <div class="movie-info">
-                <h3>${similar.results[3].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
-            </div>
-    </div>
-    <div class="col-sm">
-    <img src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
-            <div class="movie-info">
-                <h3>${similar.results[5].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
-            </div>
-    </div>
-  </div>
-</div>
-   `
+  </div> `
   myNav.appendChild(movieE2);
-  document.getElementById(videos).addEventListener('click', () => {
-  let keys = videos.results[0].key
-  console.log(keys)
-  playVideo(keys)
-    })
-  }
-    
-
-
+} 
 
 function genresType( genres, index, arr) {
   arr[index] = genres.name ;
@@ -408,14 +380,5 @@ function test(adult) {
 }
 var response = test();
 
-function checkVideoExists(results) {
-  if (results == undefined) {
-    return {message: 'No'};
-}
-}
-var responses = checkVideoExists();
 
-function playVideo(keys){
-  window.open("https://www.youtube.com/embed/"+ keys)
-}
-
+   

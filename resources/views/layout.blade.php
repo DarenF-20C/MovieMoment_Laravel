@@ -53,7 +53,7 @@
                               <a class="nav-link" href="{{url('movieRecommendation')}}"><i class="fas fa-video"></i> Movie Recommendation  </a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Weekly)  </a>
+                              <a class="nav-link" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Weekly)  </a>          
                            </li>
                            <li class="nav-item">
                               <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
@@ -62,6 +62,7 @@
                                  <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members(User)</a></li>
                                  <li><a class="dropdown-item" href="{{url('showMembers')}}">Show Members(Admin)</a></li>
                                  <li><a class="dropdown-item" href="{{url('contact')}}">Contact Us(User)</a></li>
+                                 <a class="dropdown-item" href="{{url('familyMovie')}}">Family Movie (Users)</a></li>
                               </ul>
                            </li>
                         </ul>
