@@ -115,20 +115,22 @@ function getTop10Movies() {
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         const d = new Date();
-        var date = d.getDate();
-        var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
-        var year = d.getFullYear();
-        //NextWeek
-        var nextDate = d.getDate() + 7;
-        var month = d.getMonth() + 1;
+        var date = d.getDate() || 7 ; 
+        var month = d.getMonth() ; // Since getMonth() returns month from 0-11 not 1-12
         var year = d.getFullYear();
         var dateStr = date + "/" + month + "/" + year;
-        var nextWeek = nextDate + "/" + month + "/" + year;
+        // var today = new Date();
+        // var day = today.getDay() || 7; // Get current day number, converting Sun. to 7
+        // if( day !== 1 )                // Only manipulate the date if it isn't Mon.
+        // today.setHours(-24 * (day - 1));   // Set the hours to day number minus 1
+                                         
 
         movieEl.innerHTML = `
-        <h1 class="Top10">Top 10 Movies lists from ${dateStr} to  ${nextWeek} </h1>
+        <div class="abc">
+        <h1 class="Top10">Top 10 Movies lists</h1> <h2 class="update">Last Update: ${dateStr}</h2>
         <div class="d-flex justify-content-center">
         <div class="top-1">
+        <br>
         <h1><span class="fa fa-crown fa-lg"></span></h> 
         <div class="movies">
         <img src="${data[0].poster_path? IMG_URL+ data[0].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[0].title}" id="${data[0].id}">
@@ -143,7 +145,7 @@ function getTop10Movies() {
         
         <div class="d-flex justify-content-center">
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">2</span></h1>
+        <h1><span class="bi bi-circle-2">2</span> 
         <div class="movies">
         <img src="${data[1].poster_path? IMG_URL+ data[1].poster_path: "http://via.placeholder.com/1080x1580" }"  alt="${data[1].title}" id="${data[1].id}">
         <div class="movie-info">
@@ -153,7 +155,7 @@ function getTop10Movies() {
         </div>
         </div>
         <div class="top-1">
-        <h1><span class="fa fa-circle-3">3</span></h1>
+        <h1><span class="bi bi-circle-3">3</span></h1>
         <div class="movies">
         <img src="${data[2].poster_path? IMG_URL+ data[2].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[2].title}" id="${data[2].id}">
         <div class="movie-info">
@@ -166,7 +168,7 @@ function getTop10Movies() {
 
         <div class="d-flex justify-content-center">
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">4</span></h1>
+        <h1><span class="bi bi-circle-4">4</span></h1>
         <div class="movies">
         <img src="${data[3].poster_path? IMG_URL+ data[3].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[3].title}" id="${data[3].id}">
         <div class="movie-info">
@@ -176,7 +178,7 @@ function getTop10Movies() {
         </div>
         </div>
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">5</span></h1>
+        <h1><span class="bi bi-circle-5">5</span></h1>
         <div class="movies">
         <img src="${data[4].poster_path? IMG_URL+ data[4].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[4].title}" id="${data[4].id}">
         <div class="movie-info">
@@ -186,7 +188,7 @@ function getTop10Movies() {
         </div>
         </div>
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">6</span></h1>
+        <h1><span class="bi bi-circle-6">6</span></h1>
         <div class="movies">
         <img src="${data[5].poster_path? IMG_URL+ data[5].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[5].title}" id="${data[5].id}">
         <div class="movie-info">
@@ -199,7 +201,7 @@ function getTop10Movies() {
 
         <div class="d-flex justify-content-center">
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">7</span></h1>
+        <h1><span class="bi bi-circle-7">7</span></h1>
         <div class="movies">
         <img src="${data[6].poster_path? IMG_URL+ data[6].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[6].title}" id="${data[6].id}">
         <div class="movie-info">
@@ -209,7 +211,7 @@ function getTop10Movies() {
         </div>
         </div>
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">8</span></h1>
+        <h1><span class="bi bi-circle-8">8</span></h1>
         <div class="movies">
         <img src="${data[7].poster_path? IMG_URL+ data[7].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[7].title}" id="${data[7].id}">
         <div class="movie-info">
@@ -219,7 +221,7 @@ function getTop10Movies() {
         </div>
         </div>
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">9</span></h1>
+        <h1><span class=bi bi-circle-9">9</span></h1>
         <div class="movies">
         <img src="${data[8].poster_path? IMG_URL+ data[8].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[8].title}" id="${data[8].id}">
         <div class="movie-info">
@@ -229,12 +231,15 @@ function getTop10Movies() {
         </div>
         </div>
         <div class="top-1">
-        <h1><span class="fa fa-circle-2">10</span></h1>
+        <h1><span class="bi bi-circle-10">10</span></h1>
         <div class="movies">
         <img src="${data[9].poster_path? IMG_URL+ data[9].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[9].title}" id="${data[9].id}">
         <div class="movie-info">
         ${data[9].title}
         <span class="${getColor(data[9].vote_average)}">${data[9].vote_average.toFixed(1)}</span>
+        </div>
+        </div>
+        <br>
         </div>
         </div>
         </div>
@@ -333,6 +338,7 @@ function showMovieDetails(movieData) {
   movieE2.classList.add('movieDetails');
   movieE2.innerHTML=
   `
+  <div id="focus">
   <br><br>
   <div class="row">
   <div class="col-6">
@@ -369,37 +375,56 @@ function showMovieDetails(movieData) {
   <p class="Titles">You may also like... </p>
   <div class="row">
     <div class="col-sm">
-    <img id="" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
+    <img class="similarimg" id="${similar.results[0].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
             <div class="movie-info">
                 <h3>${similar.results[0].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
+                <span class="${getColor(similar.results[0].vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
-    <img src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}" onclick="getSimilarMovies()">
+    <img class="similarimg" id="${similar.results[3].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}">
             <div class="movie-info">
                 <h3>${similar.results[3].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
+                <span class="${getColor(similar.results[3].vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
-    <img src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
+    <img class="similarimg"  id="${similar.results[5].id}"src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
             <div class="movie-info">
                 <h3>${similar.results[5].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
+                <span class="${getColor(similar.results[5].vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
             </div>
     </div>
   </div>
 </div>
+</div>
   `
-
+//  <span class="${getColor(data[9].vote_average)}">${data[9].vote_average.toFixed(1)}</span>
   myNav.appendChild(movieE2);
   document.getElementById(videos).addEventListener('click', () => {
     let keys = videos.results[0].key
     console.log(keys)
     playVideo(keys)
       })
-  }
+  document.getElementById(similar.results[0].id).addEventListener('click', () => {
+    let id = similar.results[0].id
+    console.log(id)
+    getMovieDetailss(id)
+    document.getElementById('focus').scrollIntoView();
+  })
+  document.getElementById(similar.results[3].id).addEventListener('click', () => {
+    let id = similar.results[3].id
+    console.log(id)
+    getMovieDetailss(id)
+    document.getElementById('focus').scrollIntoView();
+  })
+  document.getElementById(similar.results[5].id).addEventListener('click', () => {
+    let id = similar.results[5].id
+    console.log(id)
+    getMovieDetailss(id)
+    document.getElementById('focus').scrollIntoView();
+  })
+}
 
   /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
@@ -426,4 +451,17 @@ var response = test();
 
 function playVideo(keys){
   window.open("https://www.youtube.com/embed/"+ keys)
+}
+
+function getMovieDetailss(id) {
+  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+  //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
+  .then(movieData => {
+  console.log(movieData);
+  closeNav();
+  showMovieDetails(movieData);
+  })
+  .catch(error => {
+    throw(error);
+  })
 }

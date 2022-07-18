@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color:black;
+    background-color:#101210;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     overflow-x:scroll;
@@ -49,7 +49,7 @@ header{
     margin: 1rem;
     border-radius: 5px;
     box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
-    background-color: black;
+    background-color: #101210;
     position:relative;
     overflow: hidden;
     border-radius:black 2px;
@@ -73,9 +73,9 @@ h1 {
 
 .Top10{
     color: #ff8036;
-    font-family: Franklin Gothic Medium;
+    font-family: Impact, fantasy;
     text-align:center;
-    font-size:42px;
+    font-size:58px;
 }
 
 .movies img{
@@ -95,6 +95,8 @@ h1 {
     padding:5px;
     font-size:22px;
     font-weight:bold;
+    background-color: #101210;
+    height:100px;
 }
 
 .movie-info h3{
@@ -102,16 +104,12 @@ h1 {
 }
 
 .movie-info span{
-    background-color: black;
     border-radius: 3px;
     font-weight: bold;
     padding:25px 25px 25px 25px;
     text-align:center;
     font-size:18px;
-    
 }
-
-
 
 .movie-info span.green{
     color:lightgreen;
@@ -123,11 +121,6 @@ h1 {
 
 .movie-info span.red{
     color:red;
-}
-
-.top-10-movies{
-    background-color:black;
-   
 }
 
 .myNav {
@@ -292,4 +285,34 @@ h1 {
     display:inline;
     padding-left:2%;
 }
-  
+
+h3 {
+    font-family: Franklin Gothic Medium;
+}
+
+.d-flex.justify-content-center{
+    border-radius: 25px;
+}
+
+.abc{
+    border: 2px solid rgb(248, 192, 8);
+    border-radius: 50px;
+    width:98%;
+    /* background-color:rgba(17, 245, 222, 0.8); */
+}
+
+.update {
+    color: #00dd00;;
+    font-size:18px;
+    text-align:center;
+    font-family:sans-serif;
+}
+
+.similarimg {
+    cursor:pointer;
+   }
+   
+.col-sm:hover {
+       transform: scale(1.05);
+      }
+   

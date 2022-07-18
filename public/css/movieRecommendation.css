@@ -382,3 +382,10 @@ main{
     padding-left:2%;
 }
 
+.similarimg {
+ cursor:pointer;
+}
+
+.col-sm:hover {
+    transform: scale(1.05);
+   }

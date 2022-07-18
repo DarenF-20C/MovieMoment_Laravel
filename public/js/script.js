@@ -312,13 +312,14 @@ function showMovieDetails(movieData) {
   const movieE2 = document.createElement('div');
   movieE2.classList.add('movieDetails');
   movieE2.innerHTML = `
+  <div id="focus">
   <br><br>
   <div class="row">
   <div class="col-6">
   <img class= "img" src ="${poster_path? IMG_URL +poster_path:"http://via.placeholder.com/1080x1580"  }" alt="${title}"> <br>
   </div>
   <div class="col-6">
-  <div class="contents">
+  <div class="contents href="#contents"">
   <p class="Title">Title:</p><p class="content">${title}</p> 
   <p class="Title">Genre:</p><p class="content">${genres}</</p>
   <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} /  ${vote_count}</p>
@@ -348,27 +349,28 @@ function showMovieDetails(movieData) {
   <p class="Titles">You may also like... </p>
   <div class="row">
     <div class="col-sm">
-    <img id="" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
+    <img class="similarimg" id="${similar.results[0].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
             <div class="movie-info">
                 <h3>${similar.results[0].title}</h3>
                 <span class="${getColor(vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
-    <img src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}" onclick="getSimilarMovies()">
+    <img class="similarimg" id="${similar.results[3].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}">
             <div class="movie-info">
                 <h3>${similar.results[3].title}</h3>
                 <span class="${getColor(vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
-    <img src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
+    <img class="similarimg"  id="${similar.results[5].id}"  src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
             <div class="movie-info">
                 <h3>${similar.results[5].title}</h3>
                 <span class="${getColor(vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
             </div>
     </div>
   </div>
+</div>
 </div>
    `
   myNav.appendChild(movieE2);
@@ -377,17 +379,44 @@ function showMovieDetails(movieData) {
   console.log(keys)
   playVideo(keys)
     })
+  document.getElementById(similar.results[0].id).addEventListener('click', () => {
+      let id = similar.results[0].id
+      console.log(id)
+      getMovieDetailss(id)
+      document.getElementById('focus').scrollIntoView();
+    })
+    document.getElementById(similar.results[3].id).addEventListener('click', () => {
+      let id = similar.results[3].id
+      console.log(id)
+      getMovieDetailss(id)
+      document.getElementById('focus').scrollIntoView();
+    })
+    document.getElementById(similar.results[5].id).addEventListener('click', () => {
+      let id = similar.results[5].id
+      console.log(id)
+      getMovieDetailss(id)
+      document.getElementById('focus').scrollIntoView();
+    })
   }
-    
 
+
+  function getMovieDetailss(id) {
+    fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+    //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
+    .then(movieData => {
+    console.log(movieData);
+    closeNav();
+    showMovieDetails(movieData);
+    })
+    .catch(error => {
+      throw(error);
+    })
+  }
 
 
 function genresType( genres, index, arr) {
   arr[index] = genres.name ;
 }
-
-
-
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
@@ -408,14 +437,11 @@ function test(adult) {
 }
 var response = test();
 
-function checkVideoExists(results) {
-  if (results == undefined) {
-    return {message: 'No'};
-}
-}
-var responses = checkVideoExists();
 
 function playVideo(keys){
   window.open("https://www.youtube.com/embed/"+ keys)
 }
 
+// const scrollToTop = () => {
+//   document.getElementById("focus").focus();
+// }
