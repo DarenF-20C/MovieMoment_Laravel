@@ -293,8 +293,9 @@ const overlayContent = document.getElementById('overlay-content');
 /* Open when someone clicks on the span element */
 function getMovieDetails(movie) {
   let id = movie.id;
-  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar,release_dates').then(res => res.json())
   //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
+  ///certification/movie/list
   .then(movieData => {
   console.log(movieData);
   showMovieDetails(movieData);
@@ -306,11 +307,15 @@ function getMovieDetails(movie) {
 
 function showMovieDetails(movieData) {
   const {overview, release_date,poster_path,title,original_language,tagline,vote_average,directors,popularity,adult
-  ,status, id,genres,name,videos_results,site,videos,credits,vote_count,similar,index} = movieData;
+  ,status, id,genres,name,videos_results,site,videos,credits,vote_count,similar,index,release_dates} = movieData;
   genres.forEach(genresType);
   document.getElementById("myNav").style.width = "100%";
   const movieE2 = document.createElement('div');
   movieE2.classList.add('movieDetails');
+  if (credits.cast.length <= 2 ){
+    console.error("No actor info provided.")
+    window.alert("Info is not completed.")
+}
   movieE2.innerHTML = `
   <div id="focus">
   <br><br>
@@ -323,7 +328,7 @@ function showMovieDetails(movieData) {
   <p class="Title">Title:</p><p class="content">${title}</p> 
   <p class="Title">Genre:</p><p class="content">${genres}</</p>
   <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} /  ${vote_count}</p>
-  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p> 
+  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response}</p>
   <p class="Title">Language:<p class="content">${original_language}</p>
   <p class="Title">Status: </p> <p class="content">${status} </p>
   <p class="Title">Tagline: </p><p class="content">"${tagline}"</p>
@@ -401,7 +406,7 @@ function showMovieDetails(movieData) {
 
 
   function getMovieDetailss(id) {
-    fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+    fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar,release_dates').then(res => res.json())
     //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
     .then(movieData => {
     console.log(movieData);
@@ -442,6 +447,3 @@ function playVideo(keys){
   window.open("https://www.youtube.com/embed/"+ keys)
 }
 
-// const scrollToTop = () => {
-//   document.getElementById("focus").focus();
-// }

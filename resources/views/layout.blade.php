@@ -50,7 +50,12 @@
                               <a class="nav-link" href="{{url('community')}}" class="text-dark"><i class="fas fa-comments"></i> Movie Community  </a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="{{url('movieRecommendation')}}"><i class="fas fa-video"></i> Movie Recommendation  </a>
+                           <a class="nav-link dropdown-toggle" href="{{url('movieRecommendation')}}" ></i> <i class="fas fa-video"></i> Movie Recommendation</a>
+                              <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{{url('movieRecommendation')}}">Popular Movies</a></li>
+                              <li><a class="dropdown-item" href="{{url('familyMovie')}}">Family Movies</a></li>
+                              <li><a class="dropdown-item" href="{{url('tvshow')}}">TV Shows</a></li>
+                               </ul>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Weekly)  </a>          
@@ -58,11 +63,13 @@
                            <li class="nav-item">
                               <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
                                  <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members(Admin)</a></li>
-                                 <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members(User)</a></li>
+                                 <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members</a></li>
+                                 <li><a class="dropdown-item" href="{{url('contact')}}">User Guide</a></li>
+                                 <li><a class="dropdown-item" href="{{url('contact')}}">Vouchers Redeem</a></li>
+                                 <li><a class="dropdown-item" href="{{url('contact')}}">Help</a></li>
+                                 <li><a class="dropdown-item" href="{{url('contact')}}">Contact Us</a></li>
                                  <li><a class="dropdown-item" href="{{url('showMembers')}}">Show Members(Admin)</a></li>
-                                 <li><a class="dropdown-item" href="{{url('contact')}}">Contact Us(User)</a></li>
-                                 <a class="dropdown-item" href="{{url('familyMovie')}}">Family Movie (Users)</a></li>
+                                 <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members(Admin)</a></li>
                               </ul>
                            </li>
                         </ul>

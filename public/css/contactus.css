@@ -1,6 +1,7 @@
 form {
     background-color:rgb(178, 253, 157);
     padding:40px 40px 40px 40px;
+    border-radius:35px;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 
 label {
     font-size:30px;
-    color:#101210;
+    color:black;
     font-family: Franklin Gothic Medium;
 }
 

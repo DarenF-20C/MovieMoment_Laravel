@@ -1,0 +1,391 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #101210;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+header{
+    padding:1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: #101210;
+}
+
+.search{
+    background-color: #101210;
+    border: 2px solid #ff8036;
+    padding:0.5rem 1rem;
+    border-radius: 45px;
+    font-size: 1rem;
+    color:#fff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.search:focus{
+    outline:0;
+    background-color: transparent;
+    color:#00dd00;;
+}
+
+.search::placeholder{
+    color:#00dd00;;
+}
+
+main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color:rgba(0, 0, 0, 0.978);
+    position:relative;
+    overflow: hidden;
+}
+
+
+.movie img{
+    width:100%;
+}
+
+.movie-info{
+    color:#00dd00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    font-size:20px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+    font-size:20px;
+}
+
+.movie-info span{
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    padding:25px 25px 25px 25px;
+}
+
+.movie-info span.green{
+    color:rgb(110, 251, 110);
+}
+
+.movie-info span.orange{
+    color:#ff8036;
+}
+
+.movie-info span.red{
+    color:red;
+}
+
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:whitesmoke;
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+    color:black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y:auto;
+    scroll-behavior: auto;
+    
+}
+
+.overview h3 {
+    font-size:25px;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.movie:hover .overview{
+    transform:translateY(0);
+}
+
+#tags{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+   
+}
+
+.tag{
+    color:black;
+    padding:10px 10px;
+    background-color: #ff8036;
+    border-radius: 5px;
+    margin:10px;
+    display:inline-block;
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    background-color: #00dd00;
+}
+
+.tag.highlight{
+    background-color: rgb(65, 191, 237);
+}
+
+.no-results{
+    color:white;
+    font-size:35px;
+    white-space: nowrap;
+}
+
+.pagination{
+    display:flex;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:15px;
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color:grey !important;;
+}
+
+.page:hover{
+    color:#ff8036;
+}
+
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid #ff8036;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.know-more {
+    background-color:#00dd00;
+    text-align:center;
+    margin-left:25%;
+    border-radius:15px;
+    
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+
+  .embed.hide{
+      display: none;
+  }
+
+  .embed.show{
+      display: inline-block;
+  }
+
+  .arrow{
+      position: absolute;
+      font-size: 40px;
+  }
+
+  .arrow.left-arrow{
+      top:50%;
+      left:5%;
+      transform: translateY(-50%);
+  }
+
+  
+  .arrow.right-arrow{
+    top:50%;
+    transform: translateY(-50%);
+    right:5%;
+}
+
+.dots{
+    margin-top: 30px;
+}
+
+.dots .dot {
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.dots .dot.active{
+    border-color: orange;
+}
+
+.Title {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:#ff8036;
+    font-size:25px;
+    font-weight: bold;
+    display:inline;
+}
+
+.img {
+    padding-left:150px;
+    padding-top:20px;
+}
+
+.content {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#00dd00;
+    font-size:20px;
+    border-radius:5px;
+    position:relative;
+    font-weight:200;
+}
+
+.buttons {
+   padding-left:25%;
+   margin:10px;
+}
+
+.btn.btn-sm {
+    color:black;
+    background-color:#ff8036;
+    font-size:15px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border:0;
+    border-radius:5px;
+    text-transform: capitalize;
+}
+
+.btn.btn-sm:hover {
+    transform: scale(1.03);
+    color:azure;
+  
+}
+
+#actas {
+    color:#ff8036;
+    font-size:smaller;
+    font-family:fantasy;
+}
+
+#character {
+    color:#7378c5;
+}
+
+
+.image:hover {
+    transform: scale(1.05);
+    cursor:auto;
+}
+
+.trailer {
+    padding-left:150px;
+    padding-top:20px;
+}
+
+.images {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color:rgba(0, 0, 0, 0.978);
+    position:relative;
+    overflow: hidden;
+}
+
+.col-sm {
+    padding-left:50px;
+}
+
+.Titles {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:#ff8036;
+    font-size:30px;
+    font-weight: bold;
+    display:inline;
+    padding-left:2%;
+}
+
+.similarimg {
+ cursor:pointer;
+}
+
+.col-sm:hover {
+    transform: scale(1.05);
+   }

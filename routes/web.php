@@ -31,6 +31,10 @@ Route::get('/familyMovie', function () {
     return view('familyMovie');
 });
 
+Route::get('/tvshow', function () {
+    return view('tvshow');
+});
+
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
 //--Category route--//
