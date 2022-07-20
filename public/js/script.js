@@ -328,7 +328,7 @@ function showMovieDetails(movieData) {
   <p class="Title">Title:</p><p class="content">${title}</p> 
   <p class="Title">Genre:</p><p class="content">${genres}</</p>
   <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} /  ${vote_count}</p>
-  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response}</p>
+  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p>
   <p class="Title">Language:<p class="content">${original_language}</p>
   <p class="Title">Status: </p> <p class="content">${status} </p>
   <p class="Title">Tagline: </p><p class="content">"${tagline}"</p>
