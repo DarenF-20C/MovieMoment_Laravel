@@ -16,12 +16,15 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
         <!--Own Css -->
         <link href="{{asset('css/main.css')}}" rel="stylesheet">
-        <!-- MDB -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
+
         @stack('css')
   </head>
   <!--/Head-->
     <body>
+      <!-- MDB -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
+      @stack('script')
+
         @if(Session::has('success'))
         <div class="alert alert-success">
             {{ Session::get('success')  }}
@@ -32,8 +35,8 @@
         <!-- Navbar -->
         <!-- M&M Logo-->
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="font-family:Verdana, Geneva, Tahoma, sans-serif">
-            <a class="navbar-brand" href="{{url('')}}">
-              <img src="Images/logoHeader.jpg" height="50px" alt="M&M Logo"/>
+            <a class="navbar-brand" href="{{url('home')}}">
+              <img src="images/logoHeader.jpg" height="50px" alt="M&M Logo"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -41,11 +44,10 @@
 
             <div class="container">
                <div class="row">
-                  <div class="col-md-1"></div>
-                  <div class="col-md-9">
+                  <div class="col-md-12">
                      <div style="width:100%; margin:0 auto;">
                      <!-- Center Navigation -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                            <li class="nav-item">
                               <a class="nav-link" href="{{url('community')}}" class="text-dark"><i class="fas fa-comments"></i> Movie Community  </a>
                            </li>
@@ -64,9 +66,8 @@
                               <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
                                  <ul class="dropdown-menu">
                                  <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members</a></li>
-                                 <li><a class="dropdown-item" href="{{url('contact')}}">User Guide</a></li>
+                                 <li><a class="dropdown-item" href="{{url('contact')}}">User Guide // Help</a></li>
                                  <li><a class="dropdown-item" href="{{url('contact')}}">Vouchers Redeem</a></li>
-                                 <li><a class="dropdown-item" href="{{url('contact')}}">Help</a></li>
                                  <li><a class="dropdown-item" href="{{url('contact')}}">Contact Us</a></li>
                                  <li><a class="dropdown-item" href="{{url('showMembers')}}">Show Members(Admin)</a></li>
                                  <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members(Admin)</a></li>
@@ -75,26 +76,18 @@
                         </ul>
                      </div>
                   </div>
-                  <!-- search bar -->
-                  <div class="col-md-2 search-function">
-                     <div class="input-group searchbar">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" />
-                        <button id="search-button" type="button" class="btn btn-success">
-                           <i class="fas fa-search"></i>
-                      </div>
                   </div>
-               </div>
             </div>  
+
 
             <!-- Right elements of navbar -->
             <div class="d-flex align-items-center ">
                <!-- Notifications -->
-               <a class="text-reset me-3 dropdown-toggle hidden-arrow notice" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+               <a class="text-reset me-3 dropdown-toggle hidden-arrow notice" href="#" id="navbarDropdownMenuLink1" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                   <i class="far fa-bell"></i>
                   <span class="badge rounded-pill badge-notification bg-danger">1</span>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink1">
                      <li>
                         <a class="dropdown-item" href="#">Latest Movie Release</a>
                      </li>
@@ -107,10 +100,10 @@
                   </ul>
          
                <!-- Login Avatar -->
-               <a class="dropdown-toggle d-flex align-items-center hidden-arrow avatar" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+               <a class="dropdown-toggle d-flex align-items-center hidden-arrow avatar" href="#" id="navbarDropdownMenuLink2" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user"></i>
                </a>
-               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
                 <li>
                     <a class="dropdown-item" href="#">My profile</a>
                 </li>
