@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-        use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_admin'
+        'is_admin',
+        'gender',
+        'status',
     ];
 
     /**
@@ -32,8 +34,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
     ];
 
     /**
@@ -45,7 +45,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $appends = [
-        'profile_photo_url',
-    ];
+    public function comment(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
+    public function content(){
+        return $this->hasMany('App\Models\Content');
+    }
+
+    public function likedPosts(){
+        return $this->belongsToMany('App\Models\Content')->withTimestamps();
+    }
+    
+    // public function friend(){
+    //     return $this->hasMany('App\Models\Friend');
+    // }
 }

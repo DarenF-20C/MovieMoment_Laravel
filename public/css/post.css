@@ -1,12 +1,12 @@
 html, 
-body, 
-header, 
+body,
 #intro {
     height:100%;
     padding-top: 0px;
+    scroll-behavior: smooth;
 }
 
-#intro {
+.view {
     background:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRpc2N1c3Npb258ZW58MHx8MHx8&w=1000&q=80')no-repeat center center fixed;
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -16,12 +16,11 @@ header,
 
 #overlay
 {
-    position: center;
     min-width: 100%;
     min-height: 100%;
     left: 0;
     top: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .font-weight-bold {
@@ -32,6 +31,24 @@ header,
     color: #fff;
 }
 
+textarea:focus {
+    border: 2px solid #02eb0d !important;
+    inset: 0px;
+}
+
+input[type=text]:focus {
+    border: 2px solid #02eb0d !important;
+    inset: 0px;
+}
+
+.btn-color{
+    background-color:#02eb0d !important;
+    color: #242a30;
+}
+
+.btn-color:hover{
+    box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.10)!important;
+}
 /* header */
 .empha{
     text-align: right;
@@ -41,8 +58,119 @@ header,
     text-align: center;
 }
 
-button.no-outline{
-    outline: 0, !important;;
+/* button */
+.scroll-btn {
+    min-height: 0.5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scroll-down {
+    height: 50px;
+    width: 30px;
+    border: 2px solid white;
+    position: absolute;
+    left: 50%;
+    bottom: 200px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border: 2px solid whitesmoke;
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
+}
+.scroll-down::before {
+    top: 30%;
+    animation-delay: 0.3s;
+    /* animation: scroll-down 1s ease-in-out infinite; */
+}
+  
+@keyframes scroll-down {
+    0% {
+      /* top:20%; */
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+    }
+}
+
+.show-read-more .more-text{
+    display: none;
+}
+
+.read-more {
+    color: #00d80b !important;
+}
+
+#display-image{
+    width: 400px;
+    height: 225px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+
+  
+  /* Then style the iframe to fit in the container div with full height and width */
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border:2px solid #00d80b;
+  }
+
+/* button */
+
+/*share*/
+div#social-links {
+    margin: 0 auto;
+    max-width: 500px;
+}
+div#social-links ul li {
+    display: inline-block;
+}          
+div#social-links ul li a {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 1px;
+    font-size: 30px;
+    color: #222;
+    background-color: #ccc;
+}
+/*share*/
+
+.rounded-image img{
+    border-radius: 50%;
 }
 
 .t-plus-1 {
@@ -151,9 +279,9 @@ button.no-outline{
 .timeline .timeline-body {
     margin-left: 23%;
     margin-right: 17%;
-    background: #fff;
+    background: #2d353c;
     position: relative;
-    padding: 20px 25px;
+    padding: 20px 25px 10px 25px;
     border-radius: 6px
 }
 
@@ -179,7 +307,7 @@ button.no-outline{
 
 .timeline-header {
     padding-bottom: 10px;
-    border-bottom: 1px solid #e2e7eb;
+    border-bottom: 1px solid #02eb0d;
     line-height: 30px
 }
 
@@ -199,8 +327,25 @@ button.no-outline{
 
 .timeline-header .username,
 .timeline-header .username a {
-    color: #2d353c
+    color: whitesmoke
 }
+
+.icon-right{
+    float:right;
+    margin-top:-33px;
+}
+
+.icon-right.pen{
+    margin-right:42px;
+}
+
+.icon-right:hover{
+    cursor:pointer;
+    border:1px solid #02eb0d;
+    border-radius: 3px;
+    color:#02eb0d;
+}
+
 
 .view {
     font-size: 15px!important;
@@ -213,7 +358,8 @@ button.no-outline{
 .timeline-content {
     letter-spacing: .25px;
     line-height: 18px;
-    font-size: 13px
+    font-size: 13px;
+    color: whitesmoke;
 }
 
 .timeline-content>img{
@@ -233,9 +379,15 @@ button.no-outline{
 }
 
 .timeline-footer {
-    background: #fff;
-    border-top: 1px solid #e2e7ec;
-    padding-top: 15px
+    background: #2d353c;
+    border-top: 1px solid #02eb0d;
+    padding-top: 15px;
+    display: flex;
+}
+
+.timeline-footer a{
+    color:whitesmoke !important;
+    margin-right: 15px;
 }
 
 .timeline-footer a:not(.btn) {
@@ -244,11 +396,11 @@ button.no-outline{
 
 .timeline-footer a:not(.btn):focus,
 .timeline-footer a:not(.btn):hover {
-    color: #2d353c
+    color: #02eb0d !important
 }
 
 .timeline-likes {
-    color: #6d767f;
+    color: whitesmoke;
     font-weight: 600;
     font-size: 12px
 }
@@ -281,7 +433,7 @@ button.no-outline{
 }
 
 .timeline-comment-box {
-    background: #f2f3f4;
+    background: #2d353c;
     margin-left: -25px;
     margin-right: -25px;
     padding: 20px 25px
@@ -307,3 +459,181 @@ button.no-outline{
 .text-danger, .text-red {
     color: #ff5b57!important;
 }
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+
+
+  /* Share icon */
+.shareContainer{
+    width: 200px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: -40px 0 0 -60px;
+}
+
+.emojibar{
+    width:200px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 50px;
+    cursor: pointer;
+    transform: translateY(100);
+    transition: all 0.4s;
+    position:relative;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
+.shareContainer:hover .emojibar{
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+}
+
+.emojibar img{
+    display: block;
+    width: 25px;
+    margin: 0px 10px;
+    transition: all 0.4s;
+}
+
+.emoji p{
+    position: absolute;
+    top: -35px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgba(0,0,0, 0.9);
+    color: #02eb0d;
+    padding: 2px 10px;
+    border-radius: 50px;
+    margin-left: -20px;
+    transition: all 0.2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.emoji:hover p{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-body .input,
+.modal-body .textarea {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1px 6px;
+}
+
+.modal-body .textarea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    max-height:400px;
+    line-height: 20px;
+}
+
+.timeline-content img{
+    border: 2px solid #02eb0d;
+    border-radius: 5px;
+}
+
+.modal-body .textarea[contenteditable]:empty::before {
+content: "Placeholder still possible";
+color: gray;
+}
+
+.comment-list {
+    border-top: 1px solid #02eb0d;
+    /* background-color: #02eb0d; */
+    height: 150px;
+    padding-top: 10px;
+    letter-spacing: .25px;
+    line-height: 18px;
+    font-size: 13px;
+    color: whitesmoke;
+}
+
+.comment-list:first-child{
+    border-top: none;
+    margin-top: -30px !important;
+}
+
+
+.comment-detail {
+    margin-left: 30px;
+    max-width:fit-content;
+    padding-left: 10px;
+}
+
+.comment-list .username{
+    padding-left: 7px;
+    font-size: 14px;
+    font-weight: 600
+}
+

@@ -357,21 +357,21 @@ function showMovieDetails(movieData) {
     <img class="similarimg" id="${similar.results[0].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
             <div class="movie-info">
                 <h3>${similar.results[0].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
+                <span class="${getColor(similar.results[0].vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
     <img class="similarimg" id="${similar.results[3].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}">
             <div class="movie-info">
                 <h3>${similar.results[3].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
+                <span class="${getColor(similar.results[3].vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
     <img class="similarimg"  id="${similar.results[5].id}"  src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
             <div class="movie-info">
                 <h3>${similar.results[5].title}</h3>
-                <span class="${getColor(vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
+                <span class="${getColor(similar.results[5].vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
             </div>
     </div>
   </div>

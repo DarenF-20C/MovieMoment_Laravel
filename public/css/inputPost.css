@@ -49,3 +49,13 @@ body {
     height: 37px;
     padding: 8px 12px 9px 12px;
   }
+
+.upload-image img{
+  border: 2px solid #02eb0d;
+  border-radius: 5px;
+  max-height: 200px;
+}
+
+.upload-image{
+  border: none;
+}

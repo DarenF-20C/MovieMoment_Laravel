@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 use DB;
-use App\Models\Movie;
-use App\Models\Category;
-use Session;
-
-
+use App\Models\User;
 class HomeController extends Controller
 {
     /**
@@ -27,13 +22,30 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-     public function index()
+    public function index()
     {
-        return view('home');
+        return view('welcome');
     }
 
     public function adminHome()
     {
-        return view('admin-home');
+        $totalUser = DB::table('users')
+        ->where('is_admin','=','0')
+        ->count();
+
+        $totalAdmin = DB::table('users')
+        ->where('is_admin','=','1')
+        ->count();
+
+        $totalComment = DB::table('comments')
+        ->count();
+
+        $totalPost = DB::table('contents')
+        ->count();
+
+        return view('backend.admin-home', compact('totalUser', 'totalAdmin','totalComment','totalPost'));
+
+
+        
     }
 }
