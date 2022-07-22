@@ -49,18 +49,18 @@
                      <!-- Center Navigation -->
                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                            <li class="nav-item">
-                              <a class="nav-link" href="{{url('community')}}" class="text-dark"><i class="fas fa-comments"></i> Movie Community  </a>
+                           <a class="nav-link {{Route::currentRouteNamed('community') ? 'active' : '' }}" href="{{url('community')}}" class="text-dark"><i class="fas fa-comments"></i> Movie Community  </a>
                            </li>
                            <li class="nav-item">
-                           <a class="nav-link dropdown-toggle" href="{{url('movieRecommendation')}}" ></i> <i class="fas fa-video"></i> Movie Recommendation</a>
+                           <a class="nav-link {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }} {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }} {{Route::currentRouteNamed('tvshow') ? 'active' : '' }} dropdown-toggle" href="{{url('movieRecommendation')}}" ></i> <i class="fas fa-video"></i> Movie Recommendation</a>
                               <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{url('movieRecommendation')}}">Popular Movies</a></li>
-                              <li><a class="dropdown-item" href="{{url('familyMovie')}}">Family Movies</a></li>
-                              <li><a class="dropdown-item" href="{{url('tvshow')}}">TV Shows</a></li>
+                              <li><a class="dropdown-item {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }}" href="{{url('movieRecommendation')}}">Popular Movies</a></li>
+                              <li><a class="dropdown-item {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }}" href="{{url('familyMovie')}}">Family Movies</a></li>
+                              <li><a class="dropdown-item {{Route::currentRouteNamed('tvshow') ? 'active' : '' }}" href="{{url('tvshow')}}">TV Shows</a></li>
                                </ul>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Weekly)  </a>          
+                           <a class="nav-link {{Route::currentRouteNamed('top10') ? 'active' : '' }}" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Daily)  </a>         
                            </li>
                            <li class="nav-item">
                               <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
@@ -79,26 +79,11 @@
                   </div>
             </div>  
 
-
-            <!-- Right elements of navbar -->
-            <div class="d-flex align-items-center ">
-               <!-- Notifications -->
-               <a class="text-reset me-3 dropdown-toggle hidden-arrow notice" href="#" id="navbarDropdownMenuLink1" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                  <i class="far fa-bell"></i>
-                  <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink1">
-                     <li>
-                        <a class="dropdown-item" href="#">Latest Movie Release</a>
-                     </li>
-                     <li>
-                        <a class="dropdown-item" href="#">Community Message</a>
-                     </li>
-                     <li>
-                        <a class="dropdown-item" href="#">Comments</a>
-                     </li>
-                  </ul>
-         
+ <!-- Right elements of navbar -->
+ <div class="d-flex align-items-center ">
+            @guest
+               <a href="{{url('login')}}" class="m-r-15 text-inverse-lighter"><i class="fas fa-user"></i></a>
+            @else
                <!-- Login Avatar -->
                <a class="dropdown-toggle d-flex align-items-center hidden-arrow avatar" href="#" id="navbarDropdownMenuLink2" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user"></i>
@@ -111,9 +96,17 @@
                     <a class="dropdown-item" href="#">Settings</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}</a>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                           @csrf
+                     </form>
                 </li>
                </ul>
+            @endguest
+               
             </div>
             <!-- END Right elements -->
          </nav>

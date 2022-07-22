@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Route;
 // ----------------------------------------Home/Nav Route----------------------------------------
 Route::get('/', function ()                     {return view('welcome');});
 Route::get('/contactUs', function ()            {return view('contactUs');});
-Route::get('/top10', function ()                {return view('top10');});
-Route::get('/movieRecommendation', function ()  {return view('movieRecommendation');});
-Route::get('/familyMovie', function ()          {return view('familyMovie');});
-Route::get('/tvshow', function ()               {return view('tvshow');});
+Route::get('/top10', function ()                {return view('top10');})->name('top10');
+Route::get('/movieRecommendation', function ()  {return view('movieRecommendation');})->name('movieRecommendation');
+Route::get('/familyMovie', function () {return view('familyMovie');})->name('familyMovie');
+Route::get('/tvshow', function ()               {return view('tvshow');})->name('tvshow');
 Route::get('/community',[App\Http\Controllers\ContentController::class,'getPosts'])->name('community');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/contact', [App\Http\Controllers\ContactUsFormController::class, 'createForm']);
