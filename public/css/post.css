@@ -124,7 +124,7 @@ input[type=text]:focus {
 #display-image{
     width: 400px;
     height: 225px;
-    border: 1px solid black;
+    border: none;
     background-position: center;
     background-size: cover;
   }
