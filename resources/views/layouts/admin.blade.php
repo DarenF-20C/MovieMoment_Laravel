@@ -72,6 +72,14 @@
        <span class="tooltip">Post</span>
      </li>
      <li>
+     <li>
+       <a href="{{route('admin.rewardList')}}">
+       <i class="bx bx-award"></i>
+         <span class="links_name">Reward</span>
+       </a>
+       <span class="tooltip">Reward</span>
+     </li>
+     <li>
        <a href="#">
          <i class='bx bx-history' ></i>
          <span class="links_name">History</span>
@@ -87,13 +95,13 @@
      </li>
      <li class="profile">
          <div class="profile-details">
-           <img src="profile.jpg" alt="profileImg">
+          <img src="/images/user/{{Auth::user()->userAvatar}}">
            <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
+             <div class="name">{{Auth::user()->name}}</div>
            </div>
          </div>
-         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class='bx bx-log-out' id="log_out" ></i></a>
+         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{__('Sign out')}}
+         <i class='bx bx-log-out' id="log_out" ></i></a>
      </li>
     </ul>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -101,7 +109,7 @@
     </form>
   </div>
   <section class="home-section">
-    <div class="text">M&M Admin System Dashboard</div>
+    <div class="text">M&M Admin System Dashboard  <img src="/images/logo.png" height="50px" alt="M&M Logo"/></div>
     @yield('content')
   </section>
 
