@@ -40,8 +40,8 @@
                             <label class="custom-file-label" id="custom-file-label" for="customFile">Choose file</label>
                         </div>
                 </div>
-                <div class="col-sm-10 upload-image" id="display-image" style="display:none">
-                        <img id="previewImage" src="" alt="" />
+                <div class="col-sm-10 upload-image" id="display-image" class="" style="display:none">
+                <img id="previewImage" src="" alt=""/>
                 </div>
                 <div class="form-group mt-2">
                     <label for="rewardDescription" class="form-label">Description:</label>
@@ -107,6 +107,21 @@
         displayImage.style.display = "block";
     });
 </script>
+
+
+<style>
+#previewImage{
+    width:auto;
+    height:auto;
+    border: none;
+    max-width:500px;
+    max-height:450px;
+  }
+
+.rewardImage {
+ width:400px;
+}
+</style>
 
 @endsection
 

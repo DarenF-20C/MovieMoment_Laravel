@@ -21,7 +21,9 @@ Route::post('/updateMembers', [App\Http\Controllers\MemberController::class, 'up
 Route::get('/editMembers/{id}', [App\Http\Controllers\MemberController::class, 'edit'])->name('editMembers');
 // ----------------------------------------Home/Nav Route----------------------------------------
 
-
+// ----------------------------------------Reward System [Users]----------------------------------------
+Route::get('/showRewards', [App\Http\Controllers\RewardController::class, 'showRewards'])->name('showRewards');
+// ----------------------------------------Reward System [Users]----------------------------------------
 
 // ----------------------------------------Community Route----------------------------------------
 Route::post('/addPost', [App\Http\Controllers\ContentController::class, 'addPost'])->name('addPost');
@@ -45,11 +47,12 @@ Route::get('/admin/post-list',[App\Http\Controllers\AdminController::class, 'sho
 // ----------------------------------------Reward System----------------------------------------
 Route::get('/admin/rewards',[App\Http\Controllers\RewardController::class, 'index'])->name('admin.rewards')->middleware('is_admin');
 Route::post('/admin/rewards',[App\Http\Controllers\RewardController::class, 'store'])->name('admin.addReward')->middleware('is_admin');
-Route::get('/admin/showRewards',[App\Http\Controllers\RewardController::class, 'showRewardList'])->name('admin.rewardList')->middleware('is_admin');
+Route::get('/admin/showRewards',[App\Http\Controllers\RewardController::class, 'showRewardList'])->name('admin.rewardList')->middleware('is_admin');;
 Route::post('/admin/searchRewards',[App\Http\Controllers\RewardController::class, 'search'])->name('admin.search')->middleware('is_admin');
 Route::get('/admin/rewards/edit/{id}',[App\Http\Controllers\RewardController::class, 'edit'])->name('admin.editReward')->middleware('is_admin');
 Route::get('/admin/rewards/delete/{id}',[App\Http\Controllers\RewardController::class, 'delete'])->name('admin.deleteReward')->middleware('is_admin');
 Route::post('/admin/updateRewards',[App\Http\Controllers\RewardController::class, 'update'])->name('admin.updateReward')->middleware('is_admin');
+// ----------------------------------------Reward System----------------------------------------
 // ----------------------------------------Admin Route----------------------------------------
 
 

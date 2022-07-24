@@ -10,11 +10,17 @@ use Session;
 
 class RewardController extends Controller
 {   
+    //Require user login
+    public function __construct() {
+      $this->middleware('auth');
+    }
+    
+    //Index Views [Admin]
     public function index(){
-        return view('backend.addReward');
+       return view('backend.addReward');
     }
 
-    // store
+    // Store Reward [Admin]
     public function store(){
     $r = request();
     //image
@@ -34,7 +40,7 @@ class RewardController extends Controller
     return back();
     }
 
-    //upload image
+    //Upload image [Admin]
     public function uploadPhoto(Request $request){
         $rewards = new Reward();
         $rewards->id=0;
@@ -45,7 +51,7 @@ class RewardController extends Controller
         ]);
     }
 
-    //show reward in admin view
+    //Show Reward [Admin]
        public function showRewardList(){
         $rewards = DB::table('rewards')
         ->latest()
@@ -53,7 +59,7 @@ class RewardController extends Controller
         return view('backend.showReward')->with('rewards',$rewards);
     }
        
-    // search reward in rewardList
+    //Search reward in rewardList [Admin]
     public function search(){
         $r=request();
         $keyword=$r->keyword;
@@ -90,11 +96,20 @@ class RewardController extends Controller
         return redirect()->route('admin.rewardList');  
     }
 
-        //Delete Reward [Admin]
-        public function delete($id){
-            $rewards = reward::find($id);
-            $rewards->delete();
-            Session::flash('success',"Reward delete successfully!");
-            return redirect()->route('admin.rewardList');
-        }
+    //Delete Reward [Admin]
+    public function delete($id){
+        $rewards = reward::find($id);
+        $rewards->delete();
+        Session::flash('success',"Reward delete successfully!");
+        return redirect()->route('admin.rewardList');
+    }
+
+    //show reward for users [Users]
+    public function showRewards(){
+        $rewards = DB::table('rewards')
+        ->where('rewards.quantity','!=','0')
+        ->latest()
+        ->get();
+        return view('rewardList')->with('rewards',$rewards);
+    }
 }
