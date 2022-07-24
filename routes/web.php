@@ -23,6 +23,7 @@ Route::get('/editMembers/{id}', [App\Http\Controllers\MemberController::class, '
 
 // ----------------------------------------Reward System [Users]----------------------------------------
 Route::get('/showRewards', [App\Http\Controllers\RewardController::class, 'showRewards'])->name('showRewards');
+Route::post('/searchRewards', [App\Http\Controllers\RewardController::class, 'searchRewards'])->name('searchRewards');
 // ----------------------------------------Reward System [Users]----------------------------------------
 
 // ----------------------------------------Community Route----------------------------------------

@@ -4,9 +4,10 @@ body {
 }
 
 .TitlesRL {
-    font-size:45px;
+    font-size:48px;
     font-family: Franklin Gothic Medium;
     color:#00dd00;
+    
 }
 
 .totalpoints {
@@ -95,3 +96,48 @@ body {
     font-size:25px;
     font-weight:bold;
  }
+
+ .searchbar{
+    padding:5px;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.search {
+    border: 2px #ff8036 solid;
+    border-radius:20px;
+    outline:0;
+    background-color: transparent;
+    color:#00dd00;
+    padding:8px;
+    font-family: Franklin Gothic Medium;
+
+}
+
+.search::placeholder{
+    color:#00dd00;
+    font-family: Franklin Gothic Medium;
+}
+
+body {
+    margin:0;
+    padding:0;  
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:100vh;
+  }
+  
+  main {
+    flex:1 0 auto;
+  }
+
+.col-md-12.text-center.mt-4{
+    color:#ff8036;
+    font-family: Franklin Gothic Medium;
+    font-size:32px;
+}
+
+  
+ 
+

@@ -10,7 +10,7 @@ use Session;
 
 class RewardController extends Controller
 {   
-    //Require user login
+    //Require  login
     public function __construct() {
       $this->middleware('auth');
     }
@@ -112,4 +112,16 @@ class RewardController extends Controller
         ->get();
         return view('rewardList')->with('rewards',$rewards);
     }
+
+    //Search reward for users [Users]
+    public function searchRewards(){
+        $r=request();
+        $keyword=$r->keyword;
+        $rewards = DB::table('rewards')
+        ->where('rewards.name','LIKE','%'.$keyword.'%') 
+        ->latest()
+        ->get();
+        return view('rewardList')->with('rewards',$rewards);
+        }
+  
 }

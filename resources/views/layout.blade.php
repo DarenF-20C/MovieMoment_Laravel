@@ -67,7 +67,7 @@
                                  <ul class="dropdown-menu">
                                  <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members</a></li>
                                  <li><a class="dropdown-item" href="{{url('contact')}}">User Guide // Help</a></li>
-                                 <li><a class="dropdown-item" href="{{url('showRewards')}}">Vouchers Redeem</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}">Vouchers Redeem</a></li>
                                  <li><a class="dropdown-item" href="{{url('contact')}}">Contact Us</a></li>
                                  <li><a class="dropdown-item" href="{{url('showMembers')}}">Show Members(Admin)</a></li>
                                  <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members(Admin)</a></li>
