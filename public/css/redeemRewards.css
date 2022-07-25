@@ -34,24 +34,28 @@ body {
 .Titles {
     color:#ff8036;
     font-size:32px;
+    font-weight:bold;
 }
 
 .des {
     color:#00dd00;
     font-size:22px;
+    font-style:oblique;
 }
 
 .images {
-   border-radius:2px;
+   border-radius:5px;
 }
 
 .confirm {
     color:#00dd00;
+    font-family: Franklin Gothic Medium;
 }
 
 .orange{
     color:#ff8036;
     font-style:oblique;
+    font-family: Franklin Gothic Medium;
 }
 
 .btn.btn-primary {

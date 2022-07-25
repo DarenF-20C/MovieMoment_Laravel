@@ -11,14 +11,14 @@ Route::get('/familyMovie', function () {return view('familyMovie');})->name('fam
 Route::get('/tvshow', function ()               {return view('tvshow');})->name('tvshow');
 Route::get('/community',[App\Http\Controllers\ContentController::class,'getPosts'])->name('community');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/contact', [App\Http\Controllers\ContactUsFormController::class, 'createForm']);
-Route::post('/contact', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 Route::POST('/addMembers', [App\Http\Controllers\MemberController::class, 'store'])->name('addMembers');
 Route::get('/showMembers', [App\Http\Controllers\MemberController::class, 'view'])->name('viewMembers');
 Route::get('/deleteMembers/{id}', [App\Http\Controllers\MemberController::class, 'delete'])->name('deleteMembers');
 Route::get('/showProjectMembers', [App\Http\Controllers\MemberController::class, 'listMembers'])->name('listMembers');
 Route::post('/updateMembers', [App\Http\Controllers\MemberController::class, 'update'])->name('updateMembers');
 Route::get('/editMembers/{id}', [App\Http\Controllers\MemberController::class, 'edit'])->name('editMembers');
+Route::get('/contactUs', [App\Http\Controllers\ContactUsFormController::class, 'index'])->name('contactUs');
+Route::post('/contactUs', [App\Http\Controllers\ContactUsFormController::class, 'save'])->name('contact.store');
 // ----------------------------------------Home/Nav Route----------------------------------------
 
 // ----------------------------------------Reward System [Users]----------------------------------------

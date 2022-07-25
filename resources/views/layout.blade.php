@@ -25,11 +25,11 @@
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
       @stack('script')
 
-        @if(Session::has('success'))
+        <!-- @if(Session::has('success'))
         <div class="alert alert-success">
             {{ Session::get('success')  }}
         </div>
-        @endif
+        @endif -->
     
         <header>
         <!-- Navbar -->
@@ -68,7 +68,7 @@
                                  <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members</a></li>
                                  <li><a class="dropdown-item" href="{{url('contact')}}">User Guide // Help</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}">Vouchers Redeem</a></li>
-                                 <li><a class="dropdown-item" href="{{url('contact')}}">Contact Us</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}" href="{{url('contactUs')}}">Contact Us</a></li>
                                  <li><a class="dropdown-item" href="{{url('showMembers')}}">Show Members(Admin)</a></li>
                                  <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members(Admin)</a></li>
                               </ul>

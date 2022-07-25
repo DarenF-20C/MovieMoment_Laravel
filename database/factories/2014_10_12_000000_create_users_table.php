@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->char('gender',1)->default('M');
             $table->integer('status')->default('1');
+            $table->integer('points')->default('0');
             $table->string('userAvatar')->default('');
             $table->rememberToken();
             $table->timestamps();

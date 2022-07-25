@@ -4,28 +4,44 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Mail;
 
-class ContactUsFormController extends Controller
-{   public function createForm(Request $request){
-    return view('contact');
-}
-    //Store Contact Form
-    public function ContactUsForm (Request $request){
-    //Form Validation
-    $this->validate($request,[
-        'name'=>'required',
-        'email'=>'required|email',
-        'phone'=>'required|regex:/^[0-9\s\-\+\(\)]*)$/|min:10',
-        'message'=>'required'
-    ]); 
-    $contact = new Contact;
+class ContactUsFormController extends Controller{     
+    
+    public function index() { 
+    return view('ContactUs'); 
+  } 
 
-    $contact->name = $request->name;
-    $contact->email = $request->email;
-    $contact->phone = $request->phone_number;
-    $contact->message = $request->message;
+   public function save(Request $request) { 
+     $this->validate($request, [
+         'name' => 'required',
+         'email' => 'required|email',
+         'phone' => 'required',
+         'message' => 'required'
+     ]);
 
-    $contact->save();
-    return back()->with('Success','We have received your message and would like to thank you for writing to us.');
-    }
+     $contact = new Contact;
+
+     $contact->name = $request->name;
+     $contact->email = $request->email;
+     $contact->phone = $request->phone;
+     $contact->message = $request->message;
+
+     $contact->save();
+
+     \Mail::send('contact-email',
+             array(
+                 'name' => $request->get('name'),
+                 'email' => $request->get('email'),
+                 'phone' => $request->get('phone'),
+                 'messages' => $request->get('message'),
+             ), function($message) use ($request)
+               {
+                  $message->from($request->email);
+                  $message->to('admin@example.com');
+               });
+     
+     return back()->with('success', 'Thank you for contact us! We will reply to you as soon as possible.');
+
+ }
 }

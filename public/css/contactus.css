@@ -1,50 +1,25 @@
-form {
-    background-color:#101210;
-    padding:40px 40px 40px 40px;
-    /*   */
-    border-radius:100px;
-}
-
 body {
     background-color:#101210;
-}
-
-label {
-    font-size:35px;
-    color:#00dd00;
-    font-family: Franklin Gothic Medium;
-}
-
-h3{
-    color: #00dd00;
-    font-family: Franklin Gothic Medium;
-    font-size:120px;
-    text-align:center;
-}
-
-.form-control:focus {
-    border-color:#f97d36;
 }
 
 .fb:hover {
     color:rgb(255, 255, 255);  
     background-color:#2c5ec2;
   }
+
+.insta{
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
   
-  .insta{
-      background: #f09433; 
-      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  }
-  
-  .follow a{
+.follow a{
       color: white;
   }
   
-  .insta:hover {
-      margin-top: -3px;
+.insta:hover {
+    margin-top: -3px;
       text-shadow: 0px 7px 6px rgba(0, 0, 0, 0.4);
   }
   
@@ -54,8 +29,8 @@ h3{
       font-size:20px;
   }
 
-  .btn.btn-primary.fb{
-    color:rgb(255, 255, 255);
+  .btn.btn-secondary.btn-floating.mx-1.fb{
+    background-color:#2c5ec2;
 }
 
 .btn.btn-success.btn-block {
@@ -66,5 +41,44 @@ h3{
 
 .btn.btn-success.btn-block:hover {
     background-color: #f09433;
+}
+
+/* Start From Here */
+.card-title {
+   color:#00dd00;
+   font-family:Franklin Gothic Medium;
+   font-size:100px;
+   text-align:center;
+}
+
+.card-header {
+    background-color:#101210;
+}
+
+.card-body {
+    background-color:rgb(248, 248, 248);
+    border:5px solid #e9f3e9;
+    border-radius:10px;
+}
+
+.btn.btn-primary {
+    background-color:#00dd00;
+    color:black;
+    font-family: Franklin Gothic Medium;
+    padding:10px;
+ }
+ 
+ .btn.btn-primary:hover {
+     background-color:#ff8036;
+  }
+
+label {
+    font-size:30px;
+    color:#f09433;
+    font-family: Franklin Gothic Medium;
+}
+
+.text-center.follow{
+    text-align:center;
 }
 

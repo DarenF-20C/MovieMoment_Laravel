@@ -47,7 +47,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="{{asset('images/') }}/{{$reward->image}}" alt="reward" class="images" height="350px" width="400px">
+                <img src="{{asset('images/') }}/{{$reward->image}}" alt="reward" class="images" height="430px" width="400px">
             </div>
             <div class="col-md-8">
                 <h2 class="Titles">Product Description:</h2>
@@ -59,7 +59,7 @@
                 <p class="confirm">If you confirmed to spend <b class="orange">{{$reward->points}}</b> points to redeem <b class="orange">{{$reward->name}}</b>, please press the "Redeem" button.</p>
                 <p class="confirm">Your total point is <b class="orange">{{ Auth::user()->points }}123</b>.</p>
                 @if($reward->quantity > 0)
-                <button type="submit" class="btn btn-primary" id="redeemBtn">Redeem</button>
+                <button type="submit" class="btn btn-primary" id="redeemBtn">Redeem</button><br><br>
                 @else
                 <a class="backbutton" href="{{route('showRewards')}}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a>
                 <p class="confirm">Attention: Sorry, the reward is not available. Please choose another rewards. </p>
