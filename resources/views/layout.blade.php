@@ -63,11 +63,12 @@
                            <a class="nav-link {{Route::currentRouteNamed('top10') ? 'active' : '' }}" href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Daily)  </a>         
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link dropdown-toggle" href="#" ></i>Others</a>
+                              <a class="nav-link dropdown-toggle {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }}"></i>Others</a>
                                  <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item" href="{{url('showProjectMembers')}}">Project Members</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} " href="{{url('showProjectMembers')}}">Project Members</a></li>
                                  <li><a class="dropdown-item" href="{{url('contact')}}">User Guide // Help</a></li>
-                                 <li><a class="dropdown-item {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}">Vouchers Redeem</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}">Rewards Redeem</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('myReward') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }}" href="{{url('myReward')}}">My Rewards</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}" href="{{url('contactUs')}}">Contact Us</a></li>
                                  <li><a class="dropdown-item" href="{{url('showMembers')}}">Show Members(Admin)</a></li>
                                  <li><a class="dropdown-item" href="{{url('addMembers')}}">Add Members(Admin)</a></li>

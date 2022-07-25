@@ -68,3 +68,7 @@ body {
  .btn.btn-primary:hover {
      background-color:#ff8036;
   }
+
+  .hidden{
+    display:none;
+  }

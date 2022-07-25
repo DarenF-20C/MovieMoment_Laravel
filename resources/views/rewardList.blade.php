@@ -9,7 +9,7 @@
         <div class="col-md-12 mt-4 mb-4">
             <h3 class="TitlesRL">Welcome to Movie Moment Redeem Lists, {{ Auth::user()->name }}</h3>
             <h6 class="totalpoints">Your total points: <p class="userpoints">1234456</p> </h6>
-            <a class="reward" href="#">My Reward</a>
+            <a class="reward" href="{{route('showMyReward')}}">My Reward</a>
         </div>
         <div class="searchbar"> 
         <form class="form-inline my-2 my-lg-0" action="{{route('searchRewards')}}" method="post">

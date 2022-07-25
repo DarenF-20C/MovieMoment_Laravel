@@ -25,7 +25,9 @@ Route::post('/contactUs', [App\Http\Controllers\ContactUsFormController::class, 
 Route::get('/showRewards', [App\Http\Controllers\RewardController::class, 'showRewards'])->name('showRewards');
 Route::post('/searchRewards', [App\Http\Controllers\RewardController::class, 'searchRewards'])->name('searchRewards');
 Route::get('/redeemRewards/{id}',[App\Http\Controllers\RedeemRewardsController::class, 'redeemRewards'])->name('redeemRewards');
-Route::post('/redeemRewards',[App\Http\Controllers\RedeemListController::class, 'confirmRedeem'])->name('confirmRedeem');
+Route::post('/redeemRewards',[App\Http\Controllers\RedeemRewardsController::class, 'confirmRedeem'])->name('confirmRedeem');
+Route::get('/myReward', [App\Http\Controllers\RedeemRewardsController::class, 'myReward'])->name('myReward');
+Route::get('/myReward', [App\Http\Controllers\RedeemRewardsController::class, 'showMyReward'])->name('showMyReward');
 // ----------------------------------------Reward System [Users]----------------------------------------
 
 // ----------------------------------------Community Route----------------------------------------

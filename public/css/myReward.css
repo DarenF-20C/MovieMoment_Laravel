@@ -1,0 +1,97 @@
+body {
+    background-color:#101210;
+    height:100%;
+}
+
+.display-1 {
+    font-size:85px;
+    font-family: Franklin Gothic Medium;
+    color:#00dd00;
+}
+
+.reward {
+    color:black;
+    font-family: Franklin Gothic Medium;
+    border: 2px solid #ff8036;
+    background-color:#00dd00;
+    padding: 5px;
+}
+
+.reward:hover {
+    background-color:#ff8036;
+    color:black;
+    border: 2px solid #00dd00;
+}
+
+.card {
+    border: 4px solid #ff8036;
+}
+
+.card:hover {
+    transform: scale(1.05);
+  }
+
+.card-body {
+    background-color:black;
+    text-align:left;
+    padding-top:15px;
+}
+
+.card-title {
+    font-family: Franklin Gothic Medium;
+    font-size:25px;
+    color:#00dd00;
+    height:65px;
+    max-height:70px;
+    border-bottom: 2px #00dd00 dotted;
+}
+
+.card-text {
+    font-family: Franklin Gothic Medium;
+    color:#00dd00;
+    font-size:20px;
+}
+
+.des {
+    font-family: Franklin Gothic Medium;
+    color:#ff8036;
+    display:inline;
+}
+
+.hidden {
+    display:none;
+}
+
+.rewards {
+    color:black;
+    font-family: Franklin Gothic Medium;
+    border: 2px solid #ff8036;
+    background-color:#00dd00;
+    padding: 5px;
+}
+
+.rewards:hover {
+    background-color:#ff8036;
+    color:black;
+    border: 2px solid #00dd00;
+    cursor:copy;
+}
+
+body {
+    margin:0;
+    padding:0;  
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:100vh;
+  }
+  
+  main {
+    flex:1 0 auto;
+  }
+
+  .card-tt {
+    font-family: Franklin Gothic Medium;
+    font-size:25px;
+    color:#00dd00;
+  }
