@@ -300,7 +300,7 @@ function showMovieDetails(movieData) {
     genres.forEach(genresType);
     if (credits.cast.length <= 2  ){
         console.error("No actor info provided.")
-        window.alert("Info is not completed.")
+        window.alert("Sorry for the inconvenience. Info is not completed.")
     }
     document.getElementById("myNav").style.width = "100%";
     const movieE2 = document.createElement('div');

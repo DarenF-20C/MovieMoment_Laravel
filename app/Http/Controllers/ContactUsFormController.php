@@ -17,8 +17,15 @@ class ContactUsFormController extends Controller
         'email'=>'required|email',
         'phone'=>'required|regex:/^[0-9\s\-\+\(\)]*)$/|min:10',
         'message'=>'required'
-    ]);
-    Contact:create($request->all());
+    ]); 
+    $contact = new Contact;
+
+    $contact->name = $request->name;
+    $contact->email = $request->email;
+    $contact->phone = $request->phone_number;
+    $contact->message = $request->message;
+
+    $contact->save();
     return back()->with('Success','We have received your message and would like to thank you for writing to us.');
     }
 }

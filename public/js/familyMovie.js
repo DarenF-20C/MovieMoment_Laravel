@@ -313,8 +313,7 @@ function showMovieDetails(movieData) {
   movieE2.classList.add('movieDetails');
   if (credits.cast.length <= 2 ){
     console.error("No actor info provided.")
-    window.alert("Info is not completed.")
-    return null
+    window.alert("Sorry for the inconvenience. Info is not completed.")
 }
   movieE2.innerHTML = `
   <div id="focus">

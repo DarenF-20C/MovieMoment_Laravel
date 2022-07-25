@@ -1,0 +1,66 @@
+body {
+    background-color:#101210;
+    height:100%;
+}
+
+.display-1 {
+    color:#00dd00;
+    font-family: Franklin Gothic Medium;
+}
+
+.backbutton {
+    color:black;
+    font-family: Franklin Gothic Medium;
+    border: 2px solid #ff8036;
+    background-color:#00dd00;
+    padding: 5px;
+}
+
+.backbutton:hover {
+    background-color:#ff8036;
+    color:black;
+    border: 2px solid #00dd00;
+}
+
+.col-md-12.mt-4.mb-4.text-center{
+    color:#00dd00;
+}
+
+.strongname {
+    color:#ff8036;
+    font-weight:bold;
+}
+
+.Titles {
+    color:#ff8036;
+    font-size:32px;
+}
+
+.des {
+    color:#00dd00;
+    font-size:22px;
+}
+
+.images {
+   border-radius:2px;
+}
+
+.confirm {
+    color:#00dd00;
+}
+
+.orange{
+    color:#ff8036;
+    font-style:oblique;
+}
+
+.btn.btn-primary {
+    background-color:#00dd00;
+    color:black;
+    font-family: Franklin Gothic Medium;
+    padding:10px;
+ }
+ 
+ .btn.btn-primary:hover {
+     background-color:#ff8036;
+  }

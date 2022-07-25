@@ -123,8 +123,6 @@ function getTop10Movies() {
         // var day = today.getDay() || 7; // Get current day number, converting Sun. to 7
         // if( day !== 1 )                // Only manipulate the date if it isn't Mon.
         // today.setHours(-24 * (day - 1));   // Set the hours to day number minus 1
-                                         
-
         movieEl.innerHTML = `
         <div class="abc">
         <h1 class="Top10">Top 10 Movies lists</h1> <h2 class="update">Last Update: ${dateStr}</h2>
@@ -336,6 +334,10 @@ function showMovieDetails(movieData) {
   document.getElementById("myNav").style.width = "100%";
   const movieE2 = document.createElement('div');
   movieE2.classList.add('movieDetails');
+  if (credits.cast.length <= 2){
+    console.error("No actor info provided.")
+    window.alert("Sorry for the inconvenience. Info is not completed.")
+  }
   movieE2.innerHTML=
   `
   <div id="focus">

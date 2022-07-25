@@ -312,10 +312,10 @@ function showMovieDetails(movieData) {
   document.getElementById("myNav").style.width = "100%";
   const movieE2 = document.createElement('div');
   movieE2.classList.add('movieDetails');
-  if (credits.cast.length <= 2 ){
+  if (credits.cast.length <= 2){
     console.error("No actor info provided.")
-    window.alert("Info is not completed.")
-}
+    window.alert("Sorry for the inconvenience. Info is not completed.")
+  }
   movieE2.innerHTML = `
   <div id="focus">
   <br><br>

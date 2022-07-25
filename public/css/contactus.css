@@ -1,7 +1,8 @@
 form {
-    background-color:rgb(178, 253, 157);
+    background-color:#101210;
     padding:40px 40px 40px 40px;
-    border-radius:35px;
+    /*   */
+    border-radius:100px;
 }
 
 body {
@@ -9,16 +10,15 @@ body {
 }
 
 label {
-    font-size:30px;
-    color:black;
+    font-size:35px;
+    color:#00dd00;
     font-family: Franklin Gothic Medium;
 }
 
 h3{
-    color:#fc8138;
+    color: #00dd00;
     font-family: Franklin Gothic Medium;
-    font-size:100px;
-    text-shadow: rgb(180, 57, 0) 0.05em 0.05em 0.05em;
+    font-size:120px;
     text-align:center;
 }
 
@@ -49,7 +49,7 @@ h3{
   }
   
   h1 {
-      color:black;
+      color:#00dd00;
       font-family: Franklin Gothic Medium;
       font-size:20px;
   }

@@ -36,7 +36,7 @@
                         <p class="hidden">{{$reward->id}}</p>
                         <p class="card-text"><b class="des">Description :</b> {{$reward->description}}</i></p>
                         <p class="card-text"><b class="des">Quantity:</b><i class="card-text"> Only {{$reward->quantity}} item left !! </i></p>
-                        <div class="buttoncenter"><a class="btn btn-primary" href="#">{{$reward->points}} point</a> </div>
+                        <div class="buttoncenter"><a class="btn btn-primary" href="{{route('redeemRewards',['id'=>$reward->id])}}">{{$reward->points}} point</a> </div>
                     </div>
                 </div>
             </div>
