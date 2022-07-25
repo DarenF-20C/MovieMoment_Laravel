@@ -298,13 +298,70 @@ function showMovieDetails(movieData) {
         , status, id, genres, name, videos_results, site, videos, credits, vote_count, similar, index, number_of_episodes,number_of_seasons,first_air_date,
         last_air_date } = movieData;
     genres.forEach(genresType);
-    if (credits.cast.length <= 2  ){
-        console.error("No actor info provided.")
-        window.alert("Sorry for the inconvenience. Info is not completed.")
-    }
     document.getElementById("myNav").style.width = "100%";
     const movieE2 = document.createElement('div');
     movieE2.classList.add('movieDetails');
+    if (credits.cast.length <= 2  ){
+        console.error("No actor info provided.")
+        movieE2.innerHTML = `
+        <div id="focus">
+        <br><br>
+        <div class="row">
+        <div class="col-6">
+        <img class= "img" src ="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" alt="${title}"> <br>
+        </div>
+        <div class="col-6">
+        <div class="contents href="#contents"">
+        <p class="Title">Title:</p><p class="content">${name}</p> 
+        <p class="Title">Genre:</p><p class="content">${genres}</</p>
+        <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} / ${vote_count}</p>
+        <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p>
+        <p class="Title">Number of Episodes:</p><p class="content">${number_of_episodes}</</p>
+        <p class="Title">Number of Seasons:</p><p class="content">${number_of_seasons}</</p>
+        <p class="Title">Language:<p class="content">${original_language}</p>
+        <p class="Title">Status: </p> <p class="content">${status} </p>
+        <p class="Title">Tagline: </p><p class="content">"${tagline}"</p>
+        <p class="Title">Overview: </p><p class="content">${overview} </p>
+        <p class="Title">Released Date || Last Updated Date :  </p><p class="content">${first_air_date}  ||  ${last_air_date}</p>
+        <p class="Title">Actor/Actress:</p>  <p class="content">No info provided.</p>
+        </p>
+        <br>
+        <div class="buttons">
+        <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
+        <button class="btn btn-sm  onClick="rateMovies()"> Rate the movie </button>
+        <button class="btn btn-sm" onClick="closeNav()">Back</button>
+        </div>
+        </div>
+        </div>
+        <div class="container">
+        <p class="Titles">You may also like... </p>
+        <div class="row">
+          <div class="col-sm">
+          <img class="similarimg" id="${similar.results[0].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
+                  <div class="movie-info">
+                      <h3>${similar.results[0].name}</h3>
+                      <span class="${getColor(similar.results[0].vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
+                  </div>
+          </div>
+          <div class="col-sm">
+          <img class="similarimg" id="${similar.results[3].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}">
+                  <div class="movie-info">
+                      <h3>${similar.results[3].name}</h3>
+                      <span class="${getColor(similar.results[3].vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
+                  </div>
+          </div>
+          <div class="col-sm">
+          <img class="similarimg"  id="${similar.results[5].id}"  src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
+                  <div class="movie-info">
+                      <h3>${similar.results[5].name}</h3>
+                      <span class="${getColor(similar.results[5].vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
+                  </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      `
+    } else
     movieE2.innerHTML = `
   <div id="focus">
   <br><br>
@@ -371,10 +428,15 @@ function showMovieDetails(movieData) {
    `
     myNav.appendChild(movieE2);
     document.getElementById(videos).addEventListener('click', () => {
+        if (videos.results.length == 0 ) {
+            console.error('No videos provided.')
+            window.alert('Sorry, No trailer videos provided.')
+         } else {
         let keys = videos.results[0].key
         console.log(keys)
         playVideo(keys)
-    })
+          }
+        })
     document.getElementById(similar.results[0].id).addEventListener('click', () => {
         let id = similar.results[0].id
         console.log(id)
