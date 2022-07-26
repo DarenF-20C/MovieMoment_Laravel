@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContentUserTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,19 @@ class CreateContentUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('content_user', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('content_id');
-            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('gender');
+            $table->string('phone');
+            $table->date('date')->nullable;
+            $table->boolean('is_admin')->default('0');
+            $table->string('password');
+            $table->integer('status')->default('1');
+            $table->string('userAvatar')->default('user.jpg');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -28,6 +37,7 @@ class CreateContentUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('like_post_user');
+        Schema::dropIfExists('users');
     }
-}
+};
+
