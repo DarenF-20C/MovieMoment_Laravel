@@ -40,6 +40,51 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
+
+                            <div class="col-md-6">
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{7}" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="date" class="col-md-4 col-form-label text-md-end">{{ __('Date of Birth') }}</label>
+
+                            <div class="col-md-6">
+                            <input type="date" id="date" name="date" required size="65"><br />
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label for="date" class="col-md-4 col-form-label text-md-end">{{ __('Input Your Profile Image') }}</label>
+
+                            <div class="col-md-6">
+                            <input type="file" class="form-control" id="userAvatar" name="userAvatar" required><br/>
+
+                            @error('file')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Select Your Gender') }}</label>
+
+                            <div class="col-md-6">
+                            <div class="form-check form-check-inline" >
+                                <input class="form-check-input" type="radio" name="gender" value="male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -74,4 +119,5 @@
         </div>
     </div>
 </div>
+
 @endsection
