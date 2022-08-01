@@ -24,8 +24,8 @@
             <form class="form-inline my-2 my-lg-0" action="{{route('admin.search')}}" method="POST">
                 @csrf
                 <input class="form-control mr-sm-2" type="search" placeholder="Search by name/code" aria-label="Search" name="keyword" style="height:50px;">
-                <button class="btn btn-primary btn-sm" type="submit"> Search </button> &nbsp;
-                <button class="btn btn-primary btn-sm" type="submit" action="{{route('admin.rewardList')}}">Back</button>
+                <button class="btn btn-primary" type="submit"> Search </button> &nbsp;
+                <button class="btn btn-primary" type="submit" action="{{route('admin.rewardList')}}">Back</button>
             </form>
         </div>
         <div class="col-md-12 offset-md-10">  
@@ -58,7 +58,7 @@
                             <td class="text-center">{{$reward->quantity}}</td>
                             <td><strong>{{$reward->code}}</strong></td>
                             <td>
-                            <a class="btn btn-success btn-sm" href="{{route('admin.editReward',['id' => $reward -> id])}}">Edit <i class="fa fa-edit"></i></a>
+                            <a class="btn btn-success btn-sm" href="{{route('admin.editReward',['id' => $reward -> id])}}">Edit <i class="fa fa-edit"></i></a> <br>
                             <a class="btn btn-danger btn-sm" href="{{route('admin.deleteReward',['id' => $reward -> id])}}" onClick="return confirm('Are you sure to delete?')">Delete <i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
@@ -78,6 +78,20 @@
     </div>
 </div>
 
+<style>
+.titleReward {
+    font-size:55px;
+}
+
+.btn.btn-secondary {
+   background-color:blue;
+}
+
+.btn.btn-secondary:hover {
+   background-color:black;
+
+}
+</style>
 @endsection
 
     

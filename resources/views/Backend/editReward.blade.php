@@ -23,7 +23,7 @@
                     <input type="hidden" class="form-control" id="rewardID" name="rewardID" value="{{$reward->id}}">
                 </div>
                 <div class="form-group">
-                    <label for="rewardImage">Reward Images:</label> <br>
+                    <label for="rewardImage" class="form-label">Reward Images:</label> <br>
                     <img id="previewImage" src="{{asset('images')}}/{{$reward->image}}" alt="" width="200"> <br><br>
                         <div class="custom-file mb-3">
                         <input type="file" class="custom-file-input" id="rewardImage" name="rewardImage" onchange="showPreview(event);">    
@@ -76,12 +76,13 @@
                     <label for="rewardCode" class="form-label">Redeem Code:</label>
                     <input type="text" class="form-control" id="rewardCode" name="rewardCode" maxlength="20" value="{{$reward->code}}">
                 </div>
-                <button class="admin-btn" type="submit" style="height:50px;">Save Reward</button>
+                <button class="btn btn-primary" type="submit" style="height:50px;">Save Reward</button> <br><br>
                 @endforeach
             </form>
         </div>
     </div>
 </div>
+<br>
 
 
 <script>
@@ -96,5 +97,11 @@
         displayImage.style.display = "block";
     });
 </script>
+
+<style>
+.form-label {
+    font-size:23px;
+}
+</style>
 @endsection
 

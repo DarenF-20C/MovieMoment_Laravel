@@ -27,56 +27,58 @@ class RewardsListsSeeder extends Seeder
         // ]);
 
         $rewards1 = Reward ::create([
-            'name' => 'Movie Voucher1',
-            'image' => 'voucher1.jfif',
-            'description' => 'Super Promotion',
-            'points' => '20000',
-            'quantity' => '50',
-            'code' => 'TGVCode12345',
+            'name' => 'MBO Movie Voucher',
+            'image' => 'voucher1.jpg',
+            'description' => 'RM25 MBO Gift Voucher and RM20 MBO Movie Voucher',
+            'points' => '80000',
+            'quantity' => '30',
+            'code' => 'MBOGiftVoucher43321',
             'created_at' => '2022-07-23 07:13:22',
             'updated_at' => '2022-07-23 14:48:56'
         ]);
 
         $rewards2 = Reward ::create([
-            'name' => 'Movie Voucher2',
-            'image' => 'voucher2.jfif',
-            'description' => '12345',
-            'points' => '10000',
+            'name' => 'Cinema Gift Voucher',
+            'image' => 'voucher2.jpg',
+            'description' => 'Free Cinema Gift Voucher at any cinema! Enjoy your wonderful weekend at cinema',
+            'points' => '100000',
             'quantity' => '10',
-            'code' => 'SST128371',
+            'code' => 'CinemaVoucher953721',
             'created_at' => '2022-07-23 07:13:22',
             'updated_at' => '2022-07-23 14:48:56'
         ]);
 
         $rewards3 = Reward ::create([
-            'name' => 'Movie Voucher3',
+            'name' => '50% Discount Movie Ticket Coupon',
             'image' => 'voucher3.jpg',
-            'description' => '12345',
-            'points' => '7500044',
-            'quantity' => '54',
-            'code' => 'TGVCode12345',
+            'description' => '50% movie ticket discount at TGV, GSC cinema. Fast to grab it ! Limited Quantity !
+            The valid time is October 2021 to October 2022.',
+            'points' => '50000',
+            'quantity' => '5',
+            'code' => 'DiscountVoucher46507',
             'created_at' => '2022-07-23 07:13:22',
             'updated_at' => '2022-07-23 14:48:56'
         ]);
 
         $rewards4 = Reward ::create([
-            'name' => 'Movie Voucher4',
+            'name' => 'Movie Night -- Journey of Olivia',
             'image' => 'voucher4.jpg',
-            'description' => '12345',
-            'points' => '7500044',
-            'quantity' => '54',
-            'code' => 'TGVCode12345',
+            'description' => 'As stated in the picture, the ticket can only be used for one movie. Free popcorn will be given.',
+            'points' => '200000',
+            'quantity' => '20',
+            'code' => 'MovieNight883212',
             'created_at' => '2022-07-23 07:13:22',
             'updated_at' => '2022-07-23 14:48:56'
         ]);
 
         $rewards5 = Reward ::create([
-            'name' => 'Movie Voucher5',
+            'name' => 'Movie Saver Pass (TGV)',
             'image' => 'voucher5.jpg',
-            'description' => '12345',
-            'points' => '7500044',
-            'quantity' => '54',
-            'code' => 'TGVCode12345',
+            'description' => 'Free 1 x Movie Ticker PER month and 1 x Regular Signature Popcorn PER month. 
+            Unlimited Valid Date!! Enjoy ur day in TGV cinema every month!!!',
+            'points' => '350000',
+            'quantity' => '10',
+            'code' => 'MovieSaverTGV386420',
             'created_at' => '2022-07-23 07:13:22',
             'updated_at' => '2022-07-23 14:48:56'
         ]);

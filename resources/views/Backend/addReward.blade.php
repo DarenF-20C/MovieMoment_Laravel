@@ -17,7 +17,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 text-center mt-4 mb-4">
-            <h1>Create Rewards</h1>
+            <h1 class="title">Create Rewards</h1>
         </div>
     </div>
 </div>
@@ -34,7 +34,7 @@
                     <input type="text" class="form-control" id="rewardName" name="rewardName">
                 </div>
                 <div class="form-group">
-                    <label for="rewardImage">Reward Images:</label>
+                    <label for="rewardImage" class="form-label">Reward Images:</label>
                         <div class="custom-file mb-3">
                             <input type="file" class="custom-file-input" id="rewardImage" name="rewardImage" onchange="showPreview(event);">
                             <label class="custom-file-label" id="custom-file-label" for="customFile">Choose file</label>
@@ -48,7 +48,7 @@
                     <textarea class="form-control" id="rewardDescription" name="rewardDescription"></textarea>
                 </div>
                 <div class="form-group mt-2">
-                    <label for="pointsValue" class="form-label">Points</label>
+                    <label for="pointsValue" class="form-label">Points: </label>
                     <select class="form-select" aria-label="Default select example" id="pointsValue" name="pointsValue">
                         <option selected>Select the point:</option>
                         <option value="5000">5,000</option>
@@ -89,8 +89,9 @@
                     <label for="rewardCode" class="form-label">Redeem Code:</label>
                     <input type="text" class="form-control" id="rewardCode" name="rewardCode" maxlength="20">
                 </div>
-                <button class="admin-btn" type="submit" style="height:50px;">Add Reward</button>
+                <button class="btn btn-primary" type="submit" style="height:50px;">Add Reward</button>
             </form>
+            <br>
         </div>
     </div>
 </div>
@@ -120,6 +121,23 @@
 
 .rewardImage {
  width:400px;
+}
+
+.form-label {
+    font-size:23px;
+}
+
+.title {
+    font-size:55px;
+}
+
+.btn.btn-secondary {
+   background-color:blue;
+}
+
+.btn.btn-secondary:hover {
+   background-color:black;
+
 }
 </style>
 
