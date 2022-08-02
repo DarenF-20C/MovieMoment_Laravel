@@ -60,4 +60,6 @@ Route::post('/admin/updateRewards',[App\Http\Controllers\RewardController::class
 // ----------------------------------------Reward System----------------------------------------
 // ----------------------------------------Admin Route----------------------------------------
 
-
+//-----------------------------------------User Profile----------------------------------------
+Route::get('/userProfile/{id}',[App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
+Route::get('/editProfile/{id}',[App\Http\Controllers\UserController::class, 'edit'])->name('editProfile');
