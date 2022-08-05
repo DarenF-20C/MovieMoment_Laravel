@@ -44,11 +44,13 @@ Route::post('/addComment', [App\Http\Controllers\CommentController::class, 'addC
 Auth::routes();
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('/admin/admin-list',[App\Http\Controllers\AdminController::class, 'showAdmin'])->name('admin.adminList')->middleware('is_admin');
-Route::get('/admin/admin-list/remove/User/{id}', [App\Http\Controllers\AdminController::class, 'deleteAdmin'])->name('admin.deleteAdmin')->middleware('is_admin');
+Route::get('/admin/admin-list/remove/Admin/{id}', [App\Http\Controllers\AdminController::class, 'deleteAdmin'])->name('admin.deleteAdmin')->middleware('is_admin');
 Route::get('/admin/user-list',[App\Http\Controllers\AdminController::class, 'showUser'])->name('admin.userList')->middleware('is_admin');
 Route::get('/admin/user-list/remove/User/{id}', [App\Http\Controllers\AdminController::class, 'deleteUser'])->name('admin.deleteUser')->middleware('is_admin');
 Route::get('/admin/comment-list',[App\Http\Controllers\AdminController::class, 'showComment'])->name('admin.commentList')->middleware('is_admin');
+Route::get('/admin/post-list/remove/comment/{id}',[App\Http\Controllers\AdminController::class, 'deleteComment'])->name('admin.deleteComment')->middleware('is_admin');
 Route::get('/admin/post-list',[App\Http\Controllers\AdminController::class, 'showPost'])->name('admin.postList')->middleware('is_admin');
+Route::get('/admin/post-list/remove/post/{id}',[App\Http\Controllers\AdminController::class, 'deletePost'])->name('admin.deletePost')->middleware('is_admin');
 // ----------------------------------------Reward System----------------------------------------
 Route::get('/admin/rewards',[App\Http\Controllers\RewardController::class, 'index'])->name('admin.rewards')->middleware('is_admin');
 Route::post('/admin/rewards',[App\Http\Controllers\RewardController::class, 'store'])->name('admin.addReward')->middleware('is_admin');
