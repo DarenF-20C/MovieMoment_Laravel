@@ -14,14 +14,14 @@
     <li class="breadcrumb-item">
       <a href="{{route('admin.home')}}">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active">Post-Lists</li>
+    <li class="breadcrumb-item active">Comment-Lists</li>
   </ol>
 
 
    <!-- DataTables Example -->
    <div class="card mb-3">
     <div class="card-header">
-      <i class="bx bx-table"></i> Post List
+      <i class="bx bx-table"></i> Comment List
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -31,23 +31,23 @@
               <th>ID</th>
               <th>User Name</th>
               <th>Content Detail</th>
-              <th>Movie ID</th>
-              <th>Created Time</th>
+              <th>Comment Detail</th>
+              <th>Created At</th>
               <th>Action</th>
             </tr>
           </thead>
 
           <tbody>
-          @if(count($posts))
-              @foreach($posts as $post)
+          @if(count($comments))
+              @foreach($comments as $comment)
               <tr>
-              <td>{{$post->id}}</td>
-                <td>{{$post->userName}}</td>
-                <td>{{$post->ctDetail}}</td>
-                <td>{{$post->MovieID}}</td>
-                <td>Date: {{$post->ctDate}}  <br> Time: {{$post->ctTime}}</td>
+              <td>{{$comment->id}}</td>
+                <td>{{$comment->userName}}</td>
+                <td>{{$comment->ctDetail}}</td>
+                <td>{{$comment->cmDetail}}</td>
+                <td>{{$comment->created_at}}</td>
                 <td>
-                  <a class="admin-btn" href="{{route('admin.deletePost',['id'=>$post->id])}}" onClick="return confirm('Are you sure to delete?')" onClick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i> Delete</a>
+                  <a class="admin-btn" href="{{route('admin.deleteComment',['id'=>$comment->id])}}" onClick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i> Delete</a>
               </td>
               </tr>
               @endforeach
