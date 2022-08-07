@@ -2,8 +2,7 @@
 @section('content')
 <body>
 <br><br>
-    <title>User Profile</title>
-    <form action="{{ route('editProfile') }}" method="POST" enctype="multipart/form-data" >
+    <form action="{{ route('updateProfile') }}" method="POST" enctype="multipart/form-data" >
     @CSRF
   <div class="container">
     <div class="main-body">
@@ -19,9 +18,9 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="{{ asset('images/user/'.$user->userAvatar)}}" alt="userAvatar" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>{{user->name}}</h4>
+                      <h4>{{$user->name}}</h4>
                       <p class="text" style="float: left;">Edit Profile Image</p>
-                      <input type="file" class="form-control" id="productImage" name="userAvatar" value="{{$user->userAvatar}}" >
+                      <input type="file" class="form-control" id="userAvatar" name="userAvatar" required><br/>
                     </div>
                   </div>
                 </div>
@@ -50,50 +49,54 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">Full Name</h6>
                     </div>
+                    <div class="col-sm-9">
                     <input type="text" id="name" name="name" required size="65" value="{{$user->name}}"><br />
-                <input type="hidden" name="userID" id="userID" value="{{$user->id}}">  
+                    <input type="hidden" name="userID" id="userID" value="{{$user->id}}">  
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Email</h6>
                     </div>
+                    <div class="col-sm-9">
                     <input type="text" id="email" name="email" required size="65"  value="{{$user->email}}"><br />
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Phone</h6>
                     </div>
+                    <div class="col-sm-9">
                     <input type="tel" id="phone" name="phone"pattern="[0-9]{3}-[0-9]{7}" required  value="{{$user->phone}}">
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Gender</h6>
                     </div>
-                    <div class="col-md-6">
-                            <div class="form-check form-check-inline" >
-                                <input class="form-check-input" type="radio" name="gender" value="male">
-                                <label class="form-check-label" for="male">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="female">
-                                <label class="form-check-label" for="female">Female</label>
-                            </div>
-                            </div>
+                    <div class="col-md-6" >
+                      <select name="gender" id="gender" value="{{$user->gender}}">
+                        <option option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Date of Birth</h6>
                     </div>
+                    <div class="col-sm-9">
                     <input type="date" id="date" name="date" required size="65" value="{{$user->date}}"><br />
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="#">Save Profile</a>
+                      <button class="btn btn-primary" type="submit">Save Profile</button>
                     </div>
                   </div>
                 </div>
