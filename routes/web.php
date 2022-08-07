@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function ()                     {return view('welcome');});
 Route::get('/contactUs', function ()            {return view('contactUs');});
 Route::get('/top10', function ()                {return view('top10');})->name('top10');
+Route::get('/top10TV', function ()                {return view('Top10TV');})->name('top10TV');
 Route::get('/movieRecommendation', function ()  {return view('movieRecommendation');})->name('movieRecommendation');
 Route::get('/familyMovie', function () {return view('familyMovie');})->name('familyMovie');
 Route::get('/tvshow', function ()               {return view('tvshow');})->name('tvshow');

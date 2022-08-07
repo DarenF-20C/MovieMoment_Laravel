@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'is_admin',
         'gender',
+        'points',
         'phone',
         'date',
         'userAvatar',

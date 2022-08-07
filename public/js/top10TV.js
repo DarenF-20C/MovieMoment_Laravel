@@ -3,87 +3,75 @@ const API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
 //Base URL for TMDb
 const BASE_URL = 'https://api.themoviedb.org/3';
 //API URL
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
+const API_URL = BASE_URL + '/discover/tv?sort_by=popularity.desc&' + API_KEY;
 //Image from TMDB API
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const genres = [
-  {
-    "id": 28,
-    "name": "Action"
-  },
-  {
-    "id": 12,
-    "name": "Adventure"
-  },
-  {
-    "id": 16,
-    "name": "Animation"
-  },
-  {
-    "id": 35,
-    "name": "Comedy"
-  },
-  {
-    "id": 80,
-    "name": "Crime"
-  },
-  {
-    "id": 99,
-    "name": "Documentary"
-  },
-  {
-    "id": 18,
-    "name": "Drama"
-  },
-  {
-    "id": 10751,
-    "name": "Family"
-  },
-  {
-    "id": 14,
-    "name": "Fantasy"
-  },
-  {
-    "id": 36,
-    "name": "History"
-  },
-  {
-    "id": 27,
-    "name": "Horror"
-  },
-  {
-    "id": 10402,
-    "name": "Music"
-  },
-  {
-    "id": 9648,
-    "name": "Mystery"
-  },
-  {
-    "id": 10749,
-    "name": "Romance"
-  },
-  {
-    "id": 878,
-    "name": "Science Fiction"
-  },
-  {
-    "id": 10770,
-    "name": "TV Movie"
-  },
-  {
-    "id": 53,
-    "name": "Thriller"
-  },
-  {
-    "id": 10752,
-    "name": "War"
-  },
-  {
-    "id": 37,
-    "name": "Western"
-  }
+    {
+        "id": 10759,
+        "name": "Action & Adventure"
+    },
+    {
+        "id": 16,
+        "name": "Animation"
+    },
+    {
+        "id": 35,
+        "name": "Comedy"
+    },
+    {
+        "id": 80,
+        "name": "Crime"
+    },
+    {
+        "id": 99,
+        "name": "Documentary"
+    },
+    {
+        "id": 18,
+        "name": "Drama"
+    },
+    {
+        "id": 10751,
+        "name": "Family"
+    },
+    {
+        "id": 10762,
+        "name": "Kids"
+    },
+    {
+        "id": 9648,
+        "name": "Mystery"
+    },
+    {
+        "id": 10763,
+        "name": "News"
+    },
+    {
+        "id": 10764,
+        "name": "Reality"
+    },
+    {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+    },    
+    {
+        "id": 10766,
+        "name": "Soap"
+    }, 
+    {
+        "id": 10767
+        , "name": "Talk"
+    },
+    { 
+        "id": 10768,
+        "name": "War & Politics" 
+    },
+    {
+        "id": 37,
+        "name": "Western"
+    }
 ]
 
 const main = document.getElementById('main');
@@ -97,10 +85,10 @@ const current = document.getElementById('current')
 
 //https://api.themoviedb.org/3/trending/movie/week?api_key=fff27caf16baadb8c1e7426e855cff9d
 // https://api.themoviedb.org/3/trending/movie/week?api_key=1cf50e6248dc270629e802686245c2c8&sort=vote_average
-getTop10Movies("https://api.themoviedb.org/3/trending/movie/week?api_key=1cf50e6248dc270629e802686245c2c8&sort=vote_average")
+getTop10Movies("https://api.themoviedb.org/3/trending/tv/week?api_key=1cf50e6248dc270629e802686245c2c8&sort=vote_average")
   /* Open when someone clicks on the span element */
 function getTop10Movies() {
-  fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=1cf50e6248dc270629e802686245c2c8&sort=vote_average")
+  fetch("https://api.themoviedb.org/3/trending/tv/week?api_key=1cf50e6248dc270629e802686245c2c8&sort=vote_average")
   .then(response => response.json())
   .then(data => {
     data.results.sort((a,b) => (a.vote_average > b.vote_average)? -1 : 1 )
@@ -125,7 +113,7 @@ function getTop10Movies() {
         // today.setHours(-24 * (day - 1));   // Set the hours to day number minus 1
         movieEl.innerHTML = `
         <div class="abc">
-        <h1 class="Top10">Top 10 Movies lists</h1> <h2 class="update">Last Update: ${dateStr}</h2>
+        <h1 class="Top10">Top 10 TV Shows lists</h1> <h2 class="update">Last Update: ${dateStr}</h2>
         <div class="d-flex justify-content-center">
         <div class="top-1">
         <br>
@@ -133,7 +121,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[0].poster_path? IMG_URL+ data[0].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[0].title}" id="${data[0].id}">
         <div class="movie-info">
-        ${data[0].title}
+        ${data[0].name}
         <span class="${getColor(data[0].vote_average)}">${data[0].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -147,7 +135,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[1].poster_path? IMG_URL+ data[1].poster_path: "http://via.placeholder.com/1080x1580" }"  alt="${data[1].title}" id="${data[1].id}">
         <div class="movie-info">
-        ${data[1].title}
+        ${data[1].name}
         <span class="${getColor(data[1].vote_average)}">${data[1].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -157,7 +145,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[2].poster_path? IMG_URL+ data[2].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[2].title}" id="${data[2].id}">
         <div class="movie-info">
-        ${data[2].title}
+        ${data[2].name}
         <span class="${getColor(data[2].vote_average)}">${data[2].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -170,7 +158,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[3].poster_path? IMG_URL+ data[3].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[3].title}" id="${data[3].id}">
         <div class="movie-info">
-        ${data[3].title}
+        ${data[3].name}
         <span class="${getColor(data[3].vote_average)}">${data[3].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -180,7 +168,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[4].poster_path? IMG_URL+ data[4].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[4].title}" id="${data[4].id}">
         <div class="movie-info">
-        ${data[4].title}
+        ${data[4].name}
         <span class="${getColor(data[4].vote_average)}">${data[4].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -190,7 +178,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[5].poster_path? IMG_URL+ data[5].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[5].title}" id="${data[5].id}">
         <div class="movie-info">
-        ${data[5].title}
+        ${data[5].name}
         <span class="${getColor(data[5].vote_average)}">${data[5].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -203,7 +191,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[6].poster_path? IMG_URL+ data[6].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[6].title}" id="${data[6].id}">
         <div class="movie-info">
-        ${data[6].title}
+        ${data[6].name}
         <span class="${getColor(data[6].vote_average)}">${data[6].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -213,7 +201,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[7].poster_path? IMG_URL+ data[7].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[7].title}" id="${data[7].id}">
         <div class="movie-info">
-        ${data[7].title}
+        ${data[7].name}
         <span class="${getColor(data[7].vote_average)}">${data[7].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -223,7 +211,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[8].poster_path? IMG_URL+ data[8].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[8].title}" id="${data[8].id}">
         <div class="movie-info">
-        ${data[8].title}
+        ${data[8].name}
         <span class="${getColor(data[8].vote_average)}">${data[8].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -233,7 +221,7 @@ function getTop10Movies() {
         <div class="movies">
         <img src="${data[9].poster_path? IMG_URL+ data[9].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[9].title}" id="${data[9].id}">
         <div class="movie-info">
-        ${data[9].title}
+        ${data[9].name}
         <span class="${getColor(data[9].vote_average)}">${data[9].vote_average.toFixed(1)}</span>
         </div>
         </div>
@@ -258,7 +246,7 @@ function getTop10Movies() {
         })
         document.getElementById(data[2].id).addEventListener('click', () => {
           let id = data[2].id
-          console.log(id) 
+          console.log(id)
           getMovieDetails(id)
         })
         document.getElementById(data[3].id).addEventListener('click', () => {
@@ -315,7 +303,7 @@ const overlayContent = document.getElementById('overlay-content');
 /* Open when someone clicks on the span element */
 /* Open when someone clicks on the span element */
 function getMovieDetails(id) {
-  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+  fetch(BASE_URL + '/tv/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
   //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
   .then(movieData => {
   console.log(movieData);
@@ -328,8 +316,9 @@ function getMovieDetails(id) {
 
 
 function showMovieDetails(movieData) {
-  const {overview, release_date,poster_path,title,original_language,tagline,vote_average,directors,popularity,adult
-    ,status, id,genres,name,videos_results,site,videos,credits,vote_count,similar,index} = movieData;
+  const { overview, release_date, poster_path, title, original_language, tagline, vote_average, directors, popularity, adult
+   , status, id, genres, name, videos_results, site, videos, credits, vote_count, similar, index, number_of_episodes,number_of_seasons,first_air_date,
+  last_air_date } = movieData;
   genres.forEach(genresType);
   document.getElementById("myNav").style.width = "100%";
   const movieE2 = document.createElement('div');
@@ -346,17 +335,19 @@ function showMovieDetails(movieData) {
   </div>
   <div class="col-6">
   <div class="contents">
-  <p class="Title">Title:</p><p class="content">${title}</p> 
+  <p class="Title">Title:</p><p class="content">${name}</p> 
   <p class="Title">Genre:</p><p class="content">${genres}</</p>
-  <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} /  ${vote_count}</p>
-  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p> 
+  <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} / ${vote_count}</p>
+  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p>
+  <p class="Title">Number of Episodes:</p><p class="content">${number_of_episodes}</</p>
+  <p class="Title">Number of Seasons:</p><p class="content">${number_of_seasons}</</p>
   <p class="Title">Language:<p class="content">${original_language}</p>
   <p class="Title">Status: </p> <p class="content">${status} </p>
   <p class="Title">Tagline: </p><p class="content">"${tagline}"</p>
   <p class="Title">Overview: </p><p class="content">${overview} </p>
-  <p class="Title">Released Date:  </p><p class="content">${release_date}</p>
-  <p class="Title">Actor/Actress:</p><p class="content">No info provided.</p>
-
+  <p class="Title">Released Date || Last Updated Date :  </p><p class="content">${first_air_date}  ||  ${last_air_date}</p>
+  <p class="Title">Actor/Actress:</p>
+  <p class="Title">Actor/Actress:</p>  <p class="content">No info provided.</p>
   <br>
   <div class="buttons">
   <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
@@ -393,7 +384,7 @@ function showMovieDetails(movieData) {
 </div>
 </div>
   `
-  } else
+  }
   movieE2.innerHTML=
   `
   <div id="focus">
@@ -404,15 +395,17 @@ function showMovieDetails(movieData) {
   </div>
   <div class="col-6">
   <div class="contents">
-  <p class="Title">Title:</p><p class="content">${title}</p> 
+  <p class="Title">Title:</p><p class="content">${name}</p> 
   <p class="Title">Genre:</p><p class="content">${genres}</</p>
-  <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} /  ${vote_count}</p>
-  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p> 
+  <p class="Title">Rating / TotalVoteCount :</p><p class="content">${vote_average} / ${vote_count}</p>
+  <p class="Title">Adult :</p><p class="content ${test(adult)}">${response.message}</p>
+  <p class="Title">Number of Episodes:</p><p class="content">${number_of_episodes}</</p>
+  <p class="Title">Number of Seasons:</p><p class="content">${number_of_seasons}</</p>
   <p class="Title">Language:<p class="content">${original_language}</p>
   <p class="Title">Status: </p> <p class="content">${status} </p>
   <p class="Title">Tagline: </p><p class="content">"${tagline}"</p>
   <p class="Title">Overview: </p><p class="content">${overview} </p>
-  <p class="Title">Released Date:  </p><p class="content">${release_date}</p>
+  <p class="Title">Released Date || Last Updated Date :  </p><p class="content">${first_air_date}  ||  ${last_air_date}</p>
   <p class="Title">Actor/Actress:</p>
   <p class="content">1)${credits.cast[0].name} <text id="actas"> act as</text> "${credits.cast[0].character}"
   <p class="content">2)${credits.cast[1].name} <text id="actas"> act as</text> "${credits.cast[1].character}"
@@ -420,7 +413,6 @@ function showMovieDetails(movieData) {
   <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[0].profile_path}" alt="${credits.cast[0].name}">
   <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[1].profile_path}" alt="${credits.cast[1].name}">
   <img class="image"src="https://image.tmdb.org/t/p/w200/${credits.cast[2].profile_path}" alt="${credits.cast[2].name}">
-  </p>
   <br>
   <div class="buttons">
   <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
@@ -435,21 +427,21 @@ function showMovieDetails(movieData) {
     <div class="col-sm">
     <img class="similarimg" id="${similar.results[0].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[0].backdrop_path}" alt="${similar.results[0].title}">
             <div class="movie-info">
-                <h3>${similar.results[0].title}</h3>
+                <h3>${similar.results[0].name}</h3>
                 <span class="${getColor(similar.results[0].vote_average)}">${similar.results[0].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
     <img class="similarimg" id="${similar.results[3].id}" src="https://image.tmdb.org/t/p/w400/${similar.results[3].backdrop_path}" alt="${similar.results[3].title}">
             <div class="movie-info">
-                <h3>${similar.results[3].title}</h3>
+                <h3>${similar.results[3].name}</h3>
                 <span class="${getColor(similar.results[3].vote_average)}">${similar.results[3].vote_average.toFixed(1)}</span>
             </div>
     </div>
     <div class="col-sm">
     <img class="similarimg"  id="${similar.results[5].id}"src="https://image.tmdb.org/t/p/w400/${similar.results[5].backdrop_path}" alt="${similar.results[5].title}">
             <div class="movie-info">
-                <h3>${similar.results[5].title}</h3>
+                <h3>${similar.results[5].name}</h3>
                 <span class="${getColor(similar.results[5].vote_average)}">${similar.results[5].vote_average.toFixed(1)}</span>
             </div>
     </div>
@@ -517,7 +509,7 @@ function playVideo(keys){
 }
 
 function getMovieDetailss(id) {
-  fetch(BASE_URL + '/movie/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
+  fetch(BASE_URL + '/tv/'+id+'?'+API_KEY + '&append_to_response=videos,credits,similar').then(res => res.json())
   //https://api.themoviedb.org/3/movie/508?api_key=1cf50e6248dc270629e802686245c2c8
   .then(movieData => {
   console.log(movieData);
