@@ -51,22 +51,13 @@ class UserController extends Controller
 
         return redirect()->route('userProfile');
     }
-
-    public function updatePassword(){
-        $r=request();
-        $users= User::find($r->userID);
-        $users->pswd2=$r->password;
-        $users->save();
-
-        return redirect()->route('userProfile');
-    }
-
-    public function showChangePasswordGet($id) {
+    
+    public function editPassword($id) {
         $users=User::all()->where('id',$id);
         return view('editPassword')->with('users',$users);
     }
 
-    public function changePasswordPost(Request $request) {
+    public function updatePassword(Request $request) {
         if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
             // The passwords matches
             return redirect()->back()->with("error","Your current password does not matches with the password.");
