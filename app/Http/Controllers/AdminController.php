@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\User;
+use App\Models\Content;
+use App\Models\Comment;
 use Session;
 
 class AdminController extends Controller
@@ -43,20 +45,34 @@ class AdminController extends Controller
     public function showComment(){
         $comments = DB::table('comments')
         ->leftjoin('users','users.id','=','comments.userID')
-        ->select('comments.*','users.name as userName')
         ->leftjoin('contents','contents.id','=','comments.ContentID')
-        ->select('comments.*','contents.ctDetail as ctDetail')
+        ->select('comments.*','contents.ctDetail as ctDetail','users.name as userName')
         ->latest()
         ->get();
         return view('backend.commentList')->with('comments',$comments);
     }
 
+    public function deleteComment($id){
+        $comment=Comment::find($id);
+        $comment->delete();
+        Session::flash('success',"Comment deleted successfully!");
+        return redirect()->route('admin.commentList');
+    }
+
     public function showPost(){
-        $comments = DB::table('comments')
-        ->leftjoin('users','users.id','=','comments.userID')
-        ->select('comments.*','users.name as userName')
+        $posts = DB::table('contents')
+        ->leftjoin('users','users.id','=','contents.userID')
+        ->select('contents.*','users.name as userName')
         ->latest()
         ->get();
-        return view('backend.commentList')->with('comments',$comments);
+        return view('backend.postList')->with('posts',$posts);
     }
+    public function deletePost($id){
+        $post=Content::find($id);
+        $post->delete();
+        Session::flash('success',"Post deleted successfully!");
+        return redirect()->route('admin.postList');
+    }
+    
 }
+

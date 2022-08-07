@@ -45,38 +45,6 @@
 	<br/></br>
 </div>
 </div>
-	<div class="container-fluid">
-
-<div class="container-fluid">
-
-  
-
-
-   <!-- DataTables Example -->
-   <div class="card mb-3">
-    <div class="card-header">
-      <i class="bx bx-table"></i> Admins List
-    </div>
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>admin</th>
-              <th>Created At</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-        
-  
-          </tbody>
-        </table>
-      </div>
-    </div>
 </div>
 
 </div>

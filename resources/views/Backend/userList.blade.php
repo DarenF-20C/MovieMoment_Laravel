@@ -31,7 +31,7 @@
               <th>ID</th>
               <th>Name</th>
               <th>user</th>
-              <th>Created At</th>
+              <th>Phone<th>
               <th>Action</th>
             </tr>
           </thead>
@@ -43,7 +43,7 @@
               <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->created_at}}</td>
+                <td>{{$user->phone}}</td>
                 <td>
                   <a class="user-btn" href="{{route('admin.deleteUser',['id'=>$user->id])}}" onClick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i> Delete</a>
               </td>

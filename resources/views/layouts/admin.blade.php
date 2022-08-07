@@ -79,20 +79,6 @@
        </a>
        <span class="tooltip">Reward</span>
      </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-history' ></i>
-         <span class="links_name">History</span>
-       </a>
-       <span class="tooltip">History</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-edit' ></i>
-         <span class="links_name">Post</span>
-       </a>
-       <span class="tooltip">Post</span>
-     </li>
      <li class="profile">
          <div class="profile-details">
           <img src="/images/user/{{Auth::user()->userAvatar}}">
