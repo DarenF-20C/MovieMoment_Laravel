@@ -336,7 +336,6 @@ function showMovieDetails(movieData) {
   <br>
   <div class="buttons">
   <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
-  <button class="btn btn-sm  onClick="rateMovies()"> Rate the movie </button>
   <button class="btn btn-sm" onClick="closeNav()">Back</button>
   </div>
   </div>
@@ -399,7 +398,6 @@ function showMovieDetails(movieData) {
   <br>
   <div class="buttons">
   <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
-  <button class="btn btn-sm  onClick="rateMovies()"> Rate the movie </button>
   <button class="btn btn-sm" onClick="closeNav()">Back</button>
   </div>
   </div>

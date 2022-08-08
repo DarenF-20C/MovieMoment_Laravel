@@ -35,7 +35,7 @@
             @endforeach
         @else
             <div class="col-md-12 text-center mt-4">
-                <p class="card-tt"><i>No reward has been redeem. Work hard to earn points and claim ur rewards!</i></p>
+                <p class="card-tt"><i>No reward has been redeemed. Work hard to earn points and claim your rewards!</i></p>
             </div>
         @endif
     </div>
