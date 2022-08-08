@@ -36,7 +36,7 @@
         <!-- M&M Logo-->
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="font-family:Verdana, Geneva, Tahoma, sans-serif">
             <a class="navbar-brand" href="{{url('home')}}">
-              <img src="images/logoHeader.jpg" height="50px" alt="M&M Logo"/>
+              <img src="/images/logoHeader.jpg" height="50px" alt="M&M Logo"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
