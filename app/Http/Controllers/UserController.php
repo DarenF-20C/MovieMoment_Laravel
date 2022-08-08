@@ -53,7 +53,7 @@ class UserController extends Controller
         $users->date=$r->date;
         $users->save();
 
-        return redirect()->route('userProfile');
+        return redirect()->route('home');
     }
     
     public function editPassword($id) {
