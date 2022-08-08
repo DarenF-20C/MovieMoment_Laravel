@@ -73,14 +73,10 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Select Your Gender') }}</label>
 
                             <div class="col-md-6">
-                            <div class="form-check form-check-inline" >
-                                <input class="form-check-input" type="radio" name="gender" value="male">
-                                <label class="form-check-label" for="male">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="female">
-                                <label class="form-check-label" for="female">Female</label>
-                            </div>
+                            <select name="gender" id="gender">
+                                <option option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                             </div>
                         </div>
 
