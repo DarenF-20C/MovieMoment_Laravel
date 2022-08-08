@@ -34,14 +34,18 @@ class UserController extends Controller
     public function updateProfile(){
         $r=request();
         $users= User::find($r->userID);
-        if($r->file('image')!=''){
-            //upload image before add to DB
-            $image=$r->file('userAvatar');
-            $imageName=date('YmdHi').$image->getClientOriginalName();
-            $image->move('images/user',$imageName);
-            $users->image=$imageName;                
+        $input = $r->all();
+   
+        if ($image = $r->file('userAvatar')) {
+            $destinationPath = 'images/user';
+            $userImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $userImage);
+            $input['userAvatar'] = "$userImage";
+        }else{
+            unset($input['userAvatar']);
         }
-
+           
+        $users->update($input);
         $users->name=$r->name;
         $users->email=$r->email;
         $users->gender=$r->gender;
@@ -49,7 +53,7 @@ class UserController extends Controller
         $users->date=$r->date;
         $users->save();
 
-        return redirect()->route('userProfile');
+        return redirect()->route('home');
     }
     
     public function editPassword($id) {
