@@ -1,47 +1,73 @@
-@extends('layouts.app')
-
+@extends('layouts.admin')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+@push('js')
+<script src="{{asset('js/dataTable.js')}}" defer></script>
+@endpush
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <!-- Content -->
+    <div class="container-fluid">
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+<div class="container-fluid">
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb" style="background-color: #FFF8DC;">
+    <li class="breadcrumb-item">
+      <a href="{{route('admin.home')}}">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">Post-Lists</li>
+  </ol>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+   <!-- DataTables Example -->
+   <div class="card mb-3">
+    <div class="card-header">
+      <i class="bx bx-table"></i> Post List
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User Name</th>
+              <th>Content Detail</th>
+              <th>Movie ID</th>
+              <th>Created Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+          <tbody>
+          @if(count($posts))
+              @foreach($posts as $post)
+              <tr>
+              <td>{{$post->id}}</td>
+                <td>{{$post->userName}}</td>
+                <td>{{$post->ctDetail}}</td>
+                <td>{{$post->MovieID}}</td>
+                <td>Date: {{$post->ctDate}}  <br> Time: {{$post->ctTime}}</td>
+                <td>
+                  <a class="admin-btn" href="{{route('admin.deletePost',['id'=>$post->id])}}" onClick="return confirm('Are you sure to delete?')" onClick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i> Delete</a>
+              </td>
+              </tr>
+              @endforeach
+              @else
+            <tr>
+              <th>--</th>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+            </tr>
+        @endif
+  
+          </tbody>
+        </table>
+      </div>
     </div>
 </div>
+
+</div>
+<!-- /.container-fluid -->
+
 @endsection
