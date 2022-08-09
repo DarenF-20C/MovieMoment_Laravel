@@ -94,7 +94,7 @@
                </a>
                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
                 <li>
-                    <a class="dropdown-item" href="#">My profile</a>
+                    <a class="dropdown-item" href="{{ route('userProfile') }}">My profile</a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="#">Settings</a>
