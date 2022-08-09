@@ -12,6 +12,11 @@ use Session;
 class AdminController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function showAdmin(){
         $admins = DB::table('users')
         ->where('is_admin','=','1')
