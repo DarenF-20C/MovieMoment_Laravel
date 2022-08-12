@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 
 // ----------------------------------------Home/Nav Route----------------------------------------
 Route::get('/', function ()                     {return view('welcome');});
-Route::get('/contactUs', function ()            {return view('contactUs');});
 Route::get('/top10', function ()                {return view('top10');})->name('top10');
 Route::get('/top10TV', function ()                {return view('Top10TV');})->name('top10TV');
 Route::get('/movieRecommendation', function ()  {return view('movieRecommendation');})->name('movieRecommendation');
@@ -20,6 +19,7 @@ Route::post('/updateMembers', [App\Http\Controllers\MemberController::class, 'up
 Route::get('/editMembers/{id}', [App\Http\Controllers\MemberController::class, 'edit'])->name('editMembers');
 Route::get('/contactUs', [App\Http\Controllers\ContactUsFormController::class, 'index'])->name('contactUs');
 Route::post('/contactUs', [App\Http\Controllers\ContactUsFormController::class, 'save'])->name('contact.store');
+Route::get('/userGuide', function ()             {return view('userGuide');});
 // ----------------------------------------Home/Nav Route----------------------------------------
 
 // ----------------------------------------Reward System [Users]----------------------------------------
@@ -65,6 +65,7 @@ Route::post('/admin/updateRewards',[App\Http\Controllers\RewardController::class
 
 //-----------------------------------------User Profile----------------------------------------
 Route::get('/userProfile/{id}',[App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
+Route::get('/userProfile',[App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
 Route::get('/editProfile/{id}',[App\Http\Controllers\UserController::class, 'editProfile'])->name('editProfile');
 Route::post('/updateProfile',[App\Http\Controllers\UserController::class, 'updateProfile'])->name('updateProfile');
 Route::get('/editPassword/{id}', [App\Http\Controllers\UserController::class, 'editPassword'])->name('editPassword');

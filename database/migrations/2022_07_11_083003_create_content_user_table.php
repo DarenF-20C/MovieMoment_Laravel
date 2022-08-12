@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('date')->nullable;
             $table->boolean('is_admin')->default('0');
             $table->string('password');
+            $table->string('points');
             $table->integer('status')->default('1');
             $table->string('userAvatar')->default('user.jpg');
             $table->rememberToken();
