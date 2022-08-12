@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\User;
 use Auth;
+use Hash;
 
 class UserController extends Controller
 {
-    public function userProfile($id){
-        $users=User::all()->where('id',$id);
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    public function userProfile(){
+        $users=User::all()->where('id', Auth::id());
 
         $totalComment = DB::table('comments')
         ->leftjoin('users','users.id','=','comments.userID')
@@ -22,18 +28,25 @@ class UserController extends Controller
         ->where('contents.userID','=',Auth::id())
         ->count();
 
-        return view('userProfile', compact('totalComment','totalPost'))->with('users',$users);
+        
+        $totalPoint = DB::table('users')
+        ->where('users.id','=',Auth::id())
+        ->select('users.point')
+        ->get();
+
+        return view('userProfile', compact('totalComment','totalPost'),array('user'=>Auth::user()))->with('users',$users);
 
     }
-    
-    public function editProfile($id){
-        $users=User::all()->where('id',$id);
+
+    public function editProfile(){
+        $users=User::all()->where('id',Auth::id());
         return view('editProfile')->with('users',$users);
     }
 
     public function updateProfile(){
         $r=request();
         $users= User::find($r->userID);
+
         $input = $r->all();
    
         if ($image = $r->file('userAvatar')) {
@@ -55,9 +68,10 @@ class UserController extends Controller
 
         return redirect()->route('home');
     }
-    
-    public function editPassword($id) {
-        $users=User::all()->where('id',$id);
+
+
+    public function editPassword() {
+        $users=User::all()->where('id',Auth::id());
         return view('editPassword')->with('users',$users);
     }
 
