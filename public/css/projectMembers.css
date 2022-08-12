@@ -27,14 +27,17 @@ body{
 
 .card-text {
     color:black;
-    font-family:'Libre Franklin', sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align:center;
     padding:10px;
+    font-size:25px;
+    color:rgb(64, 63, 63);
 }
 
 img.chathead {
     width: 340px;
     height: 350px;
+    border-radius:50%;
 }
 
 .my-2 {

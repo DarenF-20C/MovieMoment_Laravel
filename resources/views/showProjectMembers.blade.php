@@ -14,14 +14,13 @@
 <div class="card">
       <div class="card-body">
       <img class="chathead" src="https://img.tukuppt.com/png_preview/00/46/97/jPISSbfuj7.jpg!/fw/780">
-        <h5 class="card-title"> Project Member 1 </h5>
+        <h5 class="card-title"> Loh Chia Heung </h5>
         <p class="card-text">     
-        Name: Loh Chia Heung <br>
-        Student ID: D200262C <br>
-        Batch: IT-20C <br>
-        H/P: 012-34567891 <br>
-        Hotmail:lohchiaheung@gmail.com<br>
-        Location:Johor Bahru, Johor
+        <strong>Student ID:</strong> D200262C <br>
+        <strong>Batch:</strong> IT-20C <br>
+        <strong>H/P:</strong> 018-4679188 <br>
+        <strong>Hotmail:</strong>lohchiaheung@gmail.com<br>
+        <strong>Location:</strong>Johor Bahru, Johor
        </p>
     </div>
   </div> 
@@ -31,14 +30,13 @@
 <div class="card">
       <div class="card-body">
       <img class="chathead" src="https://img.tukuppt.com/png_preview/00/46/97/LwhsdW43FZ.jpg!/fw/780">
-        <h5 class="card-title"> Project Member 2 </h5>
+        <h5 class="card-title"> Teh Jun Yuan </h5>
         <p class="card-text">     
-        Name: Teh Jun Yuan <br>
-        Student ID: D200248C <br>
-        Batch: IT-20C <br>
-        H/P: 012-34567891 <br>
-        Hotmail:Junyuan741@gmail.com<br>
-        Location:Johor Bahru, Johor
+        <strong>Student ID:</strong> D200248C <br>
+        <strong>Batch:</strong> IT-20C <br>
+        <strong>H/P:</strong> 018-381 7870 <br>
+        <strong>Hotmail:</strong>Junyuan741@gmail.com<br>
+        <strong>Location:</strong>Johor Bahru, Johor
        </p>
     </div>
   </div> 
@@ -47,15 +45,14 @@
 <div class="col-sm-4"> 
 <div class="card">
       <div class="card-body">
-      <img class="chathead" src="https://bpic.51yuansu.com/pic3/cover/03/47/84/5badd4424da07_610.jpg">
-        <h5 class="card-title"> Project Member 3 </h5>
+      <img class="chathead" src="/images/ghost.jpg">
+        <h5 class="card-title"> Fang Xiang Lun </h5>
         <p class="card-text"> 
-        Name: Fang Xiang Lun <br>
-        Student ID: D200221C <br>
-        Batch: IT-20C <br>
-        H/P: 012-34567891 <br>
-        Hotmail:D200221C@sc.edu.my<br>
-        Location:Johor Bahru, Johor
+        <strong>Student ID:</strong> D200221C <br>
+        <strong>Batch:</strong> IT-20C <br>
+        <strong>H/P:</strong> 016-761 1952 <br>
+        <strong>Hotmail:</strong>D200221C@sc.edu.my<br>
+        <strong>Location:</strong>Johor Bahru, Johor
        </p>
     </div>
   </div> 

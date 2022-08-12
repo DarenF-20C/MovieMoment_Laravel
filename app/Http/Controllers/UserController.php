@@ -29,9 +29,9 @@ class UserController extends Controller
         ->count();
 
         
-        $totalPoint = DB::table('users')
+        $totalPoints = DB::table('users')
         ->where('users.id','=',Auth::id())
-        ->select('users.point')
+        ->select('users.points')
         ->get();
 
         return view('userProfile', compact('totalComment','totalPost'),array('user'=>Auth::user()))->with('users',$users);

@@ -19,7 +19,7 @@ Route::post('/updateMembers', [App\Http\Controllers\MemberController::class, 'up
 Route::get('/editMembers/{id}', [App\Http\Controllers\MemberController::class, 'edit'])->name('editMembers');
 Route::get('/contactUs', [App\Http\Controllers\ContactUsFormController::class, 'index'])->name('contactUs');
 Route::post('/contactUs', [App\Http\Controllers\ContactUsFormController::class, 'save'])->name('contact.store');
-Route::get('/userGuide', function ()             {return view('userGuide');});
+Route::get('/userGuide', function ()             {return view('userGuide');})->name('userGuide');
 // ----------------------------------------Home/Nav Route----------------------------------------
 
 // ----------------------------------------Reward System [Users]----------------------------------------

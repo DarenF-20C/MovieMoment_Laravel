@@ -59,7 +59,8 @@
                   <p>
                   1) Movie Community       - A place for users to chitchatting about movies with each others.<br>
                   2) Movie Recommendation  - A place for users to search for their favorite movies.  <br>
-                  3) Top 10 Movie (Weekly) - A place for users to look for highly rated movies.<br>
+                  3) Top 10 Movie (Daily) - A place for users to look for highly rated movies.<br>
+                  4) Rewards System - A place for users to redeem valuable rewards.<br>
                   To be continued...
                   </p>
                   </div>
