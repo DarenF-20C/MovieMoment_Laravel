@@ -72,7 +72,8 @@ h1 {
 }
 
 .Top10{
-    color: #ff8036;
+    color:#fc8138;
+    text-shadow: rgb(180, 57, 0) 0.05em 0.05em 0.05em;
     font-family: Impact, fantasy;
     text-align:center;
     font-size:58px;

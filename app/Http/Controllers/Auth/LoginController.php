@@ -50,7 +50,7 @@ class LoginController extends Controller
 
         if(! auth()->attempt($credentials)){
             return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+                ->with('error','Email-Address Or Password Are Wrong.');
         }
 
         if (auth()->user()->is_admin == 1) {
