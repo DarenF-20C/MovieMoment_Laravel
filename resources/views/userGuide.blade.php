@@ -237,7 +237,7 @@
         -All of our movie data is fetched from <Strong>TMDb API.</strong> <br>
         Link: <a href="https://developers.themoviedb.org/3/getting-started/introduction">TMDb API</a> <br>
         -We would like to say a big thanks to TMDb for allowing us to use its powerful API. 
-        Its provide a large amount of movie data and information for us. 
+        Its provide a large amount of movie data and information for us. <br>
         -Until now (12 August 2022), TMDb has owned
         <strong>729,701 movies</strong>,<strong> 135,186 TV Shows</strong>,<strong> 215,443 TV Season</strong> and
         <strong> 3,322,819 TV Episodes. </strong>    
@@ -267,7 +267,7 @@
       <div class="accordion-body"> 
       <h3>Movie Recommendation Page</h3>
       <strong> Question 1: Click "Know-More" button to view movie details but nothing has been shown?</strong> <br>
-      <strong> --> </strong> Details of the movies are not completed or some bug has occured. Please contact our admins as soon as possible. Sorry for inconvenience.
+      <strong> --> </strong> Details of the movies are not completed or some bug has occured. Please contact our admins as soon as possible. Sorry for inconvenience. <br>
       <strong> Question 2: How to search movies?</strong> <br>
       <strong> --> </strong> Input the name of the movies that you want to view in the search bar which the message "Search for your movie" is placed.<br>
       <br>

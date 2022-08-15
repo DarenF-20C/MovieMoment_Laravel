@@ -64,9 +64,8 @@ Route::post('/admin/updateRewards',[App\Http\Controllers\RewardController::class
 // ----------------------------------------Admin Route----------------------------------------
 
 //-----------------------------------------User Profile----------------------------------------
-Route::get('/userProfile/{id}',[App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
-Route::get('/userProfile',[App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
-Route::get('/editProfile/{id}',[App\Http\Controllers\UserController::class, 'editProfile'])->name('editProfile');
+Route::get('/userProfile}',[App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
+Route::get('/editProfile}',[App\Http\Controllers\UserController::class, 'editProfile'])->name('editProfile');
 Route::post('/updateProfile',[App\Http\Controllers\UserController::class, 'updateProfile'])->name('updateProfile');
-Route::get('/editPassword/{id}', [App\Http\Controllers\UserController::class, 'editPassword'])->name('editPassword');
+Route::get('/editPassword}', [App\Http\Controllers\UserController::class, 'editPassword'])->name('editPassword');
 Route::post('/updatePassword', [App\Http\Controllers\UserController::class, 'updatePassword'])->name('updatePassword');

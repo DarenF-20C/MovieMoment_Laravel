@@ -11,7 +11,7 @@
         <br><br>
         <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#" class="main">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{url('home')}}" class="main">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">My Profile</li>
         </ol>
         </nav>
@@ -43,8 +43,21 @@
                   </a>
                   </li>
                   </ul>
+              </div><br>
+              <div class="row gutters-sm">
+                <div class="col-sm-12 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                    <h4 class="mb-1">Achievement:</h6>
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">My total posts: </i>&nbsp {{$totalPost}}</h6>
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">My total comments: </i>&nbsp{{$totalComment}}</h6>
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">My total points: </i>&nbsp{{$user->points}}</h6>
+                  </div>
+                </div>
               </div>
-            </div>
+               </div>
+               </div>
+            
             <div class="col-md-8">
               <div class="card mb-3">
                 <div class="card-body">
@@ -95,23 +108,13 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="{{ route('editProfile',['id'=>$user->id])}}" style="item-align:right;">Edit Profile</a>
+                      <a class="btn btn-info " target="__blank" href="{{route('editProfile')}}" style="item-align:right;">Edit Profile</a>
                     </div>
                   </div>
                 </div>
               </div>
         @endforeach
-              <div class="row gutters-sm">
-                <div class="col-sm-12 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">Total Posts: </i>&nbsp {{$totalPost}}</h6>
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">Total Comments: </i>&nbsp{{$totalComment}}</h6>
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">Total Points: </i>&nbsp{{$user->points}}</h6>
-                  </div>
-                </div>
-              </div>
-</div>
+
 
 
 

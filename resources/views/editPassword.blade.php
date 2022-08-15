@@ -58,7 +58,7 @@
                         </div>
                         <hr>
                         <div class="form-group">
-                            <label for="new-password-confirm" class="col-md-4 control-label">Confirm New Password:</label>
+                            <label for="new-password-confirm" class="col-md-6 control-label">Confirmed New Password:</label>
 
                             <div class="col-md-6">
                                 <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" placeholder="Please enter again your new password" required>
@@ -77,5 +77,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

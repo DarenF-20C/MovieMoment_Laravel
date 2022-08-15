@@ -66,7 +66,7 @@ class UserController extends Controller
         $users->date=$r->date;
         $users->save();
 
-        return redirect()->route('home');
+        return redirect()->route('userProfile');
     }
 
 
@@ -78,7 +78,7 @@ class UserController extends Controller
     public function updatePassword(Request $request) {
         if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
             // The passwords matches
-            return redirect()->back()->with("error","Your current password does not matches with the password.");
+            return redirect()->back()->with("error","Your current password does not match with the password.");
         }
 
         if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
