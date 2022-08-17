@@ -49,7 +49,7 @@
                   <p>
                   1) Provide a platform for users to share their views on movies with friends. <br>
                   2) Provide movie recommendations for users to occupy their free time. <br>
-                  3) Increase the rate of efficiency of users on searching for their favorite types of movies.
+                  3) Provide movie trends for users to follow up.
                   </p> 
                   </div>
             </div>

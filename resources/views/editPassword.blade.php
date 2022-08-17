@@ -9,9 +9,7 @@
         <div class="col-md-11 offset-2">
             <div class="panel panel-default">
                 <h2 class="title">Change password</h2>
-
-                <div class="panel-body">
-                    @if (session('error'))
+                @if (session('error'))
                         <div class="alert alert-danger">
                             {{ session('error') }}
                         </div>
@@ -21,11 +19,14 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    @if($errors)
+                    <!-- @if($errors)
                         @foreach ($errors->all() as $error)
-                            <div class="alert alert-danger">{{ $error }}</div>
+                            <div class="alert alert-danger">
+                                {{ $error }}
+                            </div>
                         @endforeach
-                    @endif
+                    @endif -->
+                <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('updatePassword') }}">
                         {{ csrf_field() }}
                         <hr>
@@ -37,7 +38,7 @@
 
                                 @if ($errors->has('current-password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('current-password') }}</strong>
+                                        <strong class="errors">{{ $errors->first('current-password') }}</strong>
                                     </span>
                                 @endif
                             </div>

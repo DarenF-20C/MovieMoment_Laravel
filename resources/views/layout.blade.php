@@ -86,7 +86,7 @@
  <!-- Right elements of navbar -->
  <div class="d-flex align-items-center ">
             @guest
-               <a href="{{url('login')}}" class="m-r-15 text-inverse-lighter"><i class="fas fa-user"></i></a>
+            <a href="{{url('login')}}" class="nav-link text-inverse-lighter" style="text-decoration:none;color:white;"><i class="fas fa-sign-in-alt">Login</i></a>
             @else
                <!-- Login Avatar -->
                <a class="dropdown-toggle d-flex align-items-center hidden-arrow avatar" href="#" id="navbarDropdownMenuLink2" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
