@@ -44,6 +44,7 @@ class RedeemRewardsController extends Controller
     public function myReward(){
         return view('myReward');
     }
+    
     public function showMyReward(){
         $showReward = DB::table('redeem_rewards')
         ->where('userID','=',Auth::id())

@@ -84,8 +84,16 @@
                     </div>
                     <div class="col-md-6" >
                       <select name="gender" id="gender" value="{{$user->gender}}">
-                        <option option value="Male">Male</option>
-                        <option value="Female">Female</option>
+                      @if ($user->gender == "F")
+                      <option value="{{$user->gender}}" selected>Female</option>
+                      <option value="M">Male</option>
+                      @endif
+                      if ($user->gender)
+                      @if ($user->gender == "M")
+                      <option value="{{$user->gender}}" selected>Male</option>
+                      <option value="F">Female</option>
+                      if ($user->gender)
+                      @endif
                       </select>
                     </div>
                   </div>

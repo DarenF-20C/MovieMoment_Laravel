@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/userGuide.css')}}">
 @endpush
 <body> <br><br>
-<h1 class="title"> User Guide // FAQ </h1>
+<h1 class="title"> User Guide / FAQ </h1>
 <!-- Item 1 : Movie Moment -->
 <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
