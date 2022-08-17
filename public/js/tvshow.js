@@ -183,7 +183,7 @@ function getMovies(url) {
                 next.classList.remove('disabled')
             }
 
-            tagsEl.scrollIntoView({ behavior: 'smooth' })
+            //tagsEl.scrollIntoView({ behavior: 'smooth' })
 
         } else {
             main.innerHTML = `<h1 class="no-results">No Results Found</h1>`
@@ -196,12 +196,14 @@ function getMovies(url) {
 prev.addEventListener('click', () => {
     if (prevPage > 0) {
         pageCall(prevPage);
+        form.scrollIntoView({behavior : 'smooth'})
     }
 })
 
 next.addEventListener('click', () => {
     if (nextPage <= totalPages) {
         pageCall(nextPage);
+        form.scrollIntoView({behavior : 'smooth'})
     }
 })
 

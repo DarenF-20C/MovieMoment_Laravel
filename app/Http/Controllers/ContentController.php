@@ -22,17 +22,23 @@ class ContentController extends Controller
         $this->middleware('auth');
     }
 
-    public function getPosts(){
+    public function getPosts(Request $request){
         $user=User::all()->where('id',Auth::id());
+        $users=User::all()->where('id',Auth::id());
 
-        $posts=Content::with('users')
+        $posts=Content::with('comments')
         ->leftjoin('users','contents.UserID','=','users.id')
         ->leftjoin('content_attachments','contents.id','=','content_attachments.ContentID')
         ->select('contents.*','contents.id as pid','users.name','users.userAvatar','content_attachments.*')
         ->orderBy('contents.created_at', 'DESC')
         ->paginate(5);
+        
+        if($request->ajax()){
+            $view=view('data')->with('user',$user)->with('users',$users)->with('posts',$posts)->render();
+            return response()->json(['html'=>$view]);
+        }
 
-        return view('community')->with('user',$user)->with('posts',$posts);
+        return view('community')->with('user',$user)->with('users',$users)->with('posts',$posts);
     }
 
     public function addPost(){

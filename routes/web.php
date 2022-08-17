@@ -43,7 +43,7 @@ Route::post('/addComment', [App\Http\Controllers\CommentController::class, 'addC
 
 // ----------------------------------------Admin Route----------------------------------------
 Auth::routes();
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('/admin/admin-list',[App\Http\Controllers\AdminController::class, 'showAdmin'])->name('admin.adminList')->middleware('is_admin');
 Route::get('/admin/admin-list/remove/Admin/{id}', [App\Http\Controllers\AdminController::class, 'deleteAdmin'])->name('admin.deleteAdmin')->middleware('is_admin');
 Route::get('/admin/user-list',[App\Http\Controllers\AdminController::class, 'showUser'])->name('admin.userList')->middleware('is_admin');

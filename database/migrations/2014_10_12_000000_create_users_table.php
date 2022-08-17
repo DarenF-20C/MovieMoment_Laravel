@@ -18,12 +18,15 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->char('gender',1)->default('M');
+            $table->string('phone');
+            $table->date('date')->nullable;
             $table->boolean('is_admin')->default('0');
             $table->string('password');
-            $table->char('gender',1)->default('M');
-            $table->integer('status')->default('1');
             $table->integer('points')->default('0');
-            $table->string('userAvatar')->default('');
+            $table->integer('dailyLimit')->default('0');
+            $table->integer('status')->default('1');
+            $table->string('userAvatar')->default('user.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

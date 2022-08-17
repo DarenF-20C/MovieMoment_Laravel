@@ -22,7 +22,7 @@
     top:80%;
     left:43%;
     font-family:Georgia, Times New Roman, Times, serif;
-    background-color:#f57226;
+    background-color:#222;
     justify-content: center;
     line-height: 1.5;
     padding: 6px 20px;
@@ -30,11 +30,18 @@
     text-decoration: none;
     border-radius: 100px;
     border-width: 0;
+    border: 2px solid #fc8138;
+  }
+
+  .buttonmain:hover {
+    background-color:rgb(0, 0, 0);
+  }
+
+  .buttonmain a:hover {
+   color:#00cf00;
   }
   
-  .buttonmain:hover {
-    background-color:#00ff00;
-  }
+
   
   .col-md-3 {
     top:20%;
@@ -123,4 +130,8 @@
   
   a:hover {
     color:#fc8138;
+  }
+
+  .hrline {
+    color:whitesmoke;
   }

@@ -195,10 +195,13 @@ function getMovies(url) {
                 next.classList.remove('disabled')
               }
   
-              tagsEl.scrollIntoView({behavior : 'smooth'})
+              //form.scrollIntoView({behavior : 'smooth'})
+
   
           }else{
-              main.innerHTML= `<h1 class="no-results">No Results Found</h1>`
+              main.innerHTML= `
+              <h1 class="no-results">
+              No Results Found.</h1>`
           }
          
       })
@@ -208,12 +211,14 @@ function getMovies(url) {
 prev.addEventListener('click', () => {
     if(prevPage > 0){
       pageCall(prevPage);
+      form.scrollIntoView({behavior : 'smooth'})
     }
   })
   
   next.addEventListener('click', () => {
     if(nextPage <= totalPages){
       pageCall(nextPage);
+      form.scrollIntoView({behavior : 'smooth'})
     }
   })
   
@@ -397,7 +402,8 @@ function showMovieDetails(movieData) {
   </p>
   <br>
   <div class="buttons">
-  <button class="btn btn-sm" id="${videos}">Play Trailer <br> </button> 
+  <button class="btn btn-sm" id="${videos}">Play Trailer
+  <br> </button> 
   <button class="btn btn-sm" onClick="closeNav()">Back</button>
   </div>
   </div>

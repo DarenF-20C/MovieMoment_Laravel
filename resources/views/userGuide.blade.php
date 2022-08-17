@@ -40,7 +40,6 @@
       </div>
     </div>
   </div>
-
 <!-- Item 2 : Movie Recommendation System -->
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingTwo">
@@ -254,6 +253,7 @@
         data-mdb-target="#flush-collapseEight"
         aria-expanded="false"
         aria-controls="flush-collapseEight"
+        id="lasts"
       >
        General Questions // Problems
       </button>
@@ -264,7 +264,7 @@
       aria-labelledby="flush-headingEight"
       data-mdb-parent="#accordionFlushExample"
     >
-      <div class="accordion-body"> 
+      <div class="accordion-body" id="last"> 
       <h3>Movie Recommendation Page</h3>
       <strong> Question 1: Click "Know-More" button to view movie details but nothing has been shown?</strong> <br>
       <strong> --> </strong> Details of the movies are not completed or some bug has occured. Please contact our admins as soon as possible. Sorry for inconvenience. <br>
@@ -288,4 +288,10 @@
 </div>
 <br>
 </body>
+<script>
+const element = document.getElementById("lasts");
+element.addEventListener("click", function() {
+  document.getElementById('flush-collapseEight').scrollIntoView({behavior: "smooth"});
+}); 
+</script>
 @endsection

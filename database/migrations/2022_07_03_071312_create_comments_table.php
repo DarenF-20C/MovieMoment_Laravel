@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->longtext('cmDetail');
             $table->integer('cmLike')->default('0');
-            $table->string('ContentID');
+            $table->string('content_id');
             $table->string('UserID');
             $table->timestamps();
         });

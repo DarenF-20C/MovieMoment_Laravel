@@ -12,10 +12,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -27,25 +23,5 @@ class HomeController extends Controller
         return view('welcome');
     }
 
-    public function adminHome()
-    {
-        $totalUser = DB::table('users')
-        ->where('is_admin','=','0')
-        ->count();
-
-        $totalAdmin = DB::table('users')
-        ->where('is_admin','=','1')
-        ->count();
-
-        $totalComment = DB::table('comments')
-        ->count();
-
-        $totalPost = DB::table('contents')
-        ->count();
-
-        return view('backend.admin-home', compact('totalUser', 'totalAdmin','totalComment','totalPost'));
-
-
-        
-    }
+    
 }

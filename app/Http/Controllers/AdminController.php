@@ -74,5 +74,26 @@ class AdminController extends Controller
         return redirect()->route('admin.postList');
     }
     
+    public function adminHome()
+    {
+        $totalUser = DB::table('users')
+        ->where('is_admin','=','0')
+        ->count();
+
+        $totalAdmin = DB::table('users')
+        ->where('is_admin','=','1')
+        ->count();
+
+        $totalComment = DB::table('comments')
+        ->count();
+
+        $totalPost = DB::table('contents')
+        ->count();
+
+        return view('backend.admin-home', compact('totalUser', 'totalAdmin','totalComment','totalPost'));
+
+
+        
+    }
 }
 

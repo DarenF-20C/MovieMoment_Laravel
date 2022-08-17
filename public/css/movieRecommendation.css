@@ -9,7 +9,7 @@ body{
 }
 
 header{
-    padding:1rem;
+    padding:1%;
     display:flex;
     justify-content: flex-end;
     background-color: #101210;
@@ -145,12 +145,12 @@ main{
 }
 
 .tag.highlight{
-    background-color: rgb(65, 191, 237);
+    background-color: rgb(0, 180, 246);
 }
 
 .no-results{
-    color:white;
-    font-size:35px;
+    color:#00dd00;
+    font-size:50px;
     white-space: nowrap;
 }
 
@@ -191,7 +191,7 @@ main{
     text-align:center;
     margin-left:25%;
     border-radius:15px;
-    
+  
 }
 
 /* The Overlay (background) */
@@ -391,7 +391,7 @@ main{
     transform: scale(1.05);
    }
 
-   body {
+body {
     margin:0;
     padding:0;  
     display:flex;
@@ -400,6 +400,7 @@ main{
     min-height:100vh;
   }
   
-  main {
+main {
     flex:1 0 auto;
   }
+

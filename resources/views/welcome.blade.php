@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/welcome.css')}}">
 @endpush
      <!-- Background image -->
-     <div class="p-5 text-center bg-image"> 
+   <div class="p-5 text-center bg-image"> 
    <div class="mask">
    <div class="d-flex justify-content-center align-items-center h-100">
    <div class="text-white">
@@ -24,7 +24,8 @@
     <main>
       <div class="container-fluid">
       <section id="about" class="text-center text-black">
-         <br>
+      <br>
+      <hr class="hrline">
         <h2 class="my-2"style="font-size:80px;">About Us</h2>
         <br>
         <div class="row container-in">

@@ -40,18 +40,18 @@
          </div>
          <!-- Mask -->
 
-      
-
 <!---------------------------------------------------------- Input post ---------------------------------------------------------->
          @foreach($user as $user)
          <div class="profile-content pt-5" id="sec-2">
+         <input type="hidden" id="userLimit" value="{{$user->dailyLimit}}">
+         <input type="hidden" id="userPoints" value="{{$user->points}}">
             <!-- begin tab-content -->
             <div class="tab-content p-0">
                <!-- begin #profile-post tab -->
                <div class="tab-pane fade active show" id="profile-post">
                   <!-- begin timeline -->
-                  <ul class="timeline">
-                     <li><!-- POST NOW -->
+                  <ul class="timeline" id="post-data1">
+                     <li id="post-data">
                         <!-- begin timeline-time -->
                         <div class="timeline-time">
                            <span class="date">now</span>
@@ -78,7 +78,7 @@
                                     <div class="panel-body">
                                           <form role="form" action="{{route('addPost')}}" method="POST" enctype="multipart/form-data">
                                              @CSRF
-                                             <textarea rows="3" class="form-control" placeholder="What's on your mind?" name="ctDetail" id="ctDetail"></textarea>
+                                             <textarea rows="3" class="form-control" placeholder="What's on your mind?" name="ctDetail" id="ctDetail" required></textarea>
                                              <!--  -->
                                              <div class="row">
                                                 <div class="col-sm-10" id="upload-icon">
@@ -91,14 +91,17 @@
                                                       <a class="btn btn-sm btn-default ivm-show" style='border:1px solid #02eb0d'>
                                                          <label for="video">
                                                          <i class="fas fa-video" style='color:#02eb0d'></i>
-                                                            <input type="file" id="video" style="display: none" name="video" accept="video/*" multiple="" data-original-title="upload videos">
+                                                            <input type="file" id="video" style="display: none" name="video" accept="video/*" multiple="" data-original-title="upload videos" onchange="showPreviewVideo(event);">
                                                          </label>
                                                       </a>
                                                 </div>
-                                                <div class="col-sm-10 upload-image" id="display-image" style="display:none">
+                                                <div class="col-sm-10 col-md-10 upload-image" id="display-image" style="display:none">
                                                    <img id="previewImage" src="" alt="" />
                                                 </div>
-                                                <div class="col-md-1 col-sm-2 text-right">
+                                                <div class="col-sm-10 col-md-10 upload-image" id="display-video" style="display:none">
+                                                   <video width="320" height="240" controls>Your browser does not support the video tag.</video>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 text-right">
                                                       <button type="submit" class="btn btn-primary btn-color" style='color:#2d353c;'>Post</button>
                                                 </div>
                                              </div>
@@ -113,139 +116,18 @@
                      @endforeach
 
 <!------------------------------------------------------------ POST ------------------------------------------------------------>
-                     @foreach($posts as $post)
-                     <li><!-- POST 1 -->
-                        <!-- begin timeline-time -->
-                        <div class="timeline-time">
-                           <input type="hidden" id="postID" value="{{$post->pid}}">
-                           <span class="date" id="date{{$post->pid}}">{{ \Carbon\Carbon::parse($post->ctDate)->format('d F') }}</span>
-                           <span class="time">{{$post->ctTime}}</span>
-                        <!-- </a> -->
-                        </div>
-                        <!-- end timeline-time -->
-                        <!-- begin timeline-icon -->
-                        <div class="timeline-icon">
-                           <a href="javascript:;">&nbsp;</a>
-                        </div>
-                        <!-- end timeline-icon -->
-                        <!-- begin timeline-body -->
-   
-                        
-                        <div class="timeline-body">
-                           <div class="timeline-header">
-                              <span class="userimage"><img src="{{ asset('images/user/'.$post->userAvatar) }}" alt=""></span>
-                              <span class="username"><a href="javascript:;">{{$post->name}}</a> <small></small></span>
-                              <span class="pull-right text-muted">18k Views</span>
-                              @if(Auth::id() == $post->UserID)
-                              <div class="dropdown">
-                                 <!-- EDIT -->
-                                 <span class="icon-right pen" style='font-size:10px' id="navbarDropdownMenuLink">
-                                    <a href="javascript:editPost({{$post->pid}});" class="btn btn-sm btn-default ivm-show edit" style='padding:5px 13px;' data-mdb-toggle="modal" data-mdb-target="#editModal" data-target-detail="{{$post->ctDetail}}" data-target-pid="{{$post->pid}}" data-target-pic="{{ asset('images/post/image/'.$post->ctImage) }}">
-                                       <i class='fa fa-pen' style='color:whitesmoke;'></i>
-                                    </a>
-                                 </span>
-                                 <!-- DELETE -->
-                                 <span class="icon-right trash" style='font-size:10px' id="navbarDropdownMenuLink" >
-                                    <a href="{{route('delPost',['id'=>$post->pid])}}" class="btn btn-sm btn-default ivm-show " style='padding:5px 13px;' onclick="return confirm('Are you sure to delete this post?')">
-                                       <i class='fa fa-trash' style='color:whitesmoke;'></i>
-                                    </a>
-                                 </span>
-                              </div>
-                              @endif
-                           </div>
-                           
-                           <div class="timeline-content">
-                              <p class="show-read-more" id="postBody{{$post->pid}}"> <!-- class="show-read-more" -->
-                                 {{$post->ctDetail}}
-                              </p>
-                              <!-- ----------------------------------------IMAGE------------------------------------------------- -->
-                              @if($post->ctImage!=NULL)
-                                 <img class="postImage zoomable" id="image{{$post->pid}}" src="{{ asset('images/post/image/'.$post->ctImage) }}" alt="" onclick="showImage({{$post->id}})">
-                              @endif
-                              <!-- ----------------------------------------VIDEO------------------------------------------------- -->
-                              @if($post->ctVideo!=NULL)
-                              <div class="iframe">
-                                 <iframe id="iF{{$post->pid}}" class="responsive-iframe" src="{{ asset('images/post/video/'.$post->ctVideo) }}" title="video" frameborder="0"  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="auto" height="auto" sandbox="" allowfullscreen></iframe>
-                              </div>
-                              @endif
-                           </div>
-                           <div class="timeline-likes">
-                              <div class="stats-right">
-                                 <!-- <span class="stats-text">259 Shares</span> -->
-                                 <span class="stats-text">0 Comments</span>
-                              </div>
-                              <div class="stats">
-                                    <span class="fa-stack fa-fw stats-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                 <span class="stats-total">
-                                 @if($post->likedUsers->count() !=0)
-                                    {{$post->likedUsers->count()+ rand(50,99)}}
-                                 @else
-                                    {{rand(50,99)}}
-                                 @endif
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="timeline-footer">
-                              <!-- LIKE FUNCTION -->
-                              @guest
-                                 <a href="#" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                              @else
-                              <div class="like">
-                                 <a href="javascript:likePost({{$post->pid}});" class="m-r-15 text-inverse-lighter" id="like-btn{{$post->pid}}"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3" style="color:{{Auth::user()->likedPosts()->where('content_id', $post->pid)->count() > 0 ? '#02eb0d' : ''}}"></i><h3 style="display: inline-block;font-size:16px;color:{{Auth::user()->likedPosts()->where('content_id', $post->pid)->count() > 0 ? '#02eb0d' : ''}}">Like</h3></a>
-                                 <form action="{{route('post.like',$post->pid)}}" method="POST" style="display:none" id="like-form-{{$post->pid}}">@csrf</form>
-                              </div>
-                              @endguest
-
-                              <!-- pop COMMENT FUNCTION -->
-                              <a href="javascript:commentBox({{$post->pid}});" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a> 
-                              <!-- SHARE FUNCTION -->
-                              <div class="shareContainer">
-                                 <div class="emojibar">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/community"><div class="emoji"><img src="Images/icons/facebook.png" alt=""><p>Facebook</p></div></a>
-                                    <a href="https://twitter.com/intent/tweet?url=http://127.0.0.1:8000/community"><div class="emoji"><img src="Images/icons/twitter.png" alt=""><p>Twitter</p></div></a>
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://127.0.0.1:8000/community&title=Share+title&summary=There+will+be+a+window+left"><div class="emoji"><img src="Images/icons/linkedin.png" alt=""><p>LinkedIn</p></div></a>
-                                    <a href="https://wa.me/?text=http://jorenvanhocht.be"><div class="emoji"><img src="Images/icons/whatsapp.png" alt=""><p>WhatsApp</p></div></a>
-                                 </div>
-                                 <a class="m-r-15 text-inverse-lighter share"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-                              </div>
-                           </div>
-                           <!-- COMMENT SHOW-->
-                           <div class="timeline-comment-box" id="comment{{$post->pid}}" style="display: none;">
-                              <!-- ADD COMMENT  -->
-                              <div class="user"><img src="{{ asset('images/user/'.$user->userAvatar) }}"></div>
-                              <div class="input">
-                                 <form action="{{route('addComment')}}" method="POST" id="comForm" enctype="multipart/form-data" >
-                                    @CSRF
-                                    <div class="input-group">
-                                       <input type="hidden" name="userId" id="userId" value="{{$user->id}}">
-                                       <input type="hidden" name="postId" id="postId" value="{{$post->pid}}">
-                                       <input type="text" name="comment" id="comment" class="form-control rounded-corner" autocomplete="off" placeholder="Write a comment..." required/>
-                                       <span class="input-group-btn p-l-10">
-                                       <button class="btn btn-primary f-s-12 rounded-corner btn-color" type="submit">Comment</button>
-                                       </span>
-                                    </div>
-                                 </form>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- end timeline-body -->
-                     </li>
-                     @endforeach
-
+                     @include('data')
 
 <!------------------------------------------------------------ POST loading ------------------------------------------------------------>
                      <li><!-- POST loading -->
                         <!-- begin timeline-icon -->
-                        <div class="timeline-icon">
+                        <div class="timeline-icon ajax-loader" style="display:;">
                            <a href="javascript:;">&nbsp;</a>
                         </div>
                         <!-- end timeline-icon -->
                         <!-- begin timeline-body -->
-                        <div class="timeline-body" style="color:whitesmoke;">
-                           Loading...
+                        <div class="timeline-body ajax-loader ajax-load" style="color:whitesmoke;display:;" >
+                           <img src="{{asset('images/loader.gif')}}" height="40px" alt="loader" style="float:left;margin-top:-10px;margin-right:5px;"> <span id="loader-text">Loading...</span>
                         </div>
                         <!-- begin timeline-body -->
                      </li>
@@ -258,7 +140,6 @@
          </div>
          <!-- end profile-content -->
          <!-- END POST -->
-        </div>
 
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
@@ -278,45 +159,9 @@
             targetDiv.style.display = "block";
          }
       }
-      
-      function addComment () {
-         // (A) GET FORM DATA
-         var form = document.getElementById("comForm");
-         var data = new FormData(form);
-         
-         // (B) AJAX
-         var xhr = new XMLHttpRequest();
-         xhr.open("POST", "addComment");
-         // What to do when server responds
-         xhr.onload = function () { console.log(this.response); };
-         xhr.send(data);
-         
-         // (C) PREVENT HTML FORM SUBMIT
-         return false;
-      }
-      function likePost($id) {
+   </script>
 
-e.preventDefault(); // Prevent Default form Submission
-var formId = "like-form-" +$id;
-var form = $(document.getElementById(formId));
-var actionUrl = form.attr('action');
- 
-
-$.ajax({
-   type: "POST",
-   url: actionUrl,
-   data: form.serialize(),
-   success:function(store) {
-      location.href = store;
-   },
-   error:function() {
-      alert(actionUrl);
-   }
-});
-
-};
-      </script>
-
+<!-- Image zoom -->
 <script src="http://static.tumblr.com/xz44nnc/o5lkyivqw/jquery-1.3.2.min.js"></script>
       <script>
       // Zoom Image
@@ -358,28 +203,70 @@ $.ajax({
 
    </script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-   <script>
-   $(document).ready(function(){
-      var maxLength = 200;
-      $(".show-read-more").each(function(){
-         var myStr = $(this).text();
-         if($.trim(myStr).length > maxLength){
-               var newStr = myStr.substring(0, maxLength);
-               var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-               $(this).empty().html(newStr);
-               $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
-               $(this).append('<span class="more-text">' + removedStr + '</span>');
+<!-- read more / read less -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+<script>
+   function AddReadMore() {
+      //This limit you can set after how much characters you want to show Read More.
+      var carLmt = 200;
+      // Text to show when text is collapsed
+      var readMoreTxt = " ... Read More";
+      // Text to show when text is expanded
+      var readLessTxt = " Read Less";
+
+
+      //Traverse all selectors with this class and manupulate HTML part to show Read More
+      $(".addReadMore").each(function() {
+         if ($(this).find(".firstSec").length)
+               return;
+
+         var allstr = $(this).text();
+         if (allstr.length > carLmt) {
+               var firstSet = allstr.substring(0, carLmt);
+               var secdHalf = allstr.substring(carLmt, allstr.length);
+               var strtoadd = firstSet + "<span class='SecSec'>" + secdHalf + "</span><span class='readMore'  title='Click to Show More'>" + readMoreTxt + "</span><span class='readLess' title='Click to Show Less'>" + readLessTxt + "</span>";
+               $(this).html(strtoadd);
          }
+
       });
-      $(".read-more").click(function(){
-         $(this).siblings(".more-text").contents().unwrap();
-         $(this).remove();
+      //Read More and Read Less Click Event binding
+      $(document).on("click", ".readMore,.readLess", function() {
+         $(this).closest(".addReadMore").toggleClass("showlesscontent showmorecontent");
       });
+   }
+   $(function() {
+      //Calling function after Page Load
+      AddReadMore();
    });
-   </script>
+</script>
 
+<!-- Preview Image -->
+<script>
+   function showPreview(event){
+   if(event.target.files.length > 0){
+      var src = URL.createObjectURL(event.target.files[0]);
+      var previewImage = document.getElementById("previewImage");
+      var displayImage = document.getElementById("display-image");
+      var icon = document.getElementById("upload-icon");
+      previewImage.src = src;
+      displayImage.style.display = "block";
+   }
+   }
+</script>
 
+<!-- Preview Video -->
+<script>
+   document.getElementById("video")
+   .onchange = function(event) {
+      var displayVideo = document.getElementById("display-video");
+      displayVideo.style.display = "block";
+      let file = event.target.files[0];
+      let blobURL = URL.createObjectURL(file);
+      document.querySelector("video").src = blobURL;
+   }
+</script>
+
+<!-- FOR EDIT POST -->
 <script>
    $(document).ready(function () {
          $("#editModal").on("show.bs.modal", function (e) {
@@ -392,23 +279,8 @@ $.ajax({
          });
       });
 </script>
-
-
 <script>
-   function showPreview(event){
-   if(event.target.files.length > 0){
-      var src = URL.createObjectURL(event.target.files[0]);
-      var previewImage = document.getElementById("previewImage");
-      var displayImage = document.getElementById("display-image");
-      var icon = document.getElementById("upload-icon");
-      previewImage.src = src;
-      displayImage.style.display = "block";
-      icon.style.display="none";
-   }
-   }
-</script>
-
-<script>
+   // pass from span to input tag 
    $(function() {
       $('#submitEdit').click(function() {
       $('#edit_ctDetail').val($('#pass_ctDetail').text());
@@ -416,9 +288,137 @@ $.ajax({
 });
 </script>
 
+<!-- like without reload -->
 <script>
-
+         $(".likeButton").click(function(){
+            var id = $(this).data("id");
+            var token = $(this).data("token");
+            $.ajax({
+               url: "/like-post/"+id,
+               type: 'POST',
+               dataType: 'JSON',
+               data: {
+                  "$PostID": id,
+                  "_method": 'POST',
+                  "_token": token,
+               },
+               success: function(){
+                  console.log('it works!');
+               } 
+            });
+            var button = $(this).data("button");
+            var buttonword = $(this).data("btnword");
+            var stats = $(this).data("stats");
+            const btn = document.getElementById(button);
+            const btnword = document.getElementById(buttonword);
+            var stat = document.getElementById(stats);
+            var statsNum = parseInt(document.getElementById(stats).textContent.trim());
+            if(btn.style.color == "rgb(2, 235, 13)"){
+               btn.style.color = "#fff";
+               btnword.style.color = "#fff";
+               stat.textContent =statsNum - 1;
+            }else{
+               btn.style.color = "#02eb0d";
+               btnword.style.color = "#02eb0d";
+               stat.textContent =statsNum + 1;
+               // Point increment
+               $.ajax({
+               headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+               },
+               url: "/addPoints/"+id,
+               type: 'POST',
+               data: {
+                  "id": id,
+               },
+               success: function(){
+                  console.log('it works!');
+               },
+               error: function(data){
+                  console.log(data);
+               }
+            });
+            }   
+         });
 </script>
+
+<!-- Point increment -->
+<script>
+   $(".emojibar").click(function(){
+      var id = $(this).data("id");
+      $.ajax({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         },
+         url: "/addPoints/"+id,
+         type: 'POST',
+         data: {
+            "id": id,
+         },
+         success: function(){
+            console.log('it works!');
+            
+         },
+         error: function(data){
+            console.log(data);
+         }
+      });
+   });
+   $(".addcomment").click(function(){
+      var id = $(this).data("id");
+      $.ajax({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         },
+         url: "/addPoints/"+id,
+         type: 'POST',
+         data: {
+            "id": id,
+         },
+         success: function(){
+            console.log('it works!');
+         },
+         error: function(data){
+            console.log(data);
+         }
+      });
+   });
+</script>
+
+<!-- Infinite load-->
+<script>
+   function loadMoreData(page){
+      $.ajax({
+         url:'?page=' + page,
+         type:'GET',
+         beforeSend: function(){
+            $(".ajax-loader").show();
+         }
+      }).done(function(data){
+         console.log(data);
+         if(data.html == " "){
+            $(".ajax-load").html("No more records");
+            return;
+         }
+         $(".ajax-loader").hide();
+         $("#post-data1").append(data.html);
+      }).fail(function(data){
+         alert(data);
+         console.log(data);
+      });
+   }
+
+   var page = 1;
+   $(window).scroll(function(){
+      // if($(window).scrollTop() == $(document).height() - $(window).height() ) {
+         if ($(window).scrollTop() >= ($(document).height() - $(window).height() - 10)) {
+         page++;
+         loadMoreData(page);
+      }
+   });
+   
+</script>
+
 </body>
 
 <!-- Modal -->
@@ -439,17 +439,33 @@ $.ajax({
             <input type="hidden" name="edit_ctDetail" id="edit_ctDetail" value="">
             <span class="textarea" role="textbox" name="pass_ctDetail" id="pass_ctDetail" contenteditable></span>
          </div>
-         <div class="form-group mt-3">
+         <!-- <div class="form-group mt-3">
             <img src="" id="pass_ctImage" style="max-width:400px;height:auto; max-height:200px;" style="display: none" onload="this.style.display=''" onerror="this.style.display='none'">
             <input type='file' name='file' id='file' class='form-control' >
-         </div>
+         </div> -->
          <!-- Preview-->
-         <div id='preview'></div>
-      </div>
+         <!-- <div id='preview'></div>
+      </div> -->
       <div class="modal-footer">
         <button type="submit" class="btn btn-success" id="submitEdit" style="background-color:#02eb0d;color:#575d63;">Save changes</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal right fade" id="notificationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-keyboard="true" >
+  <div class="modal-dialog modal-side modal-bottom-right">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Earn Points</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <p>You've earned 5 points!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection

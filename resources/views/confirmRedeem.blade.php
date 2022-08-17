@@ -23,7 +23,7 @@
 <div class="container-fluid">
     <div class="row confirmRedeem">
         <div class="col-md-12 mt-4 mb-4 text-center">
-            <h1 class="display-1">Confirm Reward Redemption</h1>
+            <h1 class="display-1">Reward Redemption</h1>
         </div>
     </div>
 </div>
@@ -38,12 +38,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mt-4">
-                <a class="backbutton" href="{{route('showRewards')}}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 mt-4 mb-4 text-center">
-                <h1>Are you sure you want to redeem <strong class="strongname">{{$reward->name}} </strong> ? </h1>
+                <a class="backbutton" href="{{route('showRewards')}}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a> <br><br>
             </div>
         </div>
         <div class="row">
@@ -57,7 +52,6 @@
                 <p class="des">{{$reward->points}}</p>
                 <h2 class="Titles">Quantity left:</h2>
                 <p class="des">{{$reward->quantity}}</p>
-                <p class="confirm">If you confirmed to spend <b class="orange" id="rewardPoints">{{$reward->points}} </b> points to redeem <b class="orange">{{$reward->name}}</b>, please press the "Redeem" button.</p>
                 <p class="confirm">Your total point is <b class="orange">{{ Auth::user()->points }}</b>.</p>
                 @if($reward->quantity > 0)
                 <button type="submit" class="btn btn-primary" id="redeemBtn">Redeem</button><br><br>

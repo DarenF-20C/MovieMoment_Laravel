@@ -8,11 +8,13 @@
 <body><br><br>
 <div style="min-height:480px">
 <header>
-        <form  id="form">
-            <input type="text" placeholder="Search for your movie" id="search" class="search">
-        </form>
-    </header>
-    <div id="tags"></div>
+<form  id="form" class="forms">
+<input type="text" placeholder="Search for your movie" id="search" class="search">
+</form>
+</header>
+<div id="tags">
+    
+</div>
     <div id="myNav" class="overlay">
 
 <!-- Button to close the overlay navigation -->

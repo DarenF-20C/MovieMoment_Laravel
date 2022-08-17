@@ -19,7 +19,7 @@
         <strong>Student ID:</strong> D200262C <br>
         <strong>Batch:</strong> IT-20C <br>
         <strong>H/P:</strong> 018-4679188 <br>
-        <strong>Hotmail:</strong>lohchiaheung@gmail.com<br>
+        <strong>Email:</strong>lohchiaheung@gmail.com<br>
         <strong>Location:</strong>Johor Bahru, Johor
        </p>
     </div>
@@ -35,7 +35,7 @@
         <strong>Student ID:</strong> D200248C <br>
         <strong>Batch:</strong> IT-20C <br>
         <strong>H/P:</strong> 018-381 7870 <br>
-        <strong>Hotmail:</strong>Junyuan741@gmail.com<br>
+        <strong>Email:</strong>Junyuan741@gmail.com<br>
         <strong>Location:</strong>Johor Bahru, Johor
        </p>
     </div>
@@ -51,7 +51,7 @@
         <strong>Student ID:</strong> D200221C <br>
         <strong>Batch:</strong> IT-20C <br>
         <strong>H/P:</strong> 016-761 1952 <br>
-        <strong>Hotmail:</strong>D200221C@sc.edu.my<br>
+        <strong>Email:</strong>fangxianglun@gmail.com<br>
         <strong>Location:</strong>Johor Bahru, Johor
        </p>
     </div>

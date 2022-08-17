@@ -48,3 +48,19 @@ main {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:black;
 }
+  
+  #FAQBar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #FAQBar li a {
+    padding: 12px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  #FAQBar li a:hover {
+    background-color: #eee;
+  }
