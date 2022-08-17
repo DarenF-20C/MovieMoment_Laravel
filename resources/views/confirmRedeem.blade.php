@@ -70,7 +70,6 @@
         var redeemBtn = document.getElementById('redeemBtn');
         var backBtn = document.getElementById('backBtn');
         var userPoint = document.getElementById('userPoint').value;
-        var rewardPoints = document.getElementById('rewardPoints').value;
         if(userPoint < 0){
             alert('Please gain more points to redeem rewards!');
             redeemBtn.classList.add('hidden');

@@ -21,7 +21,7 @@
     <div class="row">
         @if(count($redeem_rewards))
             @foreach($redeem_rewards as $redeem_rewards)
-            <div class="col-md-3 ml-4 mr-4">
+            <div class="col-md-3 ml-4 mr-4 mt-4 mb-4">
                 <div class="card" style="width: 19rem;">
                     <img src="{{asset('images/') }}/{{$redeem_rewards->rImage}}" class="card-img-top rounded-start" alt="reward" height="350px" width="250px" >
                     <div class="card-body">

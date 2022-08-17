@@ -253,7 +253,8 @@
         data-mdb-target="#flush-collapseEight"
         aria-expanded="false"
         aria-controls="flush-collapseEight"
-        id="lasts"
+        id="buttoneight"
+        onclick="myFunction()"
       >
        General Questions // Problems
       </button>
@@ -288,10 +289,4 @@
 </div>
 <br>
 </body>
-<script>
-const element = document.getElementById("lasts");
-element.addEventListener("click", function() {
-  document.getElementById('flush-collapseEight').scrollIntoView({behavior: "smooth"});
-}); 
-</script>
 @endsection

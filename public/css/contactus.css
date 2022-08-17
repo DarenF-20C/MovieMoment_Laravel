@@ -56,7 +56,7 @@ body {
 }
 
 .card-body {
-    background-color:#ff8c4a;
+    background-color:rgb(223, 223, 223);
 }
 
 .btn.btn-primary {
@@ -67,15 +67,16 @@ body {
  }
  
  .btn.btn-primary:hover {
-     background-color:rgb(212, 209, 209);
+     background-color:#f09433;
   }
 
 label {
     font-size:30px;
     color:#000000;
-    font-family: Franklin Gothic Medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .text-center.follow{
     text-align:center;
 }
+

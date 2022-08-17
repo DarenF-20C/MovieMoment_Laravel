@@ -37,6 +37,7 @@ Route::post('/editPost', [App\Http\Controllers\ContentController::class, 'editPo
 Route::get('/delPost/{id}', [App\Http\Controllers\ContentController::class, 'delPost'])->name('delPost');
 Route::post('/like-post/{id}', [App\Http\Controllers\ContentController::class, 'likePost'])->name('post.like');
 Route::post('/addComment', [App\Http\Controllers\CommentController::class, 'addComment'])->name('addComment');
+Route::get('/delComment/{id}', [App\Http\Controllers\CommentController::class, 'delComment'])->name('delComment');
 // ----------------------------------------Community Route----------------------------------------
 
 
