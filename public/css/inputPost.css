@@ -53,10 +53,10 @@ body {
 .upload-image img{
   border: 2px solid #02eb0d;
   border-radius: 5px;
+  margin-top: 5px;
   max-height: 200px;
 }
 
 .upload-image{
   border: none;
 }
-

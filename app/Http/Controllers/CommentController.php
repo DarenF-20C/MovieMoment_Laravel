@@ -17,16 +17,19 @@ class CommentController extends Controller
         $id=Comment::create([ //pre-define function in DB
             'cmDetail'=>$r->comment,
             'cmLike'=>'0',
-            'ContentID'=>$r->postId,
+            'content_id'=>$r->postId,
             'UserID'=>$r->userId,
         ]);
 
         return redirect(route('community')); 
     }
 
-    public function getComment($id){
-        $comment = Comment::all()
-        ->where('id',$id)
-        ->paginate(5);
+    public function delComment($id){
+        $comment=Comment::where('id',$id)->first();
+        if($comment!=null){
+            $comment->delete();
+        }
+        return redirect()->back();
     }
+    
 }

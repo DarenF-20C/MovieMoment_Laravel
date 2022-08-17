@@ -1,5 +1,11 @@
 body {
     background-color:#101210;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
 }
 
 .fb:hover {
@@ -16,20 +22,20 @@ body {
   
 .follow a{
       color: white;
-  }
+}
   
 .insta:hover {
     margin-top: -3px;
       text-shadow: 0px 7px 6px rgba(0, 0, 0, 0.4);
-  }
+}
   
-  h1 {
+h1 {
       color:black;
       font-family: Franklin Gothic Medium;
       font-size:20px;
-  }
+}
 
-  .btn.btn-secondary.btn-floating.mx-1.fb{
+.btn.btn-secondary.btn-floating.mx-1.fb{
     background-color:#2c5ec2;
 }
 
@@ -42,22 +48,27 @@ body {
 .btn.btn-success.btn-block:hover {
     background-color: #f09433;
 }
+.card{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    width: 90%;
+    background-color: transparent !important;
+}
 
 /* Start From Here */
 .card-title {
    color:#00dd00;
    font-family:Franklin Gothic Medium;
-   font-size:100px;
+   font-size:80px;
    text-align:center;
+   margin-top: -25px;
 }
 
 .card-header {
     background-color:#101210;
 }
 
-.card-body {
-    background-color:rgb(223, 223, 223);
-}
 
 .btn.btn-primary {
     background-color:#00dd00;
@@ -80,3 +91,73 @@ label {
     text-align:center;
 }
 
+.rowleftright{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid #02eb0d;
+    border-radius: 1%;
+    padding: 0 !important;
+}
+.send{
+    margin: -10px 0 0 0 ;
+    position: absolute;
+    left: 80%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.follow{
+    margin-top: 40px;
+}
+.left-body{
+    width: 60%;
+    padding: 10% 18%;
+    color: white;
+}
+.left-body .title h2{
+    font-size: 50px;
+    margin: -10px 0 30px 0 ;
+}
+.right-body{
+    width: 40%;
+}
+
+.row.right input, .row.right textarea {
+    border: none;
+    width: 80%;
+    margin: 15px auto;
+    border-bottom: 1px solid #4f30677d;
+    padding: 7px 9px;
+    overflow: hidden;
+    background: transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+.row.right textarea {
+    border: 1px solid #4f30677d;
+}
+.forms{
+    background-color: white;
+    border: 1px solid #02eb0d;
+    border-radius: 5%;
+    padding: 20px 0px;
+}
+.row.right .col-md-12 h2{
+    font-family: Franklin Gothic Medium;
+    font-weight:bold;
+    text-align: center;
+    color: #000000;
+}
+
+.icon{
+    font-size: 32px;
+    color: #02eb0d;
+    margin: 20px 0 20px 10px ;
+}
+.contactInfo .text p{
+    margin: -25px 0 0 80px ;
+}
+.label{
+    font-size: 24px;
+    margin: 0 0 0 10px;
+}
