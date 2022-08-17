@@ -32,11 +32,6 @@
     </div>
     <ul class="nav-list">
       <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
-      <li>
         <a href="{{route('admin.home')}}">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Dashboard</span>

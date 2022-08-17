@@ -45,7 +45,7 @@ class AdminController extends Controller
     public function showComment(){
         $comments = DB::table('comments')
         ->leftjoin('users','users.id','=','comments.userID')
-        ->leftjoin('contents','contents.id','=','comments.ContentID')
+        ->leftjoin('contents','contents.id','=','comments.content_id')
         ->select('comments.*','contents.ctDetail as ctDetail','users.name as userName')
         ->latest()
         ->get();

@@ -30,8 +30,8 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>user</th>
-              <th>Phone<th>
+              <th>Email</th>
+              <th>Phone</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -40,7 +40,7 @@
           @if(count($users))
               @foreach($users as $user)
               <tr>
-              <td>{{$user->id}}</td>
+                <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->phone}}</td>

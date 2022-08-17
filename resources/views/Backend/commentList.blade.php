@@ -47,7 +47,7 @@
                 <td>{{$comment->cmDetail}}</td>
                 <td>{{$comment->created_at}}</td>
                 <td>
-                  <a class="admin-btn" href="{{route('admin.deleteAdmin',['id'=>$admin->id])}}" onClick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i> Delete</a>
+                  <a class="admin-btn" href="{{route('admin.deleteComment',['id'=>$comment->id])}}" onClick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i> Delete</a>
               </td>
               </tr>
               @endforeach
