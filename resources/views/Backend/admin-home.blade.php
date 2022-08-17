@@ -30,6 +30,7 @@
 		</a>
 	</div>
 	<div class="col-div-3">
+	<a href="{{route('admin.postList')}}">
 		<div class="box">
 			<p>{{$totalPost}}<br/><span>Total Post</span></p>
 			<i class="fa fa fa-pencil-square-o box-icon"></i>
@@ -37,8 +38,16 @@
 	</div>
 	<div class="col-div-3">
 		<div class="box">
+		<a href="{{route('admin.commentList')}}">
 			<p>{{$totalComment}}<br/><span>Total comment</span></p>
 			<i class="fa fa-comments box-icon"></i>
+		</div>
+	</div>
+	<div class="col-div-3">
+		<div class="box">
+		<a href="{{route('admin.rewardList')}}">
+			<p>{{$totalRewards}}<br/><span>Total Rewards</span></p>
+			<i class="bx bx-award box-icon fa-lg"></i>
 		</div>
 	</div>
 	<div class="clearfix"></div>

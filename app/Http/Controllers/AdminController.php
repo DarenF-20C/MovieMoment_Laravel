@@ -90,7 +90,10 @@ class AdminController extends Controller
         $totalPost = DB::table('contents')
         ->count();
 
-        return view('backend.admin-home', compact('totalUser', 'totalAdmin','totalComment','totalPost'));
+        $totalRewards = DB::table('rewards')
+        ->count();
+
+        return view('backend.admin-home', compact('totalUser', 'totalAdmin','totalComment','totalPost','totalRewards'));
 
 
         
