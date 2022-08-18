@@ -14,7 +14,7 @@
     <li class="breadcrumb-item">
       <a href="{{route('admin.home')}}">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active">Reward Lists</li>
+    <li class="breadcrumb-item active">Reward-Lists</li>
   </ol>
 
 
