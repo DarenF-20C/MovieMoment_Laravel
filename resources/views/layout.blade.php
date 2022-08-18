@@ -71,7 +71,7 @@
                               <a class="nav-link dropdown-toggle {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }} {{Route::currentRouteNamed('userGuide') ? 'active' : '' }} {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}"></i>Others</a>
                                  <ul class="dropdown-menu">
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} " href="{{url('showProjectMembers')}}">Project Members</a></li>
-                                 <li><a class="dropdown-item {{Route::currentRouteNamed('userGuide') ? 'active' : '' }}" href="{{url('userGuide')}}">User Guide // FAQ</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('userGuide') ? 'active' : '' }}" href="{{url('userGuide')}}">User Guide / FAQ</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}">Rewards Redeem</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('myReward') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }}" href="{{url('myReward')}}">My Rewards</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}" href="{{url('contactUs')}}">Contact Us</a></li>
