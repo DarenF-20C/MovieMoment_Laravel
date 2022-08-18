@@ -4,6 +4,7 @@
    <!-- for FB share specification -->
    <meta property="og:title" content="My Post">
    <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__480.jpg">
+   <meta name="csrf-token" content="{{ csrf_token() }}" />
    <link rel="stylesheet" href="{{asset('css/inputPost.css')}}"> <!-- Post Now hold by inputPost.css -->
    <link rel="stylesheet" href="{{asset('css/post.css')}}">      <!-- POST hold by post.css -->
    <!-- Font Awesome -->

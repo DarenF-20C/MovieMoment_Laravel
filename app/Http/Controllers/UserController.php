@@ -98,4 +98,11 @@ class UserController extends Controller
 
         return redirect()->back()->with("success","Password successfully changed!");
     }
+
+    public function addPoints($id){
+        $userPoint=User::where('id',$id)
+        ->increment('points',10);
+        $userLimit=User::where('id',$id)
+        ->increment('dailyLimit',1);
+    }
 }

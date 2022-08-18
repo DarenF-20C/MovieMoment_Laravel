@@ -1,17 +1,18 @@
 @extends('layout')
 @section('content')
 @push('css')
-<link rel="stylesheet" href="{{asset('css/login.css')}}">
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
 @endpush
 <body>
 	<section class="login">
 		<div class="login_box">
-			<div class="left"> 
-				<div class="top_link"><a href="{{url('home')}}"><i class="fas fa-arrow-circle-left"></i> Return home</a></div>
-                @if (session('error'))<br>  
+			<div class="left">
+				<div class="top_link"><a href="{{route('community')}}"><i class="fas fa-arrow-circle-left"></i> Return home</a></div>
+                <div class="top_link tlright"><a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register </a></div>
+				@if (session('error'))<br>  
                 <div class="error">{{ session('error') }}</div>
                 @endif
-				<div class="contact">
+                <div class="contact">
 					<form method="POST" action="{{ route('login') }}">
                         @CSRF
 						<h3>SIGN IN</h3>
@@ -28,12 +29,9 @@
                                 </span>
                             @enderror
 						<button class="submit">Log in</button><br/>
+
                             @if (Route::has('password.request'))
                                 <a class="forgot" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <a class="forgot register" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
 					</form>
 				</div>
@@ -41,7 +39,7 @@
 			<div class="right">
                 <img src="/images/logoOnly.png" alt="logo">
 				<div class="right-text">
-					<h2>Movie Moment</h2>
+					<h2>Movie Moments</h2>
 					<h5></h5>
 				</div>
 			</div>

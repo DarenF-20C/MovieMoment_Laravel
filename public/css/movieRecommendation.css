@@ -331,6 +331,7 @@ main{
     border:0;
     border-radius:5px;
     text-transform: capitalize;
+    padding:10px;
 }
 
 .btn.btn-sm:hover {
