@@ -64,16 +64,16 @@
       -In our movie recommendation page, our system provided three selections which are <strong>(1) Popular Movies</strong>,<strong> (2) Family movies </strong>and <strong>(3) TV Shows.</strong> <br>
       <strong> (1) Popular Movies</strong> are the movies that released in recent years and it is suitable for users of all ages. <br> 
       <strong> (2) Family Movies</strong> are the movies that are more suitable for family to watch.Most of the movies are funny, fascinating, and lovely such as anime and cartoon. <br>
-      <strong> (3) TV Shows</strong> are the drama series or tv shows that contains more than one episode. For example, cooking shows, Korean drama, varierty show and so on. <br>
-      -<strong> Movie Details/Information for Movies: </strong>  <br>
+      <strong> (3) TV Shows</strong> are the drama series or tv shows that contains more than one episode. For example, cooking shows, Korean drama, variety show and so on. <br>
+      -<strong> Movie Details/Information provided for Movies: </strong>  <br>
       <strong>--></strong>Title, Genre, Rating / Total Vote Count , Adult, Language, Status, Tagline, Overview, Released Date, Name and Images of Actor/Actress, Trailer Videos, and Similar Movies. <br>
-      -<strong> Movie Details/Information for TV Shows: </strong> <br>
-      <strong>--></strong>Title, Genre, Rating / Total Vote Count , Adult, Number of Episodes, Number of Seasons, Language, Status, Tagline, Overview, Released Date || Last Updated Date, Name and Images of Actor/Actress, Trailer Videos, and Similar Movies. <br>
+      -<strong> Movie Details/Information provided for TV Shows: </strong> <br>
+      <strong>--></strong>Title, Genre, Rating / Total Vote Count , Adult, Number of Episodes, Number of Seasons, Language, Status, Tagline, Overview, Released Date || Last Updated Date, Name and Images of Actor/Actress, Trailer Videos, and Similar TV Shows. <br>
       -<strong> Genres provided for movies:</strong><br>
       <strong>--></strong> Action, Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery, Romance,
       Science Fiction, TV Movies, Thriller, Way, Western <br>
       -<strong> Genres provided for TV shows:</strong><br>
-      <strong>--></strong> Action & Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Kids, History, Reality, Mystery, Romance, News, Sci-Fi & Fantasy, Soap, Talk, War & Policits, Western <br>
+      <strong>--></strong> Action & Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Kids, History, Reality, Mystery, Romance, News, Sci-Fi & Fantasy, Soap, Talk, War & Politics, Western <br>
       <strong>-Just choose the button based on your favourite types of movies to find for your movies! </strong><br>
       <strong>-Similar movies recommendation </strong> are provided for users based on the genres of the movies that you choose! 
       <br><br>
@@ -172,7 +172,7 @@
     <br><strong> Question: Where can I view the rewards that I have redeemded?</strong> <br>
     --> Go to the "My Rewards" page to check for the rewards.
     <br><strong> Question: How can I use the rewards?</strong> <br>
-    --> Go to the "My Rewards" page, click the voucher code of the rewards that you want to redeem. Paste the voucher code in the website that you want to redeem.
+    --> Go to the "My Rewards" page, click the voucher code of the rewards that you want to redeem. Paste the voucher code in the redemption website.
     （No need to copy the voucher code, when you click it, it will automatically be copied)
 
     </div>
