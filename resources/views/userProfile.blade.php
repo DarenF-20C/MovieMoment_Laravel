@@ -49,7 +49,7 @@
                   <div class="card h-100">
                     <div class="card-body">
                     <h4 class="mb-1">Achievement:</h6>
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">My total posts: </i>&nbsp {{$totalPost}}</h6>
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">My total posts: </i>&nbsp{{$totalPost}}</h6>
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">My total comments: </i>&nbsp{{$totalComment}}</h6>
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons  mr-2">My total points: </i>&nbsp{{$user->points}}</h6>
                   </div>

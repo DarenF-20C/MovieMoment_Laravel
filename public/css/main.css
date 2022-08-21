@@ -8,7 +8,7 @@ body {
   margin:-10px;
 }
 .navbar {
-  padding-right: 4%;
+  padding-right: 8%;
   padding-left: 4%;
 }
 
@@ -51,4 +51,7 @@ ul.navbar-nav .dropdown-item.active {
   margin-right: 0px;
 }
 
+.footer-copyright{
+  padding: 10px;
+}
 

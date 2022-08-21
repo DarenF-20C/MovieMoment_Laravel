@@ -100,9 +100,9 @@ class UserController extends Controller
     }
 
     public function addPoints($id){
-        $userPoint=User::where('id',$id)
+        $userPoint=User::where('id',Auth::id())
         ->increment('points',10);
-        $userLimit=User::where('id',$id)
+        $userLimit=User::where('id',Auth::id())
         ->increment('dailyLimit',1);
     }
 }

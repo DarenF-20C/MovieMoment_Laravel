@@ -84,17 +84,17 @@
             </div>  
 
  <!-- Right elements of navbar -->
- <div class="d-flex align-items-center ">
+ <div class="nav-item align-items-center ">
             @guest
             <a href="{{url('login')}}" class="nav-link text-inverse-lighter" style="text-decoration:none;color:white;"><i class="fas fa-sign-in-alt">Login</i></a>
             @else
                <!-- Login Avatar -->
-               <a class="dropdown-toggle d-flex align-items-center hidden-arrow avatar" href="#" id="navbarDropdownMenuLink2" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+               <a class="nav-link dropdown-toggle hidden-arrow avatar" href="#" >
                 <i class="fas fa-user"></i>
                </a>
-               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
+               <ul class="dropdown-menu navbar-nav right-nav">
                 <li>
-                    <a class="dropdown-item" href="{{ route('userProfile') }}">My profile</a>
+                    <a class="dropdown-item profilemenu" href="{{ route('userProfile') }}">My profile</a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="{{ route('logout') }}"

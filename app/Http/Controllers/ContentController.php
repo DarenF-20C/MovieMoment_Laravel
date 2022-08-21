@@ -26,10 +26,10 @@ class ContentController extends Controller
         $user=User::all()->where('id',Auth::id());
         $users=User::all()->where('id',Auth::id());
 
-        $posts=Content::with('comments')
-        ->leftjoin('users','contents.UserID','=','users.id')
-        ->leftjoin('content_attachments','contents.id','=','content_attachments.ContentID')
-        ->select('contents.*','contents.id as pid','users.name','users.userAvatar','content_attachments.*')
+        $posts=Content::with('comments.user')
+        ->leftjoin('users','users.id','=','contents.UserID')
+        ->leftjoin('content_attachments','contents.id','=','content_attachments.ContentID') //ok
+        ->select('contents.*','contents.id as pid','content_attachments.ctImage','content_attachments.ctVideo','users.userAvatar','users.name')
         ->orderBy('contents.created_at', 'DESC')
         ->paginate(5);
         
@@ -37,7 +37,7 @@ class ContentController extends Controller
             $view=view('data')->with('user',$user)->with('users',$users)->with('posts',$posts)->render();
             return response()->json(['html'=>$view]);
         }
-
+        // dd($posts);
         return view('community')->with('user',$user)->with('users',$users)->with('posts',$posts);
     }
 
@@ -49,7 +49,6 @@ class ContentController extends Controller
             'ctDetail'=>$r->ctDetail,
             'ctDate'=>$date->format('y-m-d'),
             'ctTime'=>$date->format('H:i'),
-            'MovieID'=>'001',
             'UserID'=>Auth::id(),
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),

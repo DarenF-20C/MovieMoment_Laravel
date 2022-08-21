@@ -23,11 +23,12 @@ class User extends Authenticatable
         'password',
         'is_admin',
         'gender',
+        'status',
         'points',
+        'dailylimit',
+        'userAvatar',
         'phone',
         'date',
-        'userAvatar',
-        'status'
     ];
 
     /**
@@ -38,8 +39,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
     ];
 
     /**
@@ -51,9 +50,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $appends = [
-        'profile_photo_url',
-    ];
     public function comment(){
         return $this->hasMany('App\Models\Comment');
     }
@@ -63,6 +59,6 @@ class User extends Authenticatable
     }
 
     public function likedPosts(){
-        return $this->belongsToMany('App\Models\Content');
+        return $this->belongsToMany('App\Models\Content')->withTimestamps();
     }
 }

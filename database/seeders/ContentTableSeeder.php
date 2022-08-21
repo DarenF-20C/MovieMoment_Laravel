@@ -18,7 +18,7 @@ class ContentTableSeeder extends Seeder
             'ctDetail' => "One of the best movies I've watched.",
             'ctDate' => '2022-07-11',
             'ctTime' => '10:03',
-            'UserID' => '1',
+            'UserID' => '2',
             'created_at' => '2022-07-11 10:03:00',
             'updated_at' => '2022-07-11 10:03:00',
         ]);
@@ -27,7 +27,7 @@ class ContentTableSeeder extends Seeder
             'ctDetail' => "When your 14 and 16 year old brothers are staying with you for a month of summer break, you watch what they watch...it's pretty straightforwardly a big budget, chaotic disaster movie (not usually my thing) but I really enjoyed it!",
             'ctDate' => '2022-07-08',
             'ctTime' => '09:27',
-            'UserID' => '2',
+            'UserID' => '3',
             'created_at' => '2022-07-08 09:27:00',
             'updated_at' => '2022-07-08 09:27:00',
         ]);
@@ -54,7 +54,7 @@ class ContentTableSeeder extends Seeder
             'ctDetail' => "Not enough monsters. Not enough plot.",
             'ctDate' => '2022-06-28',
             'ctTime' => '15:18',
-            'UserID' => '1',
+            'UserID' => '3',
             'created_at' => '2022-06-28 15:18:00',
             'updated_at' => '2022-06-28 15:18:00',
         ]);

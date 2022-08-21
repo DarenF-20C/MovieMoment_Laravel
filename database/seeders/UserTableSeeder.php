@@ -20,40 +20,52 @@ class UserTableSeeder extends Seeder
             'is_admin' => 0,
             'password' => bcrypt('12345678'),
             'userAvatar' => 'ghost.jpg',
+            'points' => 100000,
+            'dailyLimit'=>10,
             'phone'=> "012-345678910",
-            'points' => 1000000,
             'date'=>'2022-07-23 07:13:22',
         ]);
 
         $user2 = User::create([
-            'name' => 'User2',
+            'name' => 'Ved',
             'email' => '321@gmail.com',
             'is_admin' => 0,
             'password' => bcrypt('12345678'),
             'userAvatar' => 'user.jpg',
+            'points' => 10000,
             'phone'=> "012-345678910",
-            'points' => 10,
             'date'=>'2022-07-23 07:13:22',
         ]);
 
         $user3 = User::create([
+            'name' => 'David Lee',
+            'email' => '3210@gmail.com',
+            'is_admin' => 0,
+            'password' => bcrypt('12345678'),
+            'userAvatar' => 'guest1.png',
+            'points' => 1000,
+            'phone'=> "012-345678910",
+            'date'=>'2022-07-23 07:13:22',
+        ]);
+
+        $user4 = User::create([
             'name' => 'Admin',
             'email' => 'admin@example.com',
             'is_admin' => 1,
             'password' => bcrypt('12345678'),
-            'phone'=> "012-345678910",
             'userAvatar' => 'user.jpg',
-            'points' => 10000000,
+            'phone'=> "012-345678910",
             'date'=>'2022-07-23 07:13:22',
         ]);
-        $user4 = User::create([
+
+        $user5 = User::create([
             'name' => 'User',
             'email' => 'user@example.com',
             'is_admin' => 0,
-            'phone'=> "012-345678910",
             'password' => bcrypt('12345678'),
             'userAvatar' => 'user.jpg',
-            'points' => 5000000,
+            'points' => 500000,
+            'phone'=> "012-345678910",
             'date'=>'2022-07-23 07:13:22',
         ]);
     }

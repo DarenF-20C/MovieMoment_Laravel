@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use App\Models\Schedule;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use DB;
+
 
 class LoginController extends Controller
 {
@@ -55,6 +60,16 @@ class LoginController extends Controller
 
         if (auth()->user()->is_admin == 1) {
             return redirect()->route('admin.home');
+        }
+
+        $dateToday = Carbon::now()->format('y-m-d');
+        $schedule=Schedule::all()
+        ->where('date','>=',$dateToday)
+        ->first();
+        if(!$schedule){
+            Schedule::create(['date'=>Carbon::now()->format('y-m-d')]);
+            // User::all()->update(['dailyLimit' => 0]);
+            $user = DB::table('users')->where('dailyLimit', '!=', 0)->update(array('dailyLimit' => 0));
         }
 
         return redirect()->back();

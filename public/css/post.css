@@ -660,3 +660,79 @@ color: gray;
 .item:hover{
     filter: brightness(90%);
 }
+
+.green-border{
+    border: 1px solid #02eb0d;
+}
+
+.floating-right-bottom-btn{
+    position : absolute;
+    right : 10px;
+    bottom : 16px;
+}
+
+.helpbtn {
+    background-color : #02eb0d;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+}
+  
+#help {
+    position: fixed;
+    bottom: 20px;
+    right: -160px; /*20*/
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.popup{
+    width: 230px;
+    height: 0px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+    opacity: 0;
+    transition: 1s;
+    border-radius: 3%;
+    border: 2px solid #000;
+}
+.popup {
+    left: -180px;
+    top: -10px;
+}
+#help:hover .popup {
+    opacity: 1;
+    height: 250px;
+}
+#help .popup h3 {
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    height: 30px;
+    background: #2d353c;
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 16px;
+}
+  
+#help .popup p, #help .popup li{
+    font-size: 14px;
+    padding: 2px 5px 0 10px;
+    margin: 0;
+}
+#help .popup{
+    background-color: whitesmoke;
+    cursor: default;
+}
+#help .popup li:last-child{
+    font-size: 14px;
+    padding: 2px 5px -5px 10px;
+    margin: 0;
+}
+#help .popup a{
+    text-decoration: none;
+}

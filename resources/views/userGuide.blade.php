@@ -204,6 +204,7 @@
         (1)<strong>Publish contents </strong> in Movie Community page. <br>
         (2)<strong>Like contents </strong> in Movie Community page. <br>
         (3)<strong>Share contents </strong> in Movie Community page. <br>
+        (4)<strong>Comments contents </strong> in Movie Community page. <br>
         <strong>-Each ways can earn 10 points.</strong><br>
         -Limited points received daily: <strong>150 points</strong> <br>
         -After the limited points achived, user can still publish contents, like contens, and share contents, but no points will be given.
