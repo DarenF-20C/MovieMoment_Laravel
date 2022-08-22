@@ -119,7 +119,7 @@ main{
 }
 
 #tags{
-    width:80%;
+    width:100%;
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -132,20 +132,25 @@ main{
     color:black;
     padding:10px 10px;
     background-color: #ff8036;
-    border-radius: 5px;
-    margin:10px;
+    border-radius: 25px;
+    margin:10px 10px;
     display:inline-block;
     cursor: pointer;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    min-width:10%;
+    text-align:center;
+    font-size:17px;
 }
 
 .tag:hover {
     transform: scale(1.05);
-    background-color: #00dd00;
+    background-color: rgb(0, 0, 0);
+    color: #ff8036;
+    border:2px solid #ff8036;
 }
 
 .tag.highlight{
-    background-color: rgb(65, 191, 237);
+    background-color: #5fea6f;
 }
 
 .no-results{
