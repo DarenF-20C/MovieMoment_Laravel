@@ -20,14 +20,9 @@
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js" ></script>
   </head>
-  <!--/Head-->
-
-  <!-- Body -->
+    
   <body>
-  <!--Header-->
   <header>
-      
-     <!-- Background image -->
    <div class="p-5 text-center bg-image"> 
    <div class="mask">
    <div class="d-flex justify-content-center align-items-center h-100">
