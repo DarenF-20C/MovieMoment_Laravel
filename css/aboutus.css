@@ -1,0 +1,55 @@
+main {
+  margin-top: -5px;
+}
+
+main h1,
+main h2,
+main h3, 
+main h4, 
+main h5, 
+main h6, 
+main p{
+  vertical-align: middle;
+  font-family: cursive;
+}
+
+.container-fluid {
+    background-color: black;
+}
+
+h2 {
+  color:#fc8138;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size:60px;
+}
+
+p{
+  color:#00dd00;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size:20px;
+}
+
+.my-2 {
+  color:#fc8138;
+  text-shadow: rgb(180, 57, 0) 0.05em 0.05em 0.05em;
+}
+
+.orangeline {
+  border-top:solid 2px #0f0;
+}
+
+
+.col-md-6 {
+  justify-content: center;
+  align-content: center;
+}
+
+.container-fluid img{
+  width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
