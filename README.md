@@ -17,26 +17,17 @@
         <!--Own Css -->
         <link rel="stylesheet" type="text/css" href="/main.css"  />
         <link rel="stylesheet" type="text/css" href="/welcome.css"  />
-
-        @stack('css')
   </head>
   <!--/Head-->
     <body>
       <!-- MDB -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
-      @stack('script')
 
-        <!-- @if(Session::has('success'))
-        <div class="alert alert-success">
-            {{ Session::get('success')  }}
-        </div>
-        @endif -->
-    
         <header>
         <!-- Navbar -->
         <!-- M&M Logo-->
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="font-family:Verdana, Geneva, Tahoma, sans-serif">
-            <a class="navbar-brand" href="{{url('home')}}">
+            <a class="navbar-brand" href="#">
               <img src="/images/logoHeader.jpg" height="50px" alt="M&M Logo"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +44,10 @@
                            <a class="nav-link {{Route::currentRouteNamed('community') ? 'active' : '' }}" href="{{url('community')}}" class="text-dark"><i class="fas fa-comments"></i> Movie Community  </a>
                            </li>
                            <li class="nav-item">
-                           <a class="nav-link {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }} {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }} {{Route::currentRouteNamed('tvshow') ? 'active' : '' }} dropdown-toggle" href="{{url('movieRecommendation')}}" ></i> <i class="fas fa-video"></i> Movie Recommendation</a>
+                           <a class="nav-link {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }} {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }} {{Route::currentRouteNamed('tvshow') ? 'active' : '' }} dropdown-toggle" href="#" ></i> <i class="fas fa-video"></i> Movie Recommendation</a>
                               <ul class="dropdown-menu">
-                              <li><a class="dropdown-item {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }}" href="{{url('movieRecommendation')}}">Popular Movies</a></li>
-                              <li><a class="dropdown-item {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }}" href="{{url('familyMovie')}}">Family Movies</a></li>
+                              <li><a class="dropdown-item {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }}" href="#">Popular Movies</a></li>
+                              <li><a class="dropdown-item {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }}" href="#">Family Movies</a></li>
                               <li><a class="dropdown-item {{Route::currentRouteNamed('tvshow') ? 'active' : '' }}" href="{{url('tvshow')}}">TV Shows</a></li>
                                </ul>
                            </li>
