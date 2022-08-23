@@ -62,14 +62,7 @@
                      </div>
                   </div>
                   <!-- search bar -->
-                  <div class="col-md-2 search-function">
-                     <div class="input-group searchbar">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" />
-                        <button id="search-button" type="button" class="btn btn-success">
-                           <i class="fas fa-search"></i>
-                      </div>
-                  </div>
+                  
                </div>
             </div>  
 
