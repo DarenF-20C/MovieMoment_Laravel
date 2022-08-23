@@ -113,62 +113,71 @@
          <!-- END navbar -->
 
      <!-- Background image -->
-    <div class="p-5 text-center bg-image" style="background-image: url('images/mainpagebgimage.jpeg');height: 680px; opacity:0.9;">      
-    <div class="mask">
-    <div class="d-flex justify-content-center align-items-center h-100">
-    <div class="text-white">
-    <h1 class="mb-3 ">Movie Moment</h1>
-    <h4 class="mb-3">A user-friendly movie recommendation system</h4>
-    </div>
-    </div>
-    </div>
-    </div>
-     <!-- Background image -->
+   <div class="p-5 text-center bg-image"> 
+   <div class="mask">
+   <div class="d-flex justify-content-center align-items-center h-100">
+   <div class="text-white">
+   <div class="col-md-4">
+   <img class="logomain" src="images/logo.png" alt="logo">
+   <h1 class="mb-4">Movie Moment (M&M)</h1>
+   <button type="button" class="buttonmain">Explore More</button>    
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>
+   <!-- Background image -->
     </header>
     <!--/header-->
-
-    <!--Main-->
     <main>
-      <div class="container-fluid bg-black">
-      <section id="services" class="text-center text-white">
-        <h2 class="my-0">Our Services</h2>
+      <div class="container-fluid">
+      <section id="about" class="text-center text-black">
+         <br>
+        <h2 class="my-2"style="font-size:80px;">About Us</h2>
         <br>
-        <div class="row justify-content-center align-items center">
-          <div class="col-md-4 text-center">
-            <h2>Movie Recommendation</h2>
-            <p>
-            We provide lots of movie recommendatiions for movie lovers to choose for their favorite movies.
-            </p>
+        <div class="row container-in">
+           <div class=col-md-1></div>
+           <div class=col-md-10>
+            <div class="row justify-content-center align-items center">
+               <div class="col-md-6 text-center justify-content-center align-items center "> 
+                  <h2>Project Teams</h2>
+                  <p>
+                  Our small teams made up of three members which is Loh Chia Heung, Teh Jun Yuan, and Fang Xiang Lun. Three of us are students which studied Diploma in Information Technology in Southern University College.
+                  </p>
+                  </div>
+                  <div class="col-md-6"><img src="images/projectteam.jpg" alt="projectTeam" class="img-fluid rounded-pill hover-shadow"></div>
             </div>
-            <div class="col-md-4"><img src="https://s29588.pcdn.co/wp-content/uploads/sites/2/2019/03/Movie_Posters_Orange_Blue_Featured-1200x806.jpg.optimal.jpg" alt="meat" class="img-fluid"></div>
-        </div>
-        <br>
-        <div class="row justify-content-center align-items center">
-          <div class="col-md-4 text-right">
-            <h2>Movie Community</h2>
-            <p>
-            We provide a platform for movie lovers to share their experiences and opinions about movies with friends.
-
-            </p>
+            <br>
+            <div class="row justify-content-center align-items center">
+               <div class="col-md-6"><img src="images/objectives.jpg" alt="objectivesGoal" class="img-fluid rounded-pill hover-shadow"></div>
+               
+               <div class="col-md-6 text-center"> <br><br>
+                  <h2>Objectives/Goals</h2>
+                  <p>
+                  1) Provide a platform for users to share their views on movies with friends. <br>
+                  2) Provide movie recommendations for users to occupy their free time. <br>
+                  3) Increase the rate of efficiency of users on searching for their favorite types of movies.
+                  </p> 
+                  </div>
             </div>
-            <div class="col-md-4"><img src="https://previews.123rf.com/images/emmagraphic/emmagraphic2010/emmagraphic201000004/156608215-illustrations-of-young-business-people-sharing-their-opinions-on-brainstorming.jpg" alt="moviecommunity" class="img-fluid"></div>
-        </div>
-        <br>
-        <div class="row justify-content-center align-items center">
-          <div class="col-md-4 text-right">
-            <h2>Top 10 Movie Lists (Weekly)</h2>
-            <p>
-            We provide Top 10 Movie lists based on the rating of movies given by our users weekly.
-            With this service,our users can have idea on choosing which movies to watch to occupy their leisure time.
-            </p>
+            <br>
+            <div class="row justify-content-center align-items center">
+               <div class="col-md-6 text-center"> <br><br>
+                  <h2>Our Services</h2>
+                  <p>
+                  1) Movie Community       - A place for users to chitchatting about movies with each others.<br>
+                  2) Movie Recommendation  - A place for users to search for their favorite movies.  <br>
+                  3) Top 10 Movie (Weekly) - A place for users to look for highly rated movies.<br>
+                  </p>
+                  </div>
+                  <div class="col-md-6"><img src="images/picture2.jpg" class="img-fluid rounded-pill hover-shadow"></div> 
+               </div><br>
             </div>
-            <div class="col-md-4"><img src="https://www.whiterocklocators.com/sites/default/files/content/blog/images/top-10-part-2.jpg" alt="top10lists" class="img-fluid"></div>
-        </div>
-        <br>  
-      </div>
-      </section>
-    </div>
-
+            <div class=col-md-1></div>
+           </div>
+         </div>
+    </main>
+   
     <!--Footer-->
     <footer>
       <div class="footer-copyright text-center text-light bg-dark ">
