@@ -3,6 +3,8 @@
   <!--Head-->
   <head>
     <meta charset="UTF-8" />
+     <meta property="og:title" content="Movie Moments">
+   <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__480.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Movie Moment (M&M)</title>
