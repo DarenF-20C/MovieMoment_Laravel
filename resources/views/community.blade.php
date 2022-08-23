@@ -45,7 +45,7 @@
          <div id="help">
             <div class="popup">
                <h3>Earning Points?</h3>
-               <p>Points can be used to <a href="#"><strong>redeem rewards</strong></a> in our website.</p>
+               <p>Points can be used to <a href="{{url('showRewards')}}"><strong>redeem rewards</strong></a> in our website.</p>
                <p>You can earn 10 points on each:</p>
                <ul>
                   <li>Post your content</li>
@@ -523,7 +523,7 @@
                color: '#fff',
                heightAuto: false,
                // timer: '2000',
-               // footer: '<a href="">Redeem reward?</a>',
+               footer: '<a href="">Redeem reward?</a>',
             })
             $('#userLimit').val(dailyLimit);
             $('#userPoints').val(points);
@@ -561,7 +561,7 @@
                color: '#fff',
                heightAuto: false,
                // timer: '2000',
-               // footer: '<a href="">Redeem reward?</a>',
+               footer: '<a href="">Redeem reward?</a>',
             })
             $('#userLimit').val(dailyLimit);
             $('#userPoints').val(points);
