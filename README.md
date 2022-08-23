@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <!--Head-->
   <head>
@@ -28,7 +27,6 @@
    <div class="col-md-4">
    <img class="logomain" src="images/logo.png" alt="logo">
    <h1 class="mb-4">Movie Moment (M&M)</h1>
-   <button type="button" class="buttonmain">Explore More</button>    
    </div>
    </div>
    </div>
@@ -42,5 +40,4 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
-  </body>
 </html>
