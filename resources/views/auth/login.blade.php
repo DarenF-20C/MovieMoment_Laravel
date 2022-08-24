@@ -7,7 +7,7 @@
 	<section class="login">
 		<div class="login_box">
 			<div class="left">
-				<div class="top_link"><a href="{{route('community')}}"><i class="fas fa-arrow-circle-left"></i> Return home</a></div>
+				<div class="top_link"><a href="{{url('home')}}"><i class="fas fa-arrow-circle-left"></i> Return home</a></div>
                 <div class="top_link tlright"><a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register </a></div>
 				@if (session('error'))<br>  
                 <div class="error">{{ session('error') }}</div>

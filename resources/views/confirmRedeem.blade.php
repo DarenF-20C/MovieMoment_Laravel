@@ -56,7 +56,7 @@
                 <p class="des">{{$reward->quantity}}</p>
                 <p class="confirm">Your total point is <b class="orange">{{ Auth::user()->points }}</b>.</p>
                 @if($reward->quantity > 0)
-                <button type="submit" class="btn btn-primary" id="redeemBtn">Redeem</button><br><br>
+                <button type="submit" class="btn btn-primary" id="redeemBtn" onClick="return confirm('Are you sure to redeem?')">Redeem</button><br><br>
                 @else
                 <a class="backbutton" href="{{route('showRewards')}}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a>
                 <p class="confirm">Attention: Sorry, the reward is not available. Please choose another rewards. </p>
