@@ -11,7 +11,7 @@ body {
   font-size:85px;
   position:absolute;
   top:65%；
-  text-align: center;
+  margin:0, 50%, 0, 50%;
   font-family:Georgia, Times New Roman, Times, serif;
   color: #00ff00 !important; 
 }
