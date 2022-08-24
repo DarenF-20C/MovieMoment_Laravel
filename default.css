@@ -10,8 +10,8 @@ body {
 .mb-4{
   font-size:85px;
   position:absolute;
-  top:65%;
-  left:50%;
+  top:65%；
+  text-align: center;
   font-family:Georgia, Times New Roman, Times, serif;
   color: #00ff00 !important; 
 }
@@ -23,22 +23,6 @@ body {
 
 .mainlogo {
   float:left;
-}
-
-.buttonmain {
-  font-size:25px;
-  position:absolute;
-  top:80%;
-  left:43%;
-  font-family:Georgia, Times New Roman, Times, serif;
-  background-color:#f57226;
-  justify-content: center;
-  line-height: 1.5;
-  padding: 6px 20px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 100px;
-  border-width: 0;
 }
 
 .buttonmain:hover {
