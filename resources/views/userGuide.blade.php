@@ -1,4 +1,5 @@
 @extends('layout')
+<title>M&M | User Guide / FAQ</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/userGuide.css')}}">

@@ -1,4 +1,5 @@
 @extends('layout')
+<title>M&M | Movie Community</title>
 @section('content')
 @push('css')
    <!-- for FB share specification -->

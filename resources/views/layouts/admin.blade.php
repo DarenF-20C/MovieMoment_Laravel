@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Admin Dashboard</title>
+    <title>M&M | Admin Dashboard</title>
+    <link rel="icon" href="/images/logo.png">
     <meta charset="UTF-8">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>

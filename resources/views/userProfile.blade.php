@@ -1,4 +1,5 @@
 @extends('layout')
+<title>M&M | My Profile</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/userProfile.css')}}">

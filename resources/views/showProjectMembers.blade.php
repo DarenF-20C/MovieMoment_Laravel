@@ -1,4 +1,5 @@
 @extends('layout')
+<title>M&M | Project Members</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/projectMembers.css')}}">

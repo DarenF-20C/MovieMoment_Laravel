@@ -1,4 +1,5 @@
 @extends('layout')
+<title>M&M | Top 10 Movies</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/top10.css')}}">

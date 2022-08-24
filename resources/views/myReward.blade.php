@@ -1,4 +1,5 @@
 @extends('layout')
+<title>M&M | My Rewards</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/myReward.css')}}">

@@ -1,4 +1,5 @@
 @extends('layout')
+<title>M&M | Contact Us</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/contactus.css')}}">

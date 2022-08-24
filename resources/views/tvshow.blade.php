@@ -1,4 +1,6 @@
 @extends('layout')
+<link rel="icon" href="images/logo.png">
+<title>M&M | Movie Recommendation</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/tvshow.css')}}">

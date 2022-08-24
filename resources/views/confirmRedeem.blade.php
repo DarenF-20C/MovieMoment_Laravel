@@ -1,4 +1,6 @@
 @extends('layout')
+<title>M&M | Confirm Redemption</title>
+<link rel="icon" href="/images/logo.png">
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/redeemRewards.css')}}">
