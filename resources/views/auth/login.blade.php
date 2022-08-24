@@ -39,7 +39,7 @@
 			<div class="right">
                 <img src="/images/logoOnly.png" alt="logo">
 				<div class="right-text">
-					<h2>Movie Moments</h2>
+					<h2>Movie Moment</h2>
 					<h5></h5>
 				</div>
 			</div>
