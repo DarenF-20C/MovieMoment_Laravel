@@ -15,7 +15,7 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
     <!--Own Css -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="default.css">
   </head>
     
   <body>
