@@ -62,13 +62,12 @@ class LoginController extends Controller
             return redirect()->route('admin.home');
         }
 
-        $dateToday = Carbon::now()->format('y-m-d');
+        $dateToday = Carbon::now('UTC')->addHours(8)->format('Y-m-d');
         $schedule=Schedule::all()
-        ->where('date','>=',$dateToday)
+        ->where('date','=',$dateToday)
         ->first();
         if(!$schedule){
-            Schedule::create(['date'=>Carbon::now()->format('y-m-d')]);
-            // User::all()->update(['dailyLimit' => 0]);
+            Schedule::create(['date'=>Carbon::now('UTC')->addHours(8)->format('Y-m-d')]);
             $user = DB::table('users')->where('dailyLimit', '!=', 0)->update(array('dailyLimit' => 0));
         }
 
