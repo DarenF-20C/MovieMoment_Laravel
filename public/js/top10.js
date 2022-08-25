@@ -116,7 +116,7 @@ function getTop10Movies() {
         movieEl.classList.add('movie');
         const d = new Date();
         var date = d.getDate() || 7 ; 
-        var month = d.getMonth() + 1 ; // Since getMonth() returns month from 0-11 not 1-12
+        var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
         var year = d.getFullYear();
         var dateStr = date + "/" + month + "/" + year;
         // var today = new Date();
@@ -125,9 +125,9 @@ function getTop10Movies() {
         // today.setHours(-24 * (day - 1));   // Set the hours to day number minus 1
         movieEl.innerHTML = `
         <div class="abc">
-        <h1 class="Top10">Top 10 Movies lists</h1> <h2 class="update">Last Update: ${dateStr}</h2>
+        <h1 class="Top10">Top 10 Movies</h1> <h2 class="update">Last Update: ${dateStr}</h2>
         <div class="d-flex justify-content-center">
-        <div class="top-1">
+        <div class="top-1 first">
         <br>
         <h1><span class="fa fa-crown fa-lg"></span></h> 
         <div class="movies">
@@ -152,7 +152,7 @@ function getTop10Movies() {
         </div>
         </div>
         </div>
-        <div class="top-1">
+        <div class="top-1 third">
         <h1><span class="bi bi-circle-3">3</span></h1>
         <div class="movies">
         <img src="${data[2].poster_path? IMG_URL+ data[2].poster_path: "http://via.placeholder.com/1080x1580" }" alt="${data[2].title}" id="${data[2].id}">
