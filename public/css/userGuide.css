@@ -48,19 +48,34 @@ main {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:black;
 }
-  
-  #FAQBar {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #FAQBar li a {
-    padding: 12px;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  #FAQBar li a:hover {
-    background-color: #eee;
-  }
+.accordion-item{
+  border: 2px solid black;
+}
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+#FAQBar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#FAQBar li a {
+  padding: 12px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#FAQBar li a:hover {
+  background-color: #eee;
+}
+
+.accordion-item{
+  background-color: black;
+}
+
+.image {
+  width:50px;
+  height:50px;
+}

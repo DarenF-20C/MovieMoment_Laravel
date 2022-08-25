@@ -61,4 +61,5 @@ class User extends Authenticatable
     public function likedPosts(){
         return $this->belongsToMany('App\Models\Content')->withTimestamps();
     }
+
 }

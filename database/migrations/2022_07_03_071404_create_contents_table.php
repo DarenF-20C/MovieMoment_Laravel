@@ -15,7 +15,7 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->string('ctDetail');
+            $table->text('ctDetail'); 
             $table->date('ctDate')->default('2022-01-01');
             $table->string('ctTime')->default('00:00');
             $table->unsignedBigInteger('UserID');

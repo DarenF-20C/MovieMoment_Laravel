@@ -88,7 +88,7 @@
                   The inspiration of the name is came form a popular application in China, which is WeChat.
                   WeChat provide a platfrom for users to share their status, pictures, videos, with their friends and it is called as 
                   WeChat Moments.Our system also emphasizes in providing a platform for movie lovers to share their views about movies with each other. Therefore
-                  we named is as Movie Moment (M&M).
+                  we named our system as Movie Moment (M&M).
                   </p>
                   </div>
                   <div class="col-md-6"><img src="images/ideas.jpg" class="img-fluid rounded-pill hover-shadow"></div> 

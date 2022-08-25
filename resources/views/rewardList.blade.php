@@ -12,14 +12,14 @@
             <h6 class="totalpoints">Your total points: <p class="userpoints">{{ Auth::user()->points }}</p> </h6>
             <a class="reward" href="{{route('showMyReward')}}">My Reward</a>
         </div>
-        <div class="searchbar"> 
-        <form class="form-inline my-2 my-lg-0" action="{{route('searchRewards')}}" method="post">
-        @csrf
-            <input type="search" placeholder="Search for rewards" id="search" class="search" aria-label="Search" name="keyword">
-            <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button> 
-            <button class="btn btn-primary btn-sm" type="submit" action="{{route('showRewards')}}"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>        
-        </form>
-        
+        <div class="wholesearchbar"> 
+            <form class="form-inline my-2 my-lg-0" action="{{route('searchRewards')}}" method="post">
+            @csrf
+                <input type="search" placeholder="Search for rewards" id="search" class="search searchbar" aria-label="Search" name="keyword">
+                <button class="btn btn-primary searchbar icon" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button> 
+                <button class="btn btn-primary searchbar icon" type="submit" action="{{route('showRewards')}}"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>        
+            </form>
+        </div>
         </div>
     </div>
 </div>

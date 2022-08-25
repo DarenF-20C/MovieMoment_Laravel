@@ -114,8 +114,10 @@
                      <div class="user"><img src="{{ asset('images/user/guest1.png') }}"></div>
                      <span class="username">Ved</span>
                      @else
-                     <div class="user"><img src="{{ asset('images/user/user.jpg') }}"></div>
-                     <span class="username">David Lee</span>
+                     <div class="user">
+                     <img src="{{ asset('images/user/'.$comment->user->userAvatar)}}" alt="userAvatar" class="rounded-circle" width="150">
+                     </div>
+                     <span class="username">{{$comment->user->name}}</span>
                      @endif
                      <!-- <div class="user"><img src="{{ asset('images/user/'.$comment->UserID) }}"></div>
                      <span class="username">{{$comment->UserID}}</span> -->
