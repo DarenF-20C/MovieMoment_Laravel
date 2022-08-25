@@ -116,7 +116,7 @@ function getTop10Movies() {
         movieEl.classList.add('movie');
         const d = new Date();
         var date = d.getDate() || 7 ; 
-        var month = d.getMonth() ; // Since getMonth() returns month from 0-11 not 1-12
+        var month = d.getMonth() + 1 ; // Since getMonth() returns month from 0-11 not 1-12
         var year = d.getFullYear();
         var dateStr = date + "/" + month + "/" + year;
         // var today = new Date();

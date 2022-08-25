@@ -76,7 +76,7 @@
                   <br>Follow us on:<br>
                   1.<a class="links" href="https://www.facebook.com/Movie-Moment-MM-109810318198221">Facebook <i class="fab fa-facebook-f"></i></a>
                   <br>
-                  2.<a class="links" href="https://www.instagram.com/moviemoment_2021/">Instagram <i class="fab fa-instagram"></i></a>
+                  2.<a class="links" href="https://www.instagram.com/moviemoment_2022/">Instagram <i class="fab fa-instagram"></i></a>
                   </p> 
                   </div>
             </div>
