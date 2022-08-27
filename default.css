@@ -97,11 +97,9 @@ p{
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-.markdown-body h1{
-    display:none;
-}
+
 .titleh1{
     display: flex;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: 100px;
 }
