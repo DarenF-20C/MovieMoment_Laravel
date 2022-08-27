@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="default.css">
   </head>
     
-  <body>
+  <body onload="info()">
   <header>
    <div class="p-5 text-center bg-image"> 
    <div class="mask">
@@ -36,5 +36,26 @@
    </div>
    <!-- Background image -->
     </header>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.28/sweetalert2.all.min.js" integrity="sha512-nWDPZH/tnW5b1KedLPkb9inxNXadIf4qQDoGTxPJcQNMn4XwPIIlmHSPofT821taBuF1t/uiGSOsRrVccwXS4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      function info() {
+      const Toast = Swal.mixin({
+         toast: true,
+         position: 'top-end',
+         showConfirmButton: false,
+         timer: 3000,
+         timerProgressBar: true,
+         didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+         }
+      })
+      Toast.fire({
+         icon: 'info',
+         title: "Movie Moment haven't been host on web."
+      })
+   }
+    </script>
   </body>
 </html>
