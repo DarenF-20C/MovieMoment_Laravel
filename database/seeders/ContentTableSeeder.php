@@ -42,7 +42,7 @@ class ContentTableSeeder extends Seeder
         ]);
 
         $C4 = Content::create([
-            'ctDetail' => "I have seen every Godzilla movie ever made. I am sorry to say I turned this one off after 30 minutes. Just incredible violence with no story that makes any sense. Film is dead....",
+            'ctDetail' => "I have seen every Godzilla movie ever made. I am sorry to say I turned this one off after 30 minutes. Just incredible violence with no story that makes any sense. Film is dead... So sad",
             'ctDate' => '2022-06-28',
             'ctTime' => '19:51',
             'UserID' => '2',
@@ -51,7 +51,7 @@ class ContentTableSeeder extends Seeder
         ]);
 
         $C5 = Content::create([
-            'ctDetail' => "Not enough monsters. Not enough plot.",
+            'ctDetail' => "Great tea time after movie",
             'ctDate' => '2022-06-28',
             'ctTime' => '15:18',
             'UserID' => '3',

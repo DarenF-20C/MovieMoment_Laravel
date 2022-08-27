@@ -1,5 +1,5 @@
 @extends('layout')
-<title>M&M | Project Members</title>
+<title>M&M | Our Team</title>
 @section('content')
 @push('css')
 <link rel="stylesheet" href="{{asset('css/projectMembers.css')}}">
@@ -9,8 +9,8 @@
 <div class="container-fluid">
 <section id="teammembers" class="text-center text-black">
 <br>
-<h2 class="my-2"style="font-size:80px;">Project Members</h2> <br>
-<div class="row">
+<h2 class="slide-right h2">Our Team Members</h2> <br>
+<div class="row wholecard">
 <div class="col-sm-4"> 
 <div class="card">
       <div class="card-body">
@@ -19,7 +19,7 @@
         <p class="card-text">     
         <strong>Student ID:</strong> D200262C <br>
         <strong>Batch:</strong> IT-20C <br>
-        <strong>H/P:</strong> 018-4679188 <br>
+        <strong>H/P:</strong> 018-467 9188 <br>
         <strong>Email:</strong>lohchiaheung@gmail.com<br>
         <strong>Location:</strong>Johor Bahru, Johor
        </p>

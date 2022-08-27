@@ -2,12 +2,24 @@ body,#intro {
     height:100%;
 }
 
-.my-2 {
-    color:#00dd00;;
-    font-family: 'Libre Franklin', sans-serif;
-    font-size:60px;
+.container-fluid{
+    padding: 0 5% 0 5%;
 }
 
+h2{
+    color:#00dd00;;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size:58px !important;
+    font-weight: 500 !important;
+    text-align:left;
+    padding-top: 10px;
+}
+
+.wholecard{
+    border-top: 1px solid white;
+    padding-top: 30px;
+    margin-top: -20px;
+}
 
 body{
     background-color: #101210;
@@ -40,11 +52,6 @@ img.chathead {
     border-radius:50%;
 }
 
-.my-2 {
-    text-align:center;
-    font-size:100px;
-}
-
 .orangeline {
     border:1px solid #fc8138;
 }
@@ -58,3 +65,27 @@ img.chathead {
     transform: scale(1.05); 
   }
 
+.slide-right {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0;
+    max-width: 900px
+  }
+  
+.slide-right.h2{
+      animation: slide-right 0.5s forwards;
+      transform:translateX(-100%);
+      padding-left: 0;
+      margin-left: 0px;
+      padding-top: 20px;
+  }
+  
+@keyframes slide-right {
+    to {
+        transform:translateX(0);
+    }
+}
+  
+.slide-right{
+    padding: 0 5% 0 5%;
+}

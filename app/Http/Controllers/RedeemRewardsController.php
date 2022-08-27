@@ -38,7 +38,7 @@ class RedeemRewardsController extends Controller
         $user->save();
         $rewards->save();
         Session::flash('success',"Your reward is redeemed successfully!");
-        return back();
+        return redirect()->route('showMyReward');
     }
 
     public function myReward(){

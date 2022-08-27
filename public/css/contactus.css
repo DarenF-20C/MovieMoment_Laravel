@@ -95,15 +95,34 @@ label {
     display: flex;
     flex-direction: row;
     border: 3px solid #02eb0d;
-    border-radius: 1%;
+    border-radius: 5px;
     padding: 0 !important;
 }
 .send{
     margin: -10px 0 0 0 ;
     position: absolute;
-    left: 80%;
+    left: 79%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+}
+
+.sendbtn{
+    font-family: Franklin Gothic Medium;
+    border: 2px solid #000000;
+    background-color:#00dd00;
+    color:black;
+    padding: 5px 14px;
+    margin-left: 10px;
+    height:45px;
+    width:100px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+    
+.sendbtn:hover{
+    color:black;
+    background-color: #ff8036;
 }
 
 .follow{
@@ -160,4 +179,12 @@ label {
 .label{
     font-size: 24px;
     margin: 0 0 0 10px;
+}
+.text.url{
+    text-decoration:underline;
+    font-size:18px;
+}
+
+.invalid-feedback{
+    margin-left: 10%;
 }

@@ -3,28 +3,6 @@ body {
     height:100%;
 }
 
-.display-1 {
-    color:#00dd00;
-    font-family: Franklin Gothic Medium;
-}
-
-.backbutton {
-    color:black;
-    font-family: Franklin Gothic Medium;
-    border: 2px solid #ff8036;
-    background-color:#00dd00;
-    padding: 5px;
-}
-
-.backbutton:hover {
-    background-color:#ff8036;
-    color:black;
-    border: 2px solid #00dd00;
-}
-
-.col-md-12.mt-4.mb-4.text-center{
-    color:#00dd00;
-}
 
 .strongname {
     color:#ff8036;
@@ -33,14 +11,20 @@ body {
 
 .Titles {
     color:#ff8036;
-    font-size:32px;
+    font-size:24;
     font-weight:bold;
+}
+.Titles:nth-child(3),.Titles:nth-child(4){
+    padding-bottom: 20px;
+}
+.Titles:nth-child(3){
+    padding-top: 10px;
 }
 
 .des {
     color:#00dd00;
-    font-size:22px;
-    
+    font-size:18px;
+    font-weight: 500 !important;
 }
 
 .images {
@@ -51,23 +35,110 @@ body {
     color:#00dd00;
 }
 
-.orange{
+.pointsTitle{
     color:#ff8036;
-    font-style:oblique;
-    font-family: Franklin Gothic Medium;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 500 !important;
 }
 
-.btn.btn-primary {
-    background-color:#00dd00;
-    color:black;
+.orange{
+    color:#00dd00;
+    font-style:oblique;
     font-family: Franklin Gothic Medium;
-    padding:10px;
- }
- 
- .btn.btn-primary:hover {
-     background-color:#ff8036;
-  }
+    font-size: 18px;
+}
 
   .hidden{
     display:none;
   }
+
+  .reward {
+    color:#00dd00;
+    font-family: Franklin Gothic Medium;
+    border: 2px solid #ff8036;
+    background-color:black;
+    padding: 5px 14px;
+    margin-left: 10px;
+    height:25px;
+    width:255px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.reward:hover {
+    opacity: 0.8;
+    border: 2px solid #ff8036;
+    background-color:black;
+    color:#00d300;
+}
+.pagetitle{
+    color:#00dd00;;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size:58px !important;
+    font-weight: 500 !important;
+    padding-top: 20px;
+    text-align:left;
+}
+
+.headContainer{
+    padding: 30px 0 0 0!important;
+    margin: 0 5% 0 5%;
+}
+
+.session-row{
+    max-width: 90% !important;
+}
+
+.session-container{
+    border-top: 1px solid white;
+    padding-top: 20px;
+    margin: 0;
+}
+
+#redeemBtn{
+    font-family: Franklin Gothic Medium;
+    border: 2px solid #000000;
+    background-color:#00dd00;
+    color:black;
+    padding: 5px 14px;
+    margin-left: 10px;
+    height:45px;
+    width:105px;
+    border-radius: 30px;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+#redeemBtn:hover{
+    color:black;
+    background-color: #ff8036;
+}
+
+.rewardDetail{
+    min-height: 580px;
+}
+.slide-right {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0;
+    max-width: 900px
+  }
+  
+.slide-right.h2{
+      animation: slide-right 0.5s forwards;
+      transform:translateX(-100%);
+      padding-left: 0;
+      margin-left: 0px;
+      padding-top: 20px;
+  }
+  
+@keyframes slide-right {
+    to {
+        transform:translateX(0);
+    }
+}
+  
+.slide-right{
+    padding: 0 5% 0 5%;
+}

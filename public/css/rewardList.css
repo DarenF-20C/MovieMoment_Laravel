@@ -3,30 +3,33 @@ body {
     height:100%;
 }
 
-.TitlesRL {
-    font-size:48px;
-    font-family: Franklin Gothic Medium;
-    color:#00dd00;
-    
-}
-
 .totalpoints {
+    color:#ffffff;
+    font-size:22px;
+}
+.totalpoints strong{
     color:#00dd00;
-    font-size:20px;
+    font-size:23px;
 }
 
 .reward {
-    color:black;
+    color:#00dd00;
     font-family: Franklin Gothic Medium;
     border: 2px solid #ff8036;
-    background-color:#00dd00;
-    padding: 5px;
+    background-color:black;
+    padding: 5px 14px;
+    margin-left: 10px;
+    height:25px;
+    width:255px;
+    border-radius: 30px;
+    font-size: 18px;
 }
 
 .reward:hover {
-    background-color:#ff8036;
-    color:black;
-    border: 2px solid #00dd00;
+    opacity: 0.8;
+    border: 2px solid #ff8036;
+    background-color:black;
+    color:#00d300;
 }
 
 .card {
@@ -48,10 +51,10 @@ body {
 .card-title {
     font-family: Franklin Gothic Medium;
     font-size:25px;
-    color:#00dd00;
+    color:#ffffff;
     height:65px;
     max-height:70px;
-    border-bottom: 2px #00dd00 dotted;
+    border-bottom: 2px #ffffff solid;
 }
 
 .hidden {
@@ -70,6 +73,23 @@ body {
 .des {
     font-family: Franklin Gothic Medium;
     color:#ff8036;
+}
+.rewardView{
+    font-family: Franklin Gothic Medium;
+    border: 2px solid #000000;
+    background-color:#00dd00;
+    color:black;
+    padding: 5px 14px;
+    margin-left: 10px;
+    height:25px;
+    width:255px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.rewardView:hover{
+    color:black;
+    background-color: #ff8036;
 }
 
 .btn.btn-primary {
@@ -90,12 +110,7 @@ body {
    top:90%;
    left:35%;
  }
- 
- .userpoints {
-    color:#ff8036;
-    font-size:25px;
-    font-weight:bold;
- }
+
 
  .searchbar{
     padding:5px;
@@ -106,6 +121,7 @@ body {
 .wholesearchbar{
     display: flex;
     flex-direction: row-reverse;
+    padding-top: 10px;
 }
 
 .search {
@@ -146,4 +162,46 @@ body {
 .searchbar.icon{
     padding: 15px;
     border-radius: 100%;
+}
+
+h2{
+    color:#00dd00;;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size:58px !important;
+    font-weight: 500 !important;
+    padding-top: 20px;
+    text-align:left;
+}
+
+.container{
+    padding: 0 20px 0 20px;
+}
+
+.pointSearch{
+    padding-top: 20px;
+    border-top: 1px solid white;
+}
+.slide-right {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0;
+    max-width: 900px
+  }
+  
+.slide-right.h2{
+      animation: slide-right 0.5s forwards;
+      transform:translateX(-100%);
+      padding-left: 0;
+      margin-left: 0px;
+      padding-top: 20px;
+  }
+  
+@keyframes slide-right {
+    to {
+        transform:translateX(0);
+    }
+}
+  
+.slide-right{
+    padding: 0 5% 0 5%;
 }

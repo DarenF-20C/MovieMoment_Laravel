@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
             'is_admin' => 0,
             'password' => bcrypt('12345678'),
             'userAvatar' => 'ghost.jpg',
-            'points' => 100000,
+            'points' => 999999,
             'dailyLimit'=>10,
             'phone'=> "012-345678910",
             'date'=>'2022-07-23 07:13:22',
@@ -32,7 +32,7 @@ class UserTableSeeder extends Seeder
             'is_admin' => 0,
             'password' => bcrypt('12345678'),
             'userAvatar' => 'user.jpg',
-            'points' => 10000,
+            'points' => 999999,
             'phone'=> "012-345678910",
             'date'=>'2022-07-23 07:13:22',
         ]);
@@ -43,7 +43,7 @@ class UserTableSeeder extends Seeder
             'is_admin' => 0,
             'password' => bcrypt('12345678'),
             'userAvatar' => 'guest1.png',
-            'points' => 1000,
+            'points' => 999999,
             'phone'=> "012-345678910",
             'date'=>'2022-07-23 07:13:22',
         ]);

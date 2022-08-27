@@ -27,14 +27,14 @@
                            <span class="fa fa-phone"></span><span class="label">Phone:</span>
                         </div>
                         <div class="text">
-                           <p> + 1235 2355 98 </p>
+                           <p> +60 12 345 6789 </p>
                         </div>
                         
                         <div class="icon">
-                        <span class="fa fa-paper-plane"></span><span class="label">Email:</span>
+                        <span class="fa fa-globe"></span><span class="label">Website:</span>
                         </div>
-                        <div class="text">
-                           <p><span>www.google.com.my</span></p>
+                        <div class="text url">
+                           <p><a href="https://chiaheung.github.io/MovieMoment/" style="color:white;" target="blank"><span>Movie Moment</span></a></p>
                         </div>
 
                      </div>
@@ -100,7 +100,7 @@
                         <br>
                         <div class="row">
                            <div class="update ml-auto mr-auto">
-                              <button type="submit" class="btn btn-primary send">Send</button>
+                              <button type="submit" class="sendbtn send">Send</button>
                               <div class="text-center follow">
                                  <h1>Follow us on:</h1>
                                  <button type="button" class="btn btn-secondary btn-floating mx-1 fb">

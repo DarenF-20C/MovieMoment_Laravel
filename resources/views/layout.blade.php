@@ -53,7 +53,7 @@
                            </li>
                            <li class="nav-item">
                            <a class="nav-link {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }} {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }} {{Route::currentRouteNamed('tvshow') ? 'active' : '' }} dropdown-toggle" href="{{url('movieRecommendation')}}" ></i> <i class="fas fa-video"></i> Movie Recommendation</a>
-                              <ul class="dropdown-menu">
+                              <ul class="dropdown-menu recommend">
                               <li><a class="dropdown-item {{Route::currentRouteNamed('movieRecommendation') ? 'active' : '' }}" href="{{url('movieRecommendation')}}">Popular Movies</a></li>
                               <li><a class="dropdown-item {{Route::currentRouteNamed('familyMovie') ? 'active' : '' }}" href="{{url('familyMovie')}}">Family Movies</a></li>
                               <li><a class="dropdown-item {{Route::currentRouteNamed('tvshow') ? 'active' : '' }}" href="{{url('tvshow')}}">TV Shows</a></li>
@@ -62,18 +62,19 @@
                            
                            <li class="nav-item">
                            <a class="nav-link {{Route::currentRouteNamed('top10') ? 'active' : '' }} {{Route::currentRouteNamed('top10TV') ? 'active' : '' }}  dropdown-toggle " href="{{url('top10')}}"><i class="fas fa-crown"></i> Top 10 Movie (Daily)  </a>         
-                           <ul class="dropdown-menu">
+                           <ul class="dropdown-menu top10list">
                               <li><a class="dropdown-item {{Route::currentRouteNamed('top10') ? 'active' : '' }}" href="{{url('top10')}}">Movie Lists</a></li>
                               <li><a class="dropdown-item {{Route::currentRouteNamed('top10TV') ? 'active' : '' }}" href="{{url('top10TV')}}">TV Shows</a></li>
                                </ul>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link dropdown-toggle {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }} {{Route::currentRouteNamed('userGuide') ? 'active' : '' }} {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}"></i>Others</a>
-                                 <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} " href="{{url('showProjectMembers')}}">Project Members</a></li>
-                                 <li><a class="dropdown-item {{Route::currentRouteNamed('userGuide') ? 'active' : '' }}" href="{{url('userGuide')}}">User Guide / FAQ</a></li>
-                                 <li><a class="dropdown-item {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}">Rewards Redeem</a></li>
-                                 <li><a class="dropdown-item {{Route::currentRouteNamed('myReward') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }}" href="{{url('myReward')}}">My Rewards</a></li>
+                           <a class="nav-link {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}"class="text-dark"><i class="fas fa-award"></i> Reward </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link dropdown-toggle {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }} {{Route::currentRouteNamed('userGuide') ? 'active' : '' }} {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}"></i>Others</a>
+                                 <ul class="dropdown-menu other">
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} " href="{{url('showProjectMembers')}}">Our Teams</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('userGuide') ? 'active' : '' }}" href="{{url('userGuide')}}">Help</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}" href="{{url('contactUs')}}">Contact Us</a></li>
                               </ul>
                            </li>
@@ -96,6 +97,7 @@
                 <li>
                     <a class="dropdown-item profilemenu" href="{{ route('userProfile') }}">My profile</a>
                 </li>
+                  <li><a class="dropdown-item {{Route::currentRouteNamed('myReward') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }}" href="{{url('myReward')}}">My Rewards</a></li>
                 <li>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();

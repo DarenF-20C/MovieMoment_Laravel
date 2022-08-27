@@ -10,17 +10,23 @@ body {
 }
 
 .reward {
-    color:black;
+    color:#00dd00;
     font-family: Franklin Gothic Medium;
     border: 2px solid #ff8036;
-    background-color:#00dd00;
-    padding: 5px;
+    background-color:black;
+    padding: 5px 14px;
+    margin-left: 10px;
+    height:25px;
+    width:255px;
+    border-radius: 30px;
+    font-size: 18px;
 }
 
 .reward:hover {
-    background-color:#ff8036;
-    color:black;
-    border: 2px solid #00dd00;
+    opacity: 0.8;
+    border: 2px solid #ff8036;
+    background-color:black;
+    color:#00d300;
 }
 
 .card {
@@ -40,10 +46,10 @@ body {
 .card-title {
     font-family: Franklin Gothic Medium;
     font-size:25px;
-    color:#00dd00;
+    color:#ffffff;
     height:65px;
     max-height:70px;
-    border-bottom: 2px #00dd00 dotted;
+    border-bottom: 2px #ffffff solid;
 }
 
 .card-text {
@@ -63,17 +69,17 @@ body {
 }
 
 .rewards {
-    color:black;
+    color:#00dd00;
     font-family: Franklin Gothic Medium;
     border: 2px solid #ff8036;
-    background-color:#00dd00;
+    background-color:black;
     padding: 5px;
 }
 
 .rewards:hover {
-    background-color:#ff8036;
     color:black;
-    border: 2px solid #00dd00;
+    border: 2px solid #ff8036;
+    background-color:#00dd00;
     cursor:copy;
 }
 
@@ -95,3 +101,50 @@ body {
     font-size:25px;
     color:#ff8036;
   }
+
+.headContainer{
+    padding: 30px 0 0 0!important;
+    margin: 0 5% 0 5%;
+}
+.rewardContainer{
+    border-top: 1px solid white;
+    padding: 30px 20px 0 20px !important;
+    margin: 0 5% 0 5%;
+}
+
+.headContainer h2{
+    color:#00dd00;;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size:64px !important;
+    font-weight: 500 !important;
+    text-align:left;
+    padding-top: 10px;
+}
+
+.empty{
+    min-height: 500px;
+}
+.slide-right {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0;
+    max-width: 900px
+  }
+  
+.slide-right.h2{
+      animation: slide-right 0.5s forwards;
+      transform:translateX(-100%);
+      padding-left: 0;
+      margin-left: 0px;
+      padding-top: 20px;
+  }
+  
+@keyframes slide-right {
+    to {
+        transform:translateX(0);
+    }
+}
+  
+.slide-right{
+    padding: 0 5% 0 5%;
+}
