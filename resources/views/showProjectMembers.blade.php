@@ -6,7 +6,7 @@
 @endpush
 <body><br>
 <main>
-<div class="container-fluid">
+<div class="container-fluid membercontainer">
 <section id="teammembers" class="text-center text-black">
 <br>
 <h2 class="slide-right h2">Our Team Members</h2> <br>

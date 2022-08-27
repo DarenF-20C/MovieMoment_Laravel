@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{asset('css/rewardList.css')}}">
 @endpush
 <body><br><br>
-<div class="container">
+<div class="container redeemcontainer">
     <h2 class="slide-right h2">Points Redeem Center</h2>
     <div class="row pointSearch">
         <div class="col-md-6">

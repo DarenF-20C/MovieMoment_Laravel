@@ -68,12 +68,12 @@
                                </ul>
                            </li>
                            <li class="nav-item">
-                           <a class="nav-link {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }}" href="{{url('showRewards')}}"class="text-dark"><i class="fas fa-award"></i> Reward </a>
+                           <a class="nav-link {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }} {{Route::currentRouteNamed('showRewards') ? 'active' : '' }} {{Route::currentRouteNamed('searchRewards') ? 'active' : '' }} {{Route::currentRouteNamed('redeemRewards') ? 'active' : '' }}" href="{{url('showRewards')}}"class="text-dark"><i class="fas fa-award"></i> Reward </a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link dropdown-toggle {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }} {{Route::currentRouteNamed('userGuide') ? 'active' : '' }} {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}"></i>Others</a>
+                              <a class="nav-link dropdown-toggle {{Route::currentRouteNamed('showProjectMembers') ? 'active' : '' }} {{Route::currentRouteNamed('userGuide') ? 'active' : '' }} {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}"></i>Others</a>
                                  <ul class="dropdown-menu other">
-                                 <li><a class="dropdown-item {{Route::currentRouteNamed('listMembers') ? 'active' : '' }} " href="{{url('showProjectMembers')}}">Our Teams</a></li>
+                                 <li><a class="dropdown-item {{Route::currentRouteNamed('showProjectMembers') ? 'active' : '' }} " href="{{url('showProjectMembers')}}">Our Teams</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('userGuide') ? 'active' : '' }}" href="{{url('userGuide')}}">Help</a></li>
                                  <li><a class="dropdown-item {{Route::currentRouteNamed('contactUs') ? 'active' : '' }}" href="{{url('contactUs')}}">Contact Us</a></li>
                               </ul>
@@ -95,7 +95,7 @@
                </a>
                <ul class="dropdown-menu navbar-nav right-nav">
                 <li>
-                    <a class="dropdown-item profilemenu" href="{{ route('userProfile') }}">My profile</a>
+                    <a class="dropdown-item profilemenu {{Route::currentRouteNamed('userProfile') ? 'active' : '' }} " href="{{ route('userProfile') }}">My profile</a>
                 </li>
                   <li><a class="dropdown-item {{Route::currentRouteNamed('myReward') ? 'active' : '' }} {{Route::currentRouteNamed('showMyReward') ? 'active' : '' }}" href="{{url('myReward')}}">My Rewards</a></li>
                 <li>
