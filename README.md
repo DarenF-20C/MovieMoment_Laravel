@@ -26,7 +26,9 @@
    <div class="text-white">
    <div class="col-md-4">
    <img class="logomain" src="images/logo.png" alt="logo">
-   <h1 class="mb-4">Movie Moment (M&M)</h1>
+       <div class="titleh1">
+        <h1 class="mb-4">Movie Moment (M&M)</h1>
+       </div>
    </div>
    </div>
    </div>
