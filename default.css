@@ -97,7 +97,10 @@ p{
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-h1 {
-  text-align: center !important;
-  margin-top: 80%;
+.markdown-body h2{
+    display:none;
+}
+.titleh1{
+    display: flex;
+    justify-content: center;
 }
