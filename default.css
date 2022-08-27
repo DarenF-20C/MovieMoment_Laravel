@@ -1,5 +1,5 @@
 body {
-  padding-top: 10px;
+  padding-top: 0;
 }
 
 .navbar img {
@@ -18,7 +18,7 @@ body {
 
 .p-5 {
   background-color:#101210;
-  height:800px;
+  height:100%;
 }
 
 .mainlogo {
@@ -101,5 +101,5 @@ p{
 .titleh1{
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 120px;
 }
