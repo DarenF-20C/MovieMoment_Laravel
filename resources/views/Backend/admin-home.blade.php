@@ -45,8 +45,8 @@
 	</div>
 	<div class="col-div-3">
 		<div class="box">
-		<a href="{{route('admin.rewardList')}}">
-			<p>{{$totalRewards}}<br/><span>Total Rewards</span></p>
+		<a href="{{route('admin.rewardList')}}"> 
+			<p>{{$totalRewards}}<br/><span>Total Rewards</span></p> </a>
 			<i class="bx bx-award box-icon fa-lg"></i>
 		</div>
 	</div>
