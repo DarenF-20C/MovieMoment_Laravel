@@ -411,7 +411,7 @@ div#social-links ul li a {
     color: #575d63
 }
 
-.timeline-footer a:not(.btn):focus,
+.timeline-footer a:not(.btn):nth-child(1):focus,
 .timeline-footer a:not(.btn):hover {
     color: #02eb0d !important
 }
@@ -736,3 +736,8 @@ color: gray;
 #help .popup a{
     text-decoration: none;
 }
+
+.comment{
+    z-index: 999;
+}
+

@@ -90,7 +90,7 @@
                   @endguest
 
                   <!-- pop COMMENT FUNCTION -->
-                  <a href="javascript:commentBox({{$post->id}});" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a> 
+                  <a href="javascript:commentBox({{$post->id}});" class="comment m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a> 
                   <!-- SHARE FUNCTION -->
                   <div class="shareContainer">
                      <div class="emojibar" data-id="{{$post->id}}" data-token="{{ csrf_token() }}">

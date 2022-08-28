@@ -103,18 +103,19 @@
                                              <textarea rows="3" class="form-control" placeholder="What's on your mind?" name="ctDetail" id="ctDetail" maxlength="5000" required></textarea>
                                              <div class="row">
                                                 <div class="col-sm-10" id="upload-icon">
-                                                      <a class="btn btn-sm btn-default ivm-show" style='border:1px solid #02eb0d'>
-                                                         <label for="image" data-mdb-toggle="tooltip" title="upload an image">
-                                                            <i class="fas fa-image" style='color:#02eb0d'></i>
-                                                            <input type="file" id="image" style="display: none" name="image" accept="image/*" multiple="" data-original-title="upload photos" onchange="showPreview(event);">
-                                                         </label>
+                                                   <label for="image" data-mdb-toggle="tooltip" title="upload an image">
+                                                      <a class="btn btn-sm btn-default ivm-show" style='border:1px solid #02eb0d' onclick="$('#image').trigger('click'); return false;">
+                                                         <i class="fas fa-image" style='color:#02eb0d'></i>
+                                                         <input type="file" id="image" style="display: none" name="image" accept="image/*" multiple="" data-original-title="upload photos" onchange="showPreview(event);">
                                                       </a>
-                                                      <a class="btn btn-sm btn-default ivm-show" style='border:1px solid #02eb0d'>
-                                                         <label for="video" data-mdb-toggle="tooltip" title="upload a video">
-                                                            <i class="fas fa-video" style='color:#02eb0d'></i>
-                                                            <input type="file" id="video" style="display: none" name="video" accept="video/*" multiple="" data-original-title="upload videos" onchange="showPreviewVideo(event);">
-                                                         </label>
+                                                   </label>
+                                                      
+                                                   <label for="video" data-mdb-toggle="tooltip" title="upload a video">
+                                                      <a class="btn btn-sm btn-default ivm-show" style='border:1px solid #02eb0d' onclick="$('#video').trigger('click'); return false;">
+                                                         <i class="fas fa-video" style='color:#02eb0d'></i>
+                                                         <input type="file" id="video" style="display: none" name="video" accept="video/*" multiple="" data-original-title="upload videos" onchange="showPreviewVideo(event);">
                                                       </a>
+                                                   </label>
                                                 </div>
                                                 <div class="col-sm-10 col-md-10 upload-image" id="display-image" style="display:none">
                                                    <img id="previewImage" src="" alt="" />

@@ -60,3 +60,11 @@ body {
 .upload-image{
   border: none;
 }
+
+.fas.fa-image, .fas.fa-video{
+  padding: 3px 0;
+}
+
+.fas.fa-image, .fas.fa-video:hover{
+  cursor: pointer;
+}
