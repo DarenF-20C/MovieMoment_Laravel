@@ -50,8 +50,16 @@
 		<div class="box">
 			<p>{{$totalRewards}}<br/><span>Total Rewards</span></p>
 			<i class="bx bx-award box-icon fa-lg"></i>
+			</a>
 		</div>
-		</a>
+	</div>
+	<div class="col-div-3">
+		<a href="{{route('admin.showRewardsRedemption')}}">
+		<div class="box">
+			<p>{{$totalRedemption}}<br/><span>Total Redemption</span></p>
+			<i class="fa fa-gift box-icon"></i>
+			</a>
+		</div>
 	</div>
 	<div class="clearfix"></div>
 	<br/></br>

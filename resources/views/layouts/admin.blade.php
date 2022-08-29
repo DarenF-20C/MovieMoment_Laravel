@@ -75,6 +75,13 @@
        </a>
        <span class="tooltip">Reward</span>
      </li>
+     <li>
+       <a href="{{route('admin.showRewardsRedemption')}}">
+       <i class="bx bx-gift"></i>
+         <span class="links_name">Users' Redemption</span>
+       </a>
+       <span class="tooltip">Users' Redemption</span>
+     </li>
      <li class="profile">
          <div class="profile-details">
           <img src="/images/user/{{Auth::user()->userAvatar}}">

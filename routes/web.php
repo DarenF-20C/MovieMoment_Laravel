@@ -57,6 +57,7 @@ Route::post('/admin/searchRewards',[App\Http\Controllers\RewardController::class
 Route::get('/admin/rewards/edit/{id}',[App\Http\Controllers\RewardController::class, 'edit'])->name('admin.editReward')->middleware('is_admin');
 Route::get('/admin/rewards/delete/{id}',[App\Http\Controllers\RewardController::class, 'delete'])->name('admin.deleteReward')->middleware('is_admin');
 Route::post('/admin/updateRewards',[App\Http\Controllers\RewardController::class, 'update'])->name('admin.updateReward')->middleware('is_admin');
+Route::get('/admin/userRedemption',[App\Http\Controllers\RedeemRewardsController::class, 'showRewardsRedemption'])->name('admin.showRewardsRedemption')->middleware('is_admin');
 // ----------------------------------------Reward System----------------------------------------
 // ----------------------------------------Admin Route----------------------------------------
 

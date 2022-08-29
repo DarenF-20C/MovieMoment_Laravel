@@ -14,14 +14,14 @@
     <li class="breadcrumb-item">
       <a href="{{route('admin.home')}}">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active">User-Lists</li>
+    <li class="breadcrumb-item active">Users' Rewards Redeemption</li>
   </ol>
 
 
    <!-- DataTables Example -->
    <div class="card mb-3">
     <div class="card-header">
-      <i class="bx bx-table"></i> Users List
+      <i class="bx bx-table"></i> Users' Rewards Redeemption
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -29,27 +29,20 @@
           <thead style="background-color:Aqua;color: ;border-color:black;">
             <tr style="border-color:black;">
               <th style="border-right-color:black;">ID</th>
-              <th style="border-right-color:black;">Name</th>
-              <th style="border-right-color:black;">Email</th>
-              <th style="border-right-color:black;">Phone</th>
-              <th style="border-right-color:black;">Points</th>
-              <th style="border-right-color:black;">Daily Limit</th>
-              <th>Action</th>
+              <th style="border-right-color:black;">rewardName</th>
+              <th style="border-right-color:black;">userName</th>
+              <th style="border-right-color:black;">Redemption Time</th>
             </tr>
           </thead>
 
           <tbody>
-          @if(count($users))
-              @foreach($users as $user)
+          @if(count($redeem_rewards))
+              @foreach($redeem_rewards as $redeem_reward)
               <tr style="background-color:#ccffff;">
-                <td style="border-right-color:black;  border-bottom-color:black;">{{$user->id}}</td>
-                <td style="border-right-color:black;  border-bottom-color:black;">{{$user->name}}</td>
-                <td style="border-right-color:black;  border-bottom-color:black;">{{$user->email}}</td>
-                <td style="border-right-color:black;  border-bottom-color:black;">{{$user->phone}}</td>
-                <td style="border-right-color:black;  border-bottom-color:black;">{{$user->points}}</td>
-                <td style="border-right-color:black;  border-bottom-color:black;" width="120px">{{$user->dailyLimit}}</td>
-                <td style="border-bottom-color:black;">
-                  <a class="btn btn-danger btn-sm" href="{{route('admin.deleteUser',['id'=>$user->id])}}" onClick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i> Delete</a>
+                <td style="border-right-color:black;  border-bottom-color:black;">{{$redeem_reward->id}}</td>
+                <td style="border-right-color:black;  border-bottom-color:black;">{{$redeem_reward->rewardName}}</td>
+                <td style="border-right-color:black;  border-bottom-color:black;">{{$redeem_reward->userName}}</td>
+                <td style="border-right-color:black;  border-bottom-color:black;">{{$redeem_reward->time}}</td>
               </td>
               </tr>
               @endforeach
@@ -60,8 +53,11 @@
                 <td>--</td>
                 <td>--</td>
                 <td>--</td>
+                <td>--</td>
+                <td>--</td>
             </tr>
-        @endif
+            @endif
+  
   
           </tbody>
         </table>
