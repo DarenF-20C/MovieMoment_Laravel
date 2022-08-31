@@ -115,6 +115,14 @@ h1 {
     font-size:18px;
 }
 
+.movie-info span:nth-child(1){
+    border-radius: 3px;
+    font-weight: bold;
+    padding:30px 25px 0px 25px;
+    text-align:center;
+    font-size:18px;
+}
+
 .movie-info span.green{
     color:lightgreen;
 }

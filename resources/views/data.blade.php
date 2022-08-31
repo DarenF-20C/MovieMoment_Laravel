@@ -95,7 +95,7 @@
                   <div class="shareContainer">
                      <div class="emojibar" data-id="{{$post->id}}" data-token="{{ csrf_token() }}">
                         <input type="hidden" id="earned-share-{{$post->id}}" value="1">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/community" target="_blank"><div class="emoji"><img src="Images/icons/facebook.png" alt=""><p>Facebook</p></div></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://chiaheung.github.io/MovieMoment/" target="_blank"><div class="emoji"><img src="Images/icons/facebook.png" alt=""><p>Facebook</p></div></a>
                         <a href="https://twitter.com/intent/tweet?url=http://127.0.0.1:8000/community" target="_blank"><div class="emoji"><img src="Images/icons/twitter.png" alt=""><p>Twitter</p></div></a>
                         <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://127.0.0.1:8000/community&title=Share+title&summary=There+will+be+a+window+left" target="_blank"><div class="emoji"><img src="Images/icons/linkedin.png" alt=""><p>LinkedIn</p></div></a>
                         <a href="https://wa.me/?text=http://jorenvanhocht.be" target="_blank"><div class="emoji"><img src="Images/icons/whatsapp.png" alt=""><p>WhatsApp</p></div></a>
