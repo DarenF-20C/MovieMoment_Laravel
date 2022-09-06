@@ -1,4 +1,4 @@
-# Final Year Project on 2022 Sem A
+# Final Year Project (FEIT) Diploma
 - SUC tech fest exhibition competition
 
 - MovieMoment Publicity Video:
